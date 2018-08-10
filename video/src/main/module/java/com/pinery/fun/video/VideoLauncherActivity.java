@@ -1,9 +1,10 @@
 package com.pinery.fun.video;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+
+import com.alibaba.android.arouter.launcher.ARouter;
 
 public class VideoLauncherActivity extends AppCompatActivity {
 
@@ -14,6 +15,6 @@ public class VideoLauncherActivity extends AppCompatActivity {
     }
 
     public void gotoVideo(View view){
-        startActivity(new Intent(this, VideoActivity.class));
+        ARouter.getInstance().build("/video/main").navigation();
     }
 }

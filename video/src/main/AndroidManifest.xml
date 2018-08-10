@@ -6,6 +6,7 @@
         android:supportsRtl="true">
 
         <activity android:name=".VideoActivity"/>
+        <activity android:name=".Video2Activity"/>
 
     </application>
 

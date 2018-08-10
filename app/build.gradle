@@ -11,11 +11,9 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
-        if (!rootProject.ext.isAlone) {
-            javaCompileOptions {
-                annotationProcessorOptions {
-                    arguments = [moduleName: project.getName()]
-                }
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
             }
         }
     }
