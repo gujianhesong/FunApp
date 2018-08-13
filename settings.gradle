@@ -1,1 +1,1 @@
-include ':app', ':video', ':reader', ':common'
+include ':app', ':video', ':reader', ':common', ':test'

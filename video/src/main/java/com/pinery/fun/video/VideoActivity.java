@@ -1,39 +1,20 @@
 package com.pinery.fun.video;
 
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-
+import android.content.Context;
+import android.content.Intent;
+import android.support.v4.app.Fragment;
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.alibaba.android.arouter.launcher.ARouter;
+import com.pinery.base.activity.AgentActivity;
+import com.pinery.fun.video.ui.fragment.HomeFragment;
 
 @Route(path = "/video/main")
-public class VideoActivity extends AppCompatActivity {
+public class VideoActivity extends AgentActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_video);
+  public static void navigate(Context context){
+    context.startActivity(new Intent(context, VideoActivity.class));
+  }
 
-        findViewById(R.id.btn_video2).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ARouter.getInstance().build("/video/main2").navigation();
-            }
-        });
-
-        findViewById(R.id.btn_reader).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ARouter.getInstance().build("/reader/main").navigation();
-            }
-        });
-
-        findViewById(R.id.btn_main2).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ARouter.getInstance().build("/main/main2").navigation();
-            }
-        });
-    }
+  @Override protected Class<? extends Fragment> provideFragmentClass() {
+    return HomeFragment.class;
+  }
 }

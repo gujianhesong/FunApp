@@ -19,7 +19,7 @@ ext{
             glideVersion = "3.7.0",
             loggerVersion = "1.15",
 //            eventbusVersion = "3.0.0",
-            gsonVersion = "2.8.0",
+            gsonVersion = "2.7",
             butterknife = "8.8.0",
             retrofit = "2.3.0",
             rxjava = "2.1.1",
@@ -29,7 +29,7 @@ ext{
             dagger_compiler = "2.11",
             dagger = "2.11",
             greenDao = "3.2.2",
-            arouter_api = "1.2.1.1",
+            arouter = "1.2.1.1",
             arouter_compiler = "1.1.2.1",
             transformations = "2.0.2",
             rxjava_adapter = "2.3.0",
@@ -39,8 +39,10 @@ ext{
             eventbus = "3.0.0",
             support_v4 = "25.4.0",
             okhttp3 = "3.3.1",
-            multidex="1.0.1"
+            multidex="1.0.1",
 
+            baseRecyclerViewAdapter="2.9.30",
+            LRecyclerView="1.5.0",
 
     ]
 
@@ -57,8 +59,7 @@ ext{
             glide                     : "com.github.bumptech.glide:glide:$rootProject.glideVersion",
             gson                      : "com.google.code.gson:gson:$rootProject.gsonVersion",
             logger                    : "com.orhanobut:logger:$rootProject.loggerVersion",
-            butterknife               : "com.jakewharton:butterknife:$rootProject.butterknife",
-            butterknife_compiler      : "com.jakewharton:butterknife-compiler:$rootProject.butterknife",
+
             retrofit                  : "com.squareup.retrofit2:retrofit:$rootProject.retrofit",
             okhttp3                   : "com.squareup.okhttp3:okhttp:$rootProject.okhttp3",
 
@@ -77,9 +78,17 @@ ext{
             transformations           : "jp.wasabeef:glide-transformations:$rootProject.transformations",
             multidex                  : "com.android.support:multidex:$rootProject.multidex",
             //路由通讯
-            arouter_api               : "com.alibaba:arouter-api:$rootProject.arouter_api",
-            arouter_compiler          : "com.alibaba:arouter-compiler:$rootProject.arouter_compiler"
+            arouter                   : "com.alibaba:arouter-api:$rootProject.arouter",
+            arouter_compiler          : "com.alibaba:arouter-compiler:$rootProject.arouter_compiler",
 
+            //butterknife
+            butterknife               : "com.jakewharton:butterknife:${rootProject.butterknife}",
+            butterknife_compiler      : "com.jakewharton:butterknife-compiler:${rootProject.butterknife}",
+
+            //BaseRecyclerViewAdapter
+            baseRecyclerViewAdapter   : "com.github.CymChad:BaseRecyclerViewAdapterHelper:${rootProject.baseRecyclerViewAdapter}",
+            //可扩展的RecyclerView
+            LRecyclerView             : "com.github.jdsjlzx:LRecyclerView:${rootProject.LRecyclerView}"
 
     ]
 }

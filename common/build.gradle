@@ -1,5 +1,7 @@
 apply plugin: 'com.android.library'
 
+def libs = rootProject.ext.dependencies;
+
 android {
     compileSdkVersion 26
     buildToolsVersion "27.0.3"
@@ -27,9 +29,70 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:26.+'
     testCompile 'junit:junit:4.12'
 
-    compile rootProject.ext.dependencies.arouter_api
+    //support
+    compile(libs.appcompatV7) {
+        exclude module: "support-annotations"
+    }
+    compile libs.recycleview
+    compile libs.design
+    compile(libs.support_v4) {
+        exclude module: "support-annotations"
+    }
+    compile libs.annotations
+
+    //Arouter路由
+    compile libs.arouter
+
+    //dagger2
+    compile libs.dagger2
+
+    //rxjava相关
+    compile libs.rxjava2
+    compile(libs.rxjava2_android) {
+        exclude module: "rxjava"
+    }
+    compile(libs.rxlifecycle2) {
+        exclude module: 'rxjava'
+        exclude module: 'jsr305'
+    }
+    compile(libs.rxlifecycle2_components) {
+        exclude module: 'support-v4'
+        exclude module: 'appcompat-v7'
+        exclude module: 'support-annotations'
+        exclude module: 'rxjava'
+        exclude module: 'rxandroid'
+        exclude module: 'rxlifecycle'
+    }
+
+    //BaseRecyclerViewAdapter
+    compile libs.baseRecyclerViewAdapter
+    //LRecyclerView
+    compile libs.LRecyclerView
+
+    //gson
+    compile libs.gson
+
+    //retrofit
+    compile(libs.retrofit) {
+        //exclude module: 'okhttp'
+        //exclude module: 'okio'
+    }
+    compile(libs.retrofit_converter_gson) {
+        exclude module: 'gson'
+        exclude module: 'okhttp'
+        exclude module: 'okio'
+        exclude module: 'retrofit'
+    }
+    compile(libs.retrofit_adapter_rxjava2) {
+        exclude module: 'rxjava'
+        exclude module: 'okhttp'
+        exclude module: 'retrofit'
+        exclude module: 'okio'
+    }
+
+    //glide
+    compile libs.glide
 
 }
