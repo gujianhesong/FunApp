@@ -22,7 +22,8 @@
     <activity
         android:name=".ui.activity.VideoPlayActivity"
         android:configChanges="orientation|keyboardHidden|screenSize"
-        android:screenOrientation="portrait" />
+        android:screenOrientation="portrait"
+        android:theme="@style/FullScreenTheme" />
 
   </application>
 

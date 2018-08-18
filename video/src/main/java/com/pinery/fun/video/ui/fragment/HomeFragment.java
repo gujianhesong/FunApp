@@ -45,18 +45,20 @@ public class HomeFragment extends BaseFragment {
 
   private void initTitile() {
     mTitleList = new ArrayList<>();
-    //mTitleList.add("直播");
     mTitleList.add("视频");
-    //mTitleList.add("同城");
+    mTitleList.add("直播");
+    mTitleList.add("同城");
 
     mIndicator.setTabMode(TabLayout.MODE_FIXED);
     mIndicator.addTab(mIndicator.newTab().setText(mTitleList.get(0)));
-    //mIndicator.addTab(mIndicator.newTab().setText(mTitleList.get(1)));
-    //mIndicator.addTab(mIndicator.newTab().setText(mTitleList.get(2)));
+    mIndicator.addTab(mIndicator.newTab().setText(mTitleList.get(1)));
+    mIndicator.addTab(mIndicator.newTab().setText(mTitleList.get(2)));
   }
 
   private void initFragment() {
     mFragmentList = new ArrayList<>();
+    mFragmentList.add(HuoVideoListFragment.newInstance());
+    mFragmentList.add(HuoLiveListFragment.newInstance());
     mFragmentList.add(HuoVideoListFragment.newInstance());
   }
 

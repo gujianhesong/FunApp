@@ -1,7 +1,6 @@
 package com.pinery.fun.video.ui.fragment;
 
 import android.graphics.Rect;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.text.TextUtils;
@@ -17,10 +16,10 @@ import com.pinery.fun.video.R;
 import com.pinery.fun.video.bean.HuoLiveBean;
 import com.pinery.fun.video.bean.HuoVideoBean;
 import com.pinery.fun.video.common.Constants;
-import com.pinery.fun.video.dagger.DaggerHuoVideoFragmentComponent;
-import com.pinery.fun.video.mvp.HuoVideoContract;
-import com.pinery.fun.video.mvp.HuoVideoPresenter;
-import com.pinery.fun.video.ui.adapter.HuoVideoAdapter;
+import com.pinery.fun.video.dagger.DaggerHuoLiveFragmentComponent;
+import com.pinery.fun.video.mvp.HuoLiveContract;
+import com.pinery.fun.video.mvp.HuoLivePresenter;
+import com.pinery.fun.video.ui.adapter.HuoLiveAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,19 +27,19 @@ import java.util.List;
  * Created by gujian on 2018-08-12.
  */
 
-public class HuoVideoListFragment extends BaseListFragment<HuoVideoPresenter>
-    implements HuoVideoContract.View {
+public class HuoLiveListFragment extends BaseListFragment<HuoLivePresenter>
+    implements HuoLiveContract.View {
 
-  private List<HuoVideoBean.DataBeanX> mDatas = new ArrayList<>();
+  private List<HuoLiveBean.DataBeanX> mDatas;
   private int mPage;
   private boolean mFirstRefresh = true;
 
-  public static HuoVideoListFragment newInstance() {
-    return new HuoVideoListFragment();
+  public static HuoLiveListFragment newInstance() {
+    return new HuoLiveListFragment();
   }
 
   @Override protected void initInjector() {
-    DaggerHuoVideoFragmentComponent.create().inject(this);
+    DaggerHuoLiveFragmentComponent.create().inject(this);
   }
 
   @Override protected void initData() {
@@ -49,29 +48,16 @@ public class HuoVideoListFragment extends BaseListFragment<HuoVideoPresenter>
         //打开视频
         showToast("打开视频");
 
-        HuoVideoBean.DataBeanX dataBeanX = mDatas.get(position);
-
-        String url = dataBeanX.getData().getVideo().getUrl_list().get(0);
-
-        String coverUrl = "";
-        try {
-          HuoVideoBean.DataBeanX.DataBean.VideoBean.CoverBean coverBean =
-              dataBeanX.getData().getVideo().getCover();
-          if (TextUtils.isEmpty(coverUrl)) {
-            coverUrl = coverBean != null ? coverBean.getUrl_list().get(0) : coverUrl;
-          }
-        } catch (Exception ex) {
-          ex.printStackTrace();
-        }
-        String userName = dataBeanX.getData().getAuthor().getNickname();
-
+        HuoLiveBean.DataBeanX dataBeanX = mDatas.get(position);
+        String url = dataBeanX.getData().getStream_url().getRtmp_pull_url();
+        String userName = dataBeanX.getData().getOwner().getNickname();
         String avatar = "";
-        HuoVideoBean.DataBeanX.DataBean.AuthorBean.AvatarJpgBean avatarJpgBean =
-            dataBeanX.getData().getAuthor().getAvatar_jpg();
-        HuoVideoBean.DataBeanX.DataBean.AuthorBean.AvatarLargeBean avatarLargeBean =
-            dataBeanX.getData().getAuthor().getAvatar_large();
-        HuoVideoBean.DataBeanX.DataBean.AuthorBean.AvatarThumbBean avatarThumbBean =
-            dataBeanX.getData().getAuthor().getAvatar_thumb();
+        HuoLiveBean.DataBeanX.DataBean.OwnerBean.AvatarJpgBean avatarJpgBean =
+            dataBeanX.getData().getOwner().getAvatar_jpg();
+        HuoLiveBean.DataBeanX.DataBean.OwnerBean.AvatarLargeBean avatarLargeBean =
+            dataBeanX.getData().getOwner().getAvatar_large();
+        HuoLiveBean.DataBeanX.DataBean.OwnerBean.AvatarThumbBean avatarThumbBean =
+            dataBeanX.getData().getOwner().getAvatar_thumb();
         if (TextUtils.isEmpty(avatar)) {
           avatar = avatarJpgBean != null ? avatarJpgBean.getUrl_list().get(0) : avatar;
         }
@@ -84,10 +70,10 @@ public class HuoVideoListFragment extends BaseListFragment<HuoVideoPresenter>
 
         ARouter.getInstance().build("/video/play")
             .withString(Constants.KEY_URL, url)
-            .withString(Constants.KEY_COVER_URL, coverUrl)
             .withString(Constants.KEY_USER_NAME, userName)
             .withString(Constants.KEY_USER_AVATAR, avatar)
             .navigation();
+
       }
     });
     setOnItemLongClickListener(new OnItemLongClickListener() {
@@ -103,12 +89,11 @@ public class HuoVideoListFragment extends BaseListFragment<HuoVideoPresenter>
       mRecyclerView.forceToRefresh();
     }else{
     }
-
   }
 
   @Override protected RecyclerView.Adapter generateAdapter() {
-    //mDatas = new ArrayList<>();
-    HuoVideoAdapter adapter = new HuoVideoAdapter(mContext, mDatas);
+    mDatas = new ArrayList<>();
+    HuoLiveAdapter adapter = new HuoLiveAdapter(mContext, mDatas);
     adapter.bindRecyclerView(mRecyclerView);
     return adapter;
   }
@@ -147,7 +132,7 @@ public class HuoVideoListFragment extends BaseListFragment<HuoVideoPresenter>
     mPresenter.loadMoreData(mPage);
   }
 
-  @Override public void updateList(boolean isRefresh, HuoVideoBean huoVideoBean) {
+  @Override public void updateList(boolean isRefresh, HuoLiveBean huoLivebean) {
     if(isRefresh){
       mDatas.clear();
       mPage = 0;
@@ -155,7 +140,7 @@ public class HuoVideoListFragment extends BaseListFragment<HuoVideoPresenter>
     LogUtil.printStack("add page:"+mPage);
     mPage++;
 
-    List<HuoVideoBean.DataBeanX> list = huoVideoBean.getData();
+    List<HuoLiveBean.DataBeanX> list = huoLivebean.getData();
     if(list != null){
       mDatas.addAll(list);
     }

@@ -3,7 +3,7 @@ package com.pinery.fun.video.model;
 import com.pinery.base.rxjava.RetryWithDelayFunc;
 import com.pinery.fun.video.api.ApiService;
 import com.pinery.fun.video.api.HuoApi;
-import com.pinery.fun.video.bean.HuoVideoBean;
+import com.pinery.fun.video.bean.HuoLiveBean;
 import com.pinery.fun.video.callback.OnDataCallback;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
@@ -12,19 +12,19 @@ import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 import java.util.HashMap;
 
-public class HuoVideoModel extends BaseModel<HuoVideoBean> {
+public class HuoLiveModel extends BaseModel<HuoLiveBean> {
 
-  @Override public Disposable firstRefreshData(final OnDataCallback<HuoVideoBean> callback) {
+  @Override public Disposable firstRefreshData(final OnDataCallback<HuoLiveBean> callback) {
     HashMap<String, Object> hashMap = createHashMapWithCommonParams();
 
-    return getApiService(HuoApi.Main, ApiService.class).firstRefreshVideoData(hashMap)
+    return getApiService(HuoApi.Main, ApiService.class).firstRefreshLiveData(hashMap)
         .retryWhen(new RetryWithDelayFunc())
         .subscribeOn(Schedulers.io())
         .observeOn(AndroidSchedulers.mainThread())
-        .subscribe(new Consumer<HuoVideoBean>() {
-          @Override public void accept(@NonNull HuoVideoBean huoVideoBean) throws Exception {
+        .subscribe(new Consumer<HuoLiveBean>() {
+          @Override public void accept(@NonNull HuoLiveBean huoLivebean) throws Exception {
             if (callback != null) {
-              callback.onSuccess(huoVideoBean);
+              callback.onSuccess(huoLivebean);
             }
           }
         }, new Consumer<Throwable>() {
@@ -36,17 +36,17 @@ public class HuoVideoModel extends BaseModel<HuoVideoBean> {
         });
   }
 
-  @Override public Disposable refreshData(final OnDataCallback<HuoVideoBean> callback) {
+  @Override public Disposable refreshData(final OnDataCallback<HuoLiveBean> callback) {
     HashMap<String, Object> hashMap = createHashMapWithCommonParams();
 
-    return getApiService(HuoApi.Main, ApiService.class).refreshVideoData(hashMap)
+    return getApiService(HuoApi.Main, ApiService.class).refreshLiveData(hashMap)
         .retryWhen(new RetryWithDelayFunc())
         .subscribeOn(Schedulers.io())
         .observeOn(AndroidSchedulers.mainThread())
-        .subscribe(new Consumer<HuoVideoBean>() {
-          @Override public void accept(@NonNull HuoVideoBean huoVideoBean) throws Exception {
+        .subscribe(new Consumer<HuoLiveBean>() {
+          @Override public void accept(@NonNull HuoLiveBean huoLivebean) throws Exception {
             if (callback != null) {
-              callback.onSuccess(huoVideoBean);
+              callback.onSuccess(huoLivebean);
             }
           }
         }, new Consumer<Throwable>() {
@@ -58,19 +58,19 @@ public class HuoVideoModel extends BaseModel<HuoVideoBean> {
         });
   }
 
-  @Override public Disposable loadMoreData(int page, final OnDataCallback<HuoVideoBean> callback) {
+  @Override public Disposable loadMoreData(int page, final OnDataCallback<HuoLiveBean> callback) {
     HashMap<String, Object> hashMap = createHashMapWithCommonParams();
     hashMap.put("max_time", System.currentTimeMillis());
-    hashMap.put("offset", page * 12 + 1);
+    hashMap.put("offset", page * 6 + 1);
 
-    return getApiService(HuoApi.Main, ApiService.class).loadMoreVideoData(hashMap)
+    return getApiService(HuoApi.Main, ApiService.class).loadMoreLiveData(hashMap)
         .retryWhen(new RetryWithDelayFunc())
         .subscribeOn(Schedulers.io())
         .observeOn(AndroidSchedulers.mainThread())
-        .subscribe(new Consumer<HuoVideoBean>() {
-          @Override public void accept(@NonNull HuoVideoBean huoVideoBean) throws Exception {
+        .subscribe(new Consumer<HuoLiveBean>() {
+          @Override public void accept(@NonNull HuoLiveBean huoLivebean) throws Exception {
             if (callback != null) {
-              callback.onSuccess(huoVideoBean);
+              callback.onSuccess(huoLivebean);
             }
           }
         }, new Consumer<Throwable>() {
@@ -100,6 +100,9 @@ public class HuoVideoModel extends BaseModel<HuoVideoBean> {
 
     hashMap.put("manifest_version_code", "373");
     hashMap.put("update_version_code", "3732");
+
+    hashMap.put("resolution", "1080*1920");
+    hashMap.put("dpi", "480");
 
     return hashMap;
   }

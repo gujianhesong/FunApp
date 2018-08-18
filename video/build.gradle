@@ -73,4 +73,7 @@ dependencies {
         exclude module: 'lifecycle'
     }
 
+    //autolayout
+    compile 'com.zhy:autolayout:1.4.5'
+
 }

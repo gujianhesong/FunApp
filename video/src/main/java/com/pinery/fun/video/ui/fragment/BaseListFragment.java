@@ -14,17 +14,19 @@ import com.github.jdsjlzx.interfaces.OnNetWorkErrorListener;
 import com.github.jdsjlzx.interfaces.OnRefreshListener;
 import com.github.jdsjlzx.recyclerview.LRecyclerView;
 import com.github.jdsjlzx.recyclerview.LRecyclerViewAdapter;
-import com.pinery.base.fragment.BaseFragment;
+import com.pinery.base.fragment.BaseLazyFragment;
 import com.pinery.base.mvp.IPresenter;
 import com.pinery.base.util.ViewUtil;
 import com.pinery.base.widget.RecycleViewDivider;
 import com.pinery.fun.video.R;
 
 /**
+ * 列表页面Fragment
  * Created by gujian on 2018-08-12.
  */
 
-public abstract class BaseListFragment<T extends IPresenter> extends BaseFragment<T> implements OnRefreshListener, OnLoadMoreListener{
+public abstract class BaseListFragment<T extends IPresenter> extends BaseLazyFragment<T>
+    implements OnRefreshListener, OnLoadMoreListener {
 
   protected LRecyclerView mRecyclerView;
 
@@ -50,7 +52,7 @@ public abstract class BaseListFragment<T extends IPresenter> extends BaseFragmen
     mRecyclerView.setAdapter(mLRecyclerViewAdapter);
     mRecyclerView.setOnRefreshListener(this);
     mRecyclerView.setOnLoadMoreListener(this);
-    mRecyclerView.addOnScrollListener(new ImageAutoLoadScrollListener());
+    //mRecyclerView.addOnScrollListener(new ImageAutoLoadScrollListener());
   }
 
   public void notifyCompleteRefresh(int refreshCount) {
@@ -82,14 +84,14 @@ public abstract class BaseListFragment<T extends IPresenter> extends BaseFragmen
     mRecyclerView.addItemDecoration(new RecycleViewDivider(mContext));
   }
 
-  public void setOnItemClickListener(OnItemClickListener listener){
-    if(mLRecyclerViewAdapter != null){
+  public void setOnItemClickListener(OnItemClickListener listener) {
+    if (mLRecyclerViewAdapter != null) {
       mLRecyclerViewAdapter.setOnItemClickListener(listener);
     }
   }
 
-  public void setOnItemLongClickListener(OnItemLongClickListener listener){
-    if(mLRecyclerViewAdapter != null){
+  public void setOnItemLongClickListener(OnItemLongClickListener listener) {
+    if (mLRecyclerViewAdapter != null) {
       mLRecyclerViewAdapter.setOnItemLongClickListener(listener);
     }
   }
