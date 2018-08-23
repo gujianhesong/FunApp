@@ -40,7 +40,9 @@ public class TestPresenter extends BaseRxJavaPresenter<TestContract.View>
         .observeOn(AndroidSchedulers.mainThread())
         .subscribe(new Consumer<Integer>() {
           @Override public void accept(@NonNull Integer integer) throws Exception {
-            mView.showUpdate("hahaha" + integer);
+            if(mView != null){
+              mView.showUpdate("hahaha" + integer);
+            }
           }
         }, new Consumer<Throwable>() {
           @Override public void accept(@NonNull Throwable throwable) throws Exception {

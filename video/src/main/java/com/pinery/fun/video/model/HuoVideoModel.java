@@ -12,7 +12,7 @@ import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 import java.util.HashMap;
 
-public class HuoVideoModel extends BaseModel<HuoVideoBean> {
+public class HuoVideoModel extends BaseModel<HuoVideoBean> implements IModel<HuoVideoBean> {
 
   @Override public Disposable firstRefreshData(final OnDataCallback<HuoVideoBean> callback) {
     HashMap<String, Object> hashMap = createHashMapWithCommonParams();

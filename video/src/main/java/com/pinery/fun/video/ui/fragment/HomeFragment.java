@@ -59,7 +59,7 @@ public class HomeFragment extends BaseFragment {
     mFragmentList = new ArrayList<>();
     mFragmentList.add(HuoVideoListFragment.newInstance());
     mFragmentList.add(HuoLiveListFragment.newInstance());
-    mFragmentList.add(HuoVideoListFragment.newInstance());
+    mFragmentList.add(HuoCityListFragment.newInstance());
   }
 
   private void initViewPager(){

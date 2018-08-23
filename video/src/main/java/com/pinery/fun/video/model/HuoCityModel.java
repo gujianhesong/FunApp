@@ -3,7 +3,7 @@ package com.pinery.fun.video.model;
 import com.pinery.base.rxjava.RetryWithDelayFunc;
 import com.pinery.fun.video.api.ApiService;
 import com.pinery.fun.video.api.HuoApi;
-import com.pinery.fun.video.bean.HuoLiveBean;
+import com.pinery.fun.video.bean.HuoCityBean;
 import com.pinery.fun.video.callback.OnDataCallback;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
@@ -12,19 +12,19 @@ import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 import java.util.HashMap;
 
-public class HuoLiveModel extends BaseModel<HuoLiveBean> implements IModel<HuoLiveBean>{
+public class HuoCityModel extends BaseModel<HuoCityBean> implements IModel<HuoCityBean> {
 
-  @Override public Disposable firstRefreshData(final OnDataCallback<HuoLiveBean> callback) {
+  @Override public Disposable firstRefreshData(final OnDataCallback<HuoCityBean> callback) {
     HashMap<String, Object> hashMap = createHashMapWithCommonParams();
 
-    return getApiService(HuoApi.Main, ApiService.class).firstRefreshLiveData(hashMap)
+    return getApiService(HuoApi.Main, ApiService.class).firstRefreshCityData(hashMap)
         .retryWhen(new RetryWithDelayFunc())
         .subscribeOn(Schedulers.io())
         .observeOn(AndroidSchedulers.mainThread())
-        .subscribe(new Consumer<HuoLiveBean>() {
-          @Override public void accept(@NonNull HuoLiveBean huoLivebean) throws Exception {
+        .subscribe(new Consumer<HuoCityBean>() {
+          @Override public void accept(@NonNull HuoCityBean bean) throws Exception {
             if (callback != null) {
-              callback.onSuccess(huoLivebean);
+              callback.onSuccess(bean);
             }
           }
         }, new Consumer<Throwable>() {
@@ -36,17 +36,17 @@ public class HuoLiveModel extends BaseModel<HuoLiveBean> implements IModel<HuoLi
         });
   }
 
-  @Override public Disposable refreshData(final OnDataCallback<HuoLiveBean> callback) {
+  @Override public Disposable refreshData(final OnDataCallback<HuoCityBean> callback) {
     HashMap<String, Object> hashMap = createHashMapWithCommonParams();
 
-    return getApiService(HuoApi.Main, ApiService.class).refreshLiveData(hashMap)
+    return getApiService(HuoApi.Main, ApiService.class).refreshCityData(hashMap)
         .retryWhen(new RetryWithDelayFunc())
         .subscribeOn(Schedulers.io())
         .observeOn(AndroidSchedulers.mainThread())
-        .subscribe(new Consumer<HuoLiveBean>() {
-          @Override public void accept(@NonNull HuoLiveBean huoLivebean) throws Exception {
+        .subscribe(new Consumer<HuoCityBean>() {
+          @Override public void accept(@NonNull HuoCityBean bean) throws Exception {
             if (callback != null) {
-              callback.onSuccess(huoLivebean);
+              callback.onSuccess(bean);
             }
           }
         }, new Consumer<Throwable>() {
@@ -58,19 +58,19 @@ public class HuoLiveModel extends BaseModel<HuoLiveBean> implements IModel<HuoLi
         });
   }
 
-  @Override public Disposable loadMoreData(int page, final OnDataCallback<HuoLiveBean> callback) {
+  @Override public Disposable loadMoreData(int page, final OnDataCallback<HuoCityBean> callback) {
     HashMap<String, Object> hashMap = createHashMapWithCommonParams();
     hashMap.put("max_time", System.currentTimeMillis());
-    hashMap.put("offset", page * 6 + 1);
+    hashMap.put("offset", page * 10 + 1);
 
-    return getApiService(HuoApi.Main, ApiService.class).loadMoreLiveData(hashMap)
+    return getApiService(HuoApi.Main, ApiService.class).loadMoreCityData(hashMap)
         .retryWhen(new RetryWithDelayFunc())
         .subscribeOn(Schedulers.io())
         .observeOn(AndroidSchedulers.mainThread())
-        .subscribe(new Consumer<HuoLiveBean>() {
-          @Override public void accept(@NonNull HuoLiveBean huoLivebean) throws Exception {
+        .subscribe(new Consumer<HuoCityBean>() {
+          @Override public void accept(@NonNull HuoCityBean bean) throws Exception {
             if (callback != null) {
-              callback.onSuccess(huoLivebean);
+              callback.onSuccess(bean);
             }
           }
         }, new Consumer<Throwable>() {
@@ -100,9 +100,6 @@ public class HuoLiveModel extends BaseModel<HuoLiveBean> implements IModel<HuoLi
 
     hashMap.put("manifest_version_code", "373");
     hashMap.put("update_version_code", "3732");
-
-    hashMap.put("resolution", "1080*1920");
-    hashMap.put("dpi", "480");
 
     return hashMap;
   }

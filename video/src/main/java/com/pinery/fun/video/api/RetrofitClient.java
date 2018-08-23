@@ -1,6 +1,10 @@
 package com.pinery.fun.video.api;
 
 import android.os.Build;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.pinery.fun.video.bean.BaseVideoItemBean;
+import com.pinery.fun.video.bean.VideoItemInfoDeserializer;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import okhttp3.Interceptor;
@@ -36,9 +40,14 @@ public class RetrofitClient {
         .readTimeout(500, TimeUnit.SECONDS)
         .retryOnConnectionFailure(false)
         .build();
+
+    Gson gson = new GsonBuilder()
+        .registerTypeAdapter(BaseVideoItemBean.class, new VideoItemInfoDeserializer())
+        .create();
+
     retrofit = new Retrofit.Builder().baseUrl(url)
         .client(okHttpClient)
-        .addConverterFactory(GsonConverterFactory.create())
+        .addConverterFactory(GsonConverterFactory.create(gson))
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
         .build();
 

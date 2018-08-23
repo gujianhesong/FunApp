@@ -1,10 +1,13 @@
 package com.pinery.fun.video.api;
 
+import com.pinery.fun.video.bean.CommentBean;
+import com.pinery.fun.video.bean.HuoCityBean;
 import com.pinery.fun.video.bean.HuoLiveBean;
 import com.pinery.fun.video.bean.HuoVideoBean;
 import io.reactivex.Flowable;
 import java.util.HashMap;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
 
 public interface ApiService {
@@ -17,7 +20,7 @@ public interface ApiService {
   @GET("hotsoon/feed/?type=video&min_time=0&offset=0&count=20&req_from=enter_auto&live_sdk_version=373&ac=wifi&channel=local"
       + "&aid=1112&app_name=live_stream&device_platform=android&ssmix=a"
       + "&language=zh&openudid=ebc5a2ef6694b29"
-      + "&_rticket=1534073513114&ts=1534073512&as=a245c1b7e8ba6b5af03241&cp=1aa0b85184067ba2e2dtbf&mas=00df3d59f4183004c8964417704f16641d4406620488e046e2 HTTP/1.1")
+      + "&_rticket=1534073513114&ts=1534073512&as=a245c1b7e8ba6b5af03241&cp=1aa0b85184067ba2e2dtbf&mas=00df3d59f4183004c8964417704f16641d4406620488e046e2")
   Flowable<HuoVideoBean> firstRefreshVideoData(@QueryMap HashMap<String, Object> map);
 
   /**
@@ -28,7 +31,7 @@ public interface ApiService {
   @GET("hotsoon/feed/?type=video&min_time=0&offset=0&count=20&req_from=feed_refresh&live_sdk_version=373&ac=wifi&channel=local"
       + "&aid=1112&app_name=live_stream&device_platform=android&ssmix=a"
       + "&language=zh&openudid=ebc5a2ef6694b29"
-      + "&_rticket=1534073862768&ts=1534073862&as=a295c117f6e07b1c703043&cp=1b01b6516c017dc7e2mwba&mas=009dcef44d73c3be7e0a8f704cc45948d00688ca04c8e406a4 HTTP/1.1")
+      + "&_rticket=1534073862768&ts=1534073862&as=a295c117f6e07b1c703043&cp=1b01b6516c017dc7e2mwba&mas=009dcef44d73c3be7e0a8f704cc45948d00688ca04c8e406a4")
   Flowable<HuoVideoBean> refreshVideoData(@QueryMap HashMap<String, Object> map);
 
   /**
@@ -39,7 +42,7 @@ public interface ApiService {
   @GET("hotsoon/feed/?type=video&count=20&req_from=feed_loadmore&live_sdk_version=373"
       + "&ac=wifi&channel=local&aid=1112&app_name=live_stream&device_platform=android&ssmix=a"
       + "&language=zh&openudid=ebc5a2ef6694b29"
-      + "&_rticket=1534073715340&ts=1534073715&as=a21591f733670bab209691&cp=1e7bb757340e78bde2zzds&mas=00b5d96ac196bb7b26037acd182d4621802620c054ad524da4 HTTP/1.1")
+      + "&_rticket=1534073715340&ts=1534073715&as=a21591f733670bab209691&cp=1e7bb757340e78bde2zzds&mas=00b5d96ac196bb7b26037acd182d4621802620c054ad524da4")
   Flowable<HuoVideoBean> loadMoreVideoData(@QueryMap HashMap<String, Object> map);
 
   /**
@@ -47,33 +50,78 @@ public interface ApiService {
    * @param map
    * @return
    */
-  @GET("/hotsoon/feed/?type=live&live_source=live_big_picture&min_time=0&offset=0&count=20&req_from=feed_refresh&live_sdk_version=373&ac=wifi&channel=local"
+  @GET("/hotsoon/feed/?type=live&live_source=live_big_picture&min_time=0&offset=0&count=20&req_from=enter_auto&live_sdk_version=373&ac=wifi&channel=local"
       + "&aid=1112&app_name=live_stream&device_platform=android&ssmix=a"
       + "&language=zh&uuid=99000821058393&openudid=ebc5a2ef6694b29"
-      + "&_rticket=1534559660964&ts=1534559661&as=a2e538b77d1aab05672236&cp=85a2b75fdd717c57e2ezdg&mas=003f08210dc11c93846a5894d4da7f447864ae228a8000a8e8 HTTP/1.1")
-  Flowable<HuoLiveBean> refreshLiveData(@QueryMap HashMap<String, Object> map);
+      + "&_rticket=1534559660964&ts=1534559661&as=a2e538b77d1aab05672236&cp=85a2b75fdd717c57e2ezdg&mas=003f08210dc11c93846a5894d4da7f447864ae228a8000a8e8")
+  Flowable<HuoLiveBean> firstRefreshLiveData(@QueryMap HashMap<String, Object> map);
 
   /**
    * 刷新Live列表
    * @param map
    * @return
    */
-  @GET("/hotsoon/feed/?type=live&live_source=live_big_picture&count=20&req_from=feed_loadmore&live_sdk_version=373&ac=wifi&channel=local"
+  @GET("/hotsoon/feed/?type=live&live_source=live_big_picture&min_time=0&offset=0&count=20&req_from=feed_refresh&live_sdk_version=373&ac=wifi&channel=local"
       + "&aid=1112&app_name=live_stream&device_platform=android&ssmix=a"
       + "&language=zh&uuid=99000821058393&openudid=ebc5a2ef6694b29"
-      + "&_rticket=1534559660964&ts=1534559661&as=a2e538b77d1aab05672236&cp=85a2b75fdd717c57e2ezdg&mas=003f08210dc11c93846a5894d4da7f447864ae228a8000a8e8 HTTP/1.1")
-  Flowable<HuoLiveBean> loadMoreLiveData(@QueryMap HashMap<String, Object> map);
+      + "&_rticket=1534559660964&ts=1534559661&as=a2e538b77d1aab05672236&cp=85a2b75fdd717c57e2ezdg&mas=003f08210dc11c93846a5894d4da7f447864ae228a8000a8e8")
+  Flowable<HuoLiveBean> refreshLiveData(@QueryMap HashMap<String, Object> map);
 
   /**
    * 加载更多Live列表
    * @param map
    * @return
    */
-  @GET("/hotsoon/feed/?type=live&live_source=live_big_picture&min_time=0&offset=0&count=20&req_from=enter_auto&live_sdk_version=373&ac=wifi&channel=local"
+  @GET("/hotsoon/feed/?type=live&live_source=live_big_picture&count=20&req_from=feed_loadmore&live_sdk_version=373&ac=wifi&channel=local"
       + "&aid=1112&app_name=live_stream&device_platform=android&ssmix=a"
       + "&language=zh&uuid=99000821058393&openudid=ebc5a2ef6694b29"
-      + "&_rticket=1534559660964&ts=1534559661&as=a2e538b77d1aab05672236&cp=85a2b75fdd717c57e2ezdg&mas=003f08210dc11c93846a5894d4da7f447864ae228a8000a8e8 HTTP/1.1")
-  Flowable<HuoLiveBean> firstRefreshLiveData(@QueryMap HashMap<String, Object> map);
+      + "&_rticket=1534559660964&ts=1534559661&as=a2e538b77d1aab05672236&cp=85a2b75fdd717c57e2ezdg&mas=003f08210dc11c93846a5894d4da7f447864ae228a8000a8e8")
+  Flowable<HuoLiveBean> loadMoreLiveData(@QueryMap HashMap<String, Object> map);
+
+  /**
+   * 首次刷新同城列表
+   * @param map
+   * @return
+   */
+  @GET("hotsoon/feed/?type=city&min_time=0&offset=0&count=20&req_from=enter_auto&live_sdk_version=373&ac=wifi&channel=local"
+      + "&aid=1112&app_name=live_stream&device_platform=android&ssmix=a"
+      + "&language=zh&openudid=ebc5a2ef6694b29"
+      + "&_rticket=1534073513114&ts=1534073512&as=a245c1b7e8ba6b5af03241&cp=1aa0b85184067ba2e2dtbf&mas=00df3d59f4183004c8964417704f16641d4406620488e046e2")
+  Flowable<HuoCityBean> firstRefreshCityData(@QueryMap HashMap<String, Object> map);
+
+  /**
+   * 刷新同城列表
+   * @param map
+   * @return
+   */
+  @GET("hotsoon/feed/?type=city&min_time=0&offset=0&count=20&req_from=feed_refresh&live_sdk_version=373&ac=wifi&channel=local"
+      + "&aid=1112&app_name=live_stream&device_platform=android&ssmix=a"
+      + "&language=zh&openudid=ebc5a2ef6694b29"
+      + "&_rticket=1534073862768&ts=1534073862&as=a295c117f6e07b1c703043&cp=1b01b6516c017dc7e2mwba&mas=009dcef44d73c3be7e0a8f704cc45948d00688ca04c8e406a4")
+  Flowable<HuoCityBean> refreshCityData(@QueryMap HashMap<String, Object> map);
+
+  /**
+   * 加载更多同城列表
+   * @param map
+   * @return
+   */
+  @GET("hotsoon/feed/?type=city&count=20&req_from=feed_loadmore&live_sdk_version=373"
+      + "&ac=wifi&channel=local&aid=1112&app_name=live_stream&device_platform=android&ssmix=a"
+      + "&language=zh&openudid=ebc5a2ef6694b29"
+      + "&_rticket=1534073715340&ts=1534073715&as=a21591f733670bab209691&cp=1e7bb757340e78bde2zzds&mas=00b5d96ac196bb7b26037acd182d4621802620c054ad524da4")
+  Flowable<HuoCityBean> loadMoreCityData(@QueryMap HashMap<String, Object> map);
+
+  /**
+   * 评论列表
+   * @param map
+   * @return
+   */
+  @GET("/hotsoon/item/{id}/comments/?count=20&live_sdk_version=373&ac=wifi&channel=local"
+      + "&aid=1112&app_name=live_stream&device_platform=android&ssmix=a"
+      + "&language=zh&uuid=99000821058393&openudid=ebc5a2ef6694b29"
+      + "&_rticket=1534559660964&ts=1534559661&as=a2e538b77d1aab05672236&cp=85a2b75fdd717c57e2ezdg&mas=003f08210dc11c93846a5894d4da7f447864ae228a8000a8e8")
+  Flowable<CommentBean> loadComments(@Path("id") String id, @QueryMap HashMap<String, Object> map);
+
 
   ////    @GET("hotsoon/feed/?type=city&min_time=0&count=20&req_from=enter_auto&live_sdk_version=273")
   ////    Observable<SameCityBean> sameCityBean();

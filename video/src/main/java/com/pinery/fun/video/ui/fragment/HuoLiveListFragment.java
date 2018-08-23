@@ -14,6 +14,7 @@ import com.pinery.base.util.NetWorkUtil;
 import com.pinery.base.util.ScreenUtil;
 import com.pinery.fun.video.R;
 import com.pinery.fun.video.bean.HuoLiveBean;
+import com.pinery.fun.video.bean.HuoLiveItemBean;
 import com.pinery.fun.video.bean.HuoVideoBean;
 import com.pinery.fun.video.common.Constants;
 import com.pinery.fun.video.dagger.DaggerHuoLiveFragmentComponent;
@@ -30,7 +31,7 @@ import java.util.List;
 public class HuoLiveListFragment extends BaseListFragment<HuoLivePresenter>
     implements HuoLiveContract.View {
 
-  private List<HuoLiveBean.DataBeanX> mDatas;
+  private List<HuoLiveItemBean> mDatas;
   private int mPage;
   private boolean mFirstRefresh = true;
 
@@ -48,15 +49,15 @@ public class HuoLiveListFragment extends BaseListFragment<HuoLivePresenter>
         //打开视频
         showToast("打开视频");
 
-        HuoLiveBean.DataBeanX dataBeanX = mDatas.get(position);
+        HuoLiveItemBean dataBeanX = mDatas.get(position);
         String url = dataBeanX.getData().getStream_url().getRtmp_pull_url();
         String userName = dataBeanX.getData().getOwner().getNickname();
         String avatar = "";
-        HuoLiveBean.DataBeanX.DataBean.OwnerBean.AvatarJpgBean avatarJpgBean =
+        HuoLiveItemBean.DataBean.OwnerBean.AvatarJpgBean avatarJpgBean =
             dataBeanX.getData().getOwner().getAvatar_jpg();
-        HuoLiveBean.DataBeanX.DataBean.OwnerBean.AvatarLargeBean avatarLargeBean =
+        HuoLiveItemBean.DataBean.OwnerBean.AvatarLargeBean avatarLargeBean =
             dataBeanX.getData().getOwner().getAvatar_large();
-        HuoLiveBean.DataBeanX.DataBean.OwnerBean.AvatarThumbBean avatarThumbBean =
+        HuoLiveItemBean.DataBean.OwnerBean.AvatarThumbBean avatarThumbBean =
             dataBeanX.getData().getOwner().getAvatar_thumb();
         if (TextUtils.isEmpty(avatar)) {
           avatar = avatarJpgBean != null ? avatarJpgBean.getUrl_list().get(0) : avatar;
@@ -140,7 +141,7 @@ public class HuoLiveListFragment extends BaseListFragment<HuoLivePresenter>
     LogUtil.printStack("add page:"+mPage);
     mPage++;
 
-    List<HuoLiveBean.DataBeanX> list = huoLivebean.getData();
+    List<HuoLiveItemBean> list = huoLivebean.getData();
     if(list != null){
       mDatas.addAll(list);
     }

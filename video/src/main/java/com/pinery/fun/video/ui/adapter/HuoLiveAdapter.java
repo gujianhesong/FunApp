@@ -14,20 +14,20 @@ import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.pinery.base.util.ViewUtil;
 import com.pinery.fun.video.R;
-import com.pinery.fun.video.bean.HuoLiveBean;
+import com.pinery.fun.video.bean.HuoLiveItemBean;
 import java.util.List;
 
 public class HuoLiveAdapter extends RecyclerView.Adapter<HuoLiveAdapter.ViewHolder> {
-  List<HuoLiveBean.DataBeanX> list;
+  List<HuoLiveItemBean> list;
   Context context;
   RecyclerView recyclerView;
 
-  public HuoLiveAdapter(Context context, List<HuoLiveBean.DataBeanX> list) {
+  public HuoLiveAdapter(Context context, List<HuoLiveItemBean> list) {
     this.context = context;
     this.list = list;
   }
 
-  public void bindRecyclerView(RecyclerView recyclerView){
+  public void bindRecyclerView(RecyclerView recyclerView) {
     this.recyclerView = recyclerView;
   }
 
@@ -38,8 +38,8 @@ public class HuoLiveAdapter extends RecyclerView.Adapter<HuoLiveAdapter.ViewHold
   }
 
   @Override public void onBindViewHolder(HuoLiveAdapter.ViewHolder viewHodler, int position) {
-    HuoLiveBean.DataBeanX dataBeanX = list.get(position);
-    if(dataBeanX != null){
+    HuoLiveItemBean dataBeanX = list.get(position);
+    if (dataBeanX != null) {
       //setLayoutParams(viewHodler, dataBeanX);
 
       fillData(viewHodler, dataBeanX);
@@ -48,28 +48,32 @@ public class HuoLiveAdapter extends RecyclerView.Adapter<HuoLiveAdapter.ViewHold
     }
   }
 
-  private void fillData(HuoLiveAdapter.ViewHolder viewHodler, HuoLiveBean.DataBeanX dataBeanX){
+  private void fillData(HuoLiveAdapter.ViewHolder viewHodler, HuoLiveItemBean dataBeanX) {
     try {
       viewHodler.tvLocation.setText(dataBeanX.getData().getOwner().getCity());
-    }catch (Exception ex){}
+    } catch (Exception ex) {
+    }
 
     try {
       viewHodler.tvName.setText(dataBeanX.getData().getOwner().getNickname());
-    }catch (Exception ex){}
+    } catch (Exception ex) {
+    }
 
     try {
       viewHodler.tvCount.setText(String.format("%d人", dataBeanX.getData().getUser_count()));
-    }catch (Exception ex){}
+    } catch (Exception ex) {
+    }
   }
 
-  private void loadAvatarImage(final HuoLiveAdapter.ViewHolder viewHodler, final HuoLiveBean.DataBeanX dataBeanX) {
+  private void loadAvatarImage(final HuoLiveAdapter.ViewHolder viewHodler,
+      final HuoLiveItemBean dataBeanX) {
     String url = "";
 
-    HuoLiveBean.DataBeanX.DataBean.OwnerBean.AvatarJpgBean avatarJpgBean =
+    HuoLiveItemBean.DataBean.OwnerBean.AvatarJpgBean avatarJpgBean =
         dataBeanX.getData().getOwner().getAvatar_jpg();
-    HuoLiveBean.DataBeanX.DataBean.OwnerBean.AvatarLargeBean avatarLargeBean =
+    HuoLiveItemBean.DataBean.OwnerBean.AvatarLargeBean avatarLargeBean =
         dataBeanX.getData().getOwner().getAvatar_large();
-    HuoLiveBean.DataBeanX.DataBean.OwnerBean.AvatarThumbBean avatarThumbBean =
+    HuoLiveItemBean.DataBean.OwnerBean.AvatarThumbBean avatarThumbBean =
         dataBeanX.getData().getOwner().getAvatar_thumb();
     if (TextUtils.isEmpty(url)) {
       url = avatarJpgBean != null ? avatarJpgBean.getUrl_list().get(0) : url;
@@ -92,21 +96,20 @@ public class HuoLiveAdapter extends RecyclerView.Adapter<HuoLiveAdapter.ViewHold
     });
   }
 
-  private void setLayoutParams(HuoLiveAdapter.ViewHolder holder, HuoLiveBean.DataBeanX dataBeanX){
+  private void setLayoutParams(HuoLiveAdapter.ViewHolder holder, HuoLiveItemBean dataBeanX) {
     try {
       int parentWidth = recyclerView.getMeasuredWidth();
       int videoWidth = holder.ivImage.getDrawable().getIntrinsicWidth();
       int videoHeight = holder.ivImage.getDrawable().getIntrinsicHeight();
 
-      int height = (int) (videoHeight * 1f / videoWidth * (parentWidth/2));
+      int height = (int) (videoHeight * 1f / videoWidth * (parentWidth / 2));
 
       ViewGroup.LayoutParams params = holder.ivImage.getLayoutParams();
       params.height = height;
       holder.ivImage.setLayoutParams(params);
-    }catch (Exception ex){
+    } catch (Exception ex) {
       ex.printStackTrace();
     }
-
   }
 
   @Override public int getItemCount() {

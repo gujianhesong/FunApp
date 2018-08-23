@@ -27,22 +27,30 @@ public class HuoLivePresenter extends BaseRxJavaPresenter<HuoLiveContract.View>
   @Override public void refreshData(boolean firstRefresh) {
     if(firstRefresh){
       addDisposable(model.firstRefreshData(new OnDataCallback<HuoLiveBean>() {
-        @Override public void onSuccess(HuoLiveBean huoVideoBean) {
-          mView.updateList(true, huoVideoBean);
+        @Override public void onSuccess(HuoLiveBean bean) {
+          if(mView != null){
+            mView.updateList(true, bean);
+          }
         }
 
         @Override public void onError(Throwable throwable) {
-          mView.error(throwable);
+          if(mView != null){
+            mView.error(throwable);
+          }
         }
       }));
     }else{
       addDisposable(model.refreshData(new OnDataCallback<HuoLiveBean>() {
-        @Override public void onSuccess(HuoLiveBean huoVideoBean) {
-          mView.updateList(true, huoVideoBean);
+        @Override public void onSuccess(HuoLiveBean bean) {
+          if(mView != null){
+            mView.updateList(true, bean);
+          }
         }
 
         @Override public void onError(Throwable throwable) {
-          mView.error(throwable);
+          if(mView != null){
+            mView.error(throwable);
+          }
         }
       }));
     }
@@ -51,13 +59,17 @@ public class HuoLivePresenter extends BaseRxJavaPresenter<HuoLiveContract.View>
   @Override public void loadMoreData(int page) {
     LogUtil.printStack("page:"+page);
     addDisposable(model.loadMoreData(page, new OnDataCallback<HuoLiveBean>() {
-      @Override public void onSuccess(HuoLiveBean huoVideoBean) {
-        LogUtil.i("page:"+huoVideoBean);
-        mView.updateList(false, huoVideoBean);
+      @Override public void onSuccess(HuoLiveBean bean) {
+        LogUtil.i("page:"+bean);
+        if(mView != null){
+          mView.updateList(false, bean);
+        }
       }
 
       @Override public void onError(Throwable throwable) {
-        mView.error(throwable);
+        if(mView != null){
+          mView.error(throwable);
+        }
       }
     }));
   }
