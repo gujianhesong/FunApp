@@ -13,12 +13,15 @@ import com.pinery.base.util.LogUtil;
 import com.pinery.base.util.NetWorkUtil;
 import com.pinery.base.util.ScreenUtil;
 import com.pinery.fun.video.R;
+import com.pinery.fun.video.bean.BaseVideoItemBean;
 import com.pinery.fun.video.bean.HuoVideoBean;
 import com.pinery.fun.video.bean.HuoVideoItemBean;
 import com.pinery.fun.video.common.Constants;
 import com.pinery.fun.video.dagger.DaggerHuoVideoFragmentComponent;
 import com.pinery.fun.video.mvp.HuoVideoContract;
 import com.pinery.fun.video.mvp.HuoVideoPresenter;
+import com.pinery.fun.video.ui.adapter.BaseAdapter;
+import com.pinery.fun.video.ui.adapter.BaseVideoAdapter;
 import com.pinery.fun.video.ui.adapter.HuoVideoAdapter;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +33,7 @@ import java.util.List;
 public class HuoVideoListFragment extends BaseListFragment<HuoVideoPresenter>
     implements HuoVideoContract.View {
 
-  private List<HuoVideoItemBean> mDatas = new ArrayList<>();
+  private List<BaseVideoItemBean> mDatas = new ArrayList<>();
   private int mPage;
   private boolean mFirstRefresh = true;
 
@@ -43,65 +46,6 @@ public class HuoVideoListFragment extends BaseListFragment<HuoVideoPresenter>
   }
 
   @Override protected void initData() {
-    setOnItemClickListener(new OnItemClickListener() {
-      @Override public void onItemClick(View view, int position) {
-        //打开视频
-        showToast("打开视频");
-
-        HuoVideoItemBean dataBeanX = mDatas.get(position);
-
-        String url = dataBeanX.getData().getVideo().getUrl_list().get(0);
-
-        String coverUrl = "";
-        try {
-          HuoVideoItemBean.DataBean.VideoBean.CoverBean coverBean =
-              dataBeanX.getData().getVideo().getCover();
-          if (TextUtils.isEmpty(coverUrl)) {
-            coverUrl = coverBean != null ? coverBean.getUrl_list().get(0) : coverUrl;
-          }
-        } catch (Exception ex) {
-          ex.printStackTrace();
-        }
-
-        String userName = dataBeanX.getData().getAuthor().getNickname();
-
-        String avatar = "";
-        try {
-          HuoVideoItemBean.DataBean.AuthorBean authorBean = dataBeanX.getData().getAuthor();
-          if (authorBean != null) {
-            if (TextUtils.isEmpty(avatar)) {
-              avatar = authorBean.getAvatar_jpg() != null ? authorBean.getAvatar_jpg()
-                  .getUrl_list()
-                  .get(0) : avatar;
-            }
-            if (TextUtils.isEmpty(avatar)) {
-              avatar = authorBean.getAvatar_large() != null ? authorBean.getAvatar_large()
-                  .getUrl_list()
-                  .get(0) : avatar;
-            }
-            if (TextUtils.isEmpty(avatar)) {
-              avatar = authorBean.getAvatar_thumb() != null ? authorBean.getAvatar_thumb()
-                  .getUrl_list()
-                  .get(0) : avatar;
-            }
-          }
-        } catch (Exception ex) {
-        }
-
-        ARouter.getInstance()
-            .build("/video/play")
-            .withString(Constants.KEY_URL, url)
-            .withString(Constants.KEY_COVER_URL, coverUrl)
-            .withString(Constants.KEY_USER_NAME, userName)
-            .withString(Constants.KEY_USER_AVATAR, avatar)
-            .navigation();
-      }
-    });
-    setOnItemLongClickListener(new OnItemLongClickListener() {
-      @Override public void onItemLongClick(View view, int position) {
-
-      }
-    });
   }
 
   @Override protected void onLazyLoad() {
@@ -111,7 +55,7 @@ public class HuoVideoListFragment extends BaseListFragment<HuoVideoPresenter>
     }
   }
 
-  @Override protected RecyclerView.Adapter generateAdapter() {
+  @Override protected BaseAdapter<BaseVideoAdapter.BaseViewHolder> generateAdapter() {
     //mDatas = new ArrayList<>();
     HuoVideoAdapter adapter = new HuoVideoAdapter(mContext, mDatas);
     adapter.bindRecyclerView(mRecyclerView);
@@ -161,7 +105,7 @@ public class HuoVideoListFragment extends BaseListFragment<HuoVideoPresenter>
     LogUtil.printStack("add page:" + mPage);
     mPage++;
 
-    List<HuoVideoItemBean> list = huoVideoBean.getData();
+    List<BaseVideoItemBean> list = huoVideoBean.getData();
     if (list != null) {
       mDatas.addAll(list);
     }

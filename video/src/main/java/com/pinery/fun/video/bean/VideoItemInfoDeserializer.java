@@ -15,6 +15,7 @@ import java.lang.reflect.Type;
 public class VideoItemInfoDeserializer implements JsonDeserializer<BaseVideoItemBean> {
   private static final int TYPE_LIVE = 1;
   private static final int TYPE_VIDEO = 3;
+  private static final int TYPE_AD = 5;
 
   @Override public BaseVideoItemBean deserialize(JsonElement json, Type typeOfT,
       JsonDeserializationContext context) throws JsonParseException {
@@ -23,9 +24,14 @@ public class VideoItemInfoDeserializer implements JsonDeserializer<BaseVideoItem
     int type = jsonObject.get("type").getAsInt();
     switch (type) {
       case TYPE_LIVE:
+        //直播
         return new Gson().fromJson(json, HuoLiveItemBean.class);
       case TYPE_VIDEO:
+        //视频
         return new Gson().fromJson(json, HuoVideoItemBean.class);
+      case TYPE_AD:
+        //广告
+        return new Gson().fromJson(json, HuoAdItemBean.class);
       default:
         return null;
     }

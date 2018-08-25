@@ -21,6 +21,8 @@ import com.pinery.fun.video.common.Constants;
 import com.pinery.fun.video.dagger.DaggerHuoCityFragmentComponent;
 import com.pinery.fun.video.mvp.HuoCityContract;
 import com.pinery.fun.video.mvp.HuoCityPresenter;
+import com.pinery.fun.video.ui.adapter.BaseAdapter;
+import com.pinery.fun.video.ui.adapter.BaseVideoAdapter;
 import com.pinery.fun.video.ui.adapter.HuoCityAdapter;
 import java.util.ArrayList;
 import java.util.List;
@@ -45,19 +47,7 @@ public class HuoCityListFragment extends BaseListFragment<HuoCityPresenter>
   }
 
   @Override protected void initData() {
-    setOnItemClickListener(new OnItemClickListener() {
-      @Override public void onItemClick(View view, int position) {
-        //打开视频
-        showToast("打开视频");
 
-        handleOnClickItem(mDatas.get(position));
-      }
-    });
-    setOnItemLongClickListener(new OnItemLongClickListener() {
-      @Override public void onItemLongClick(View view, int position) {
-
-      }
-    });
   }
 
   @Override protected void onLazyLoad() {
@@ -67,7 +57,7 @@ public class HuoCityListFragment extends BaseListFragment<HuoCityPresenter>
     }
   }
 
-  @Override protected RecyclerView.Adapter generateAdapter() {
+  @Override protected BaseAdapter<BaseVideoAdapter.BaseViewHolder> generateAdapter() {
     //mDatas = new ArrayList<>();
     HuoCityAdapter adapter = new HuoCityAdapter(mContext, mDatas);
     adapter.bindRecyclerView(mRecyclerView);
@@ -129,75 +119,4 @@ public class HuoCityListFragment extends BaseListFragment<HuoCityPresenter>
     showToast(throwable.getMessage());
   }
 
-  private void handleOnClickItem(BaseVideoItemBean dataBeanX) {
-    String url = "", coverUrl = "", userName = "", avatar = "";
-
-    if (dataBeanX instanceof HuoVideoItemBean) {
-      HuoVideoItemBean videoItemBean = (HuoVideoItemBean) dataBeanX;
-
-      url = videoItemBean.getData().getVideo().getUrl_list().get(0);
-
-      try {
-        HuoVideoItemBean.DataBean.VideoBean.CoverBean coverBean =
-            videoItemBean.getData().getVideo().getCover();
-        if (TextUtils.isEmpty(coverUrl)) {
-          coverUrl = coverBean != null ? coverBean.getUrl_list().get(0) : coverUrl;
-        }
-      } catch (Exception ex) {
-        ex.printStackTrace();
-      }
-
-      userName = videoItemBean.getData().getAuthor().getNickname();
-
-      avatar = "";
-      try {
-        HuoVideoItemBean.DataBean.AuthorBean authorBean = videoItemBean.getData().getAuthor();
-        if (authorBean != null) {
-          if (TextUtils.isEmpty(avatar)) {
-            avatar =
-                authorBean.getAvatar_jpg() != null ? authorBean.getAvatar_jpg().getUrl_list().get(0)
-                    : avatar;
-          }
-          if (TextUtils.isEmpty(avatar)) {
-            avatar = authorBean.getAvatar_large() != null ? authorBean.getAvatar_large()
-                .getUrl_list()
-                .get(0) : avatar;
-          }
-          if (TextUtils.isEmpty(avatar)) {
-            avatar = authorBean.getAvatar_thumb() != null ? authorBean.getAvatar_thumb()
-                .getUrl_list()
-                .get(0) : avatar;
-          }
-        }
-      } catch (Exception ex) {
-      }
-    } else if (dataBeanX instanceof HuoLiveItemBean) {
-      HuoLiveItemBean liveItemBean = (HuoLiveItemBean) dataBeanX;
-      url = liveItemBean.getData().getStream_url().getRtmp_pull_url();
-      userName = liveItemBean.getData().getOwner().getNickname();
-      HuoLiveItemBean.DataBean.OwnerBean.AvatarJpgBean avatarJpgBean =
-          liveItemBean.getData().getOwner().getAvatar_jpg();
-      HuoLiveItemBean.DataBean.OwnerBean.AvatarLargeBean avatarLargeBean =
-          liveItemBean.getData().getOwner().getAvatar_large();
-      HuoLiveItemBean.DataBean.OwnerBean.AvatarThumbBean avatarThumbBean =
-          liveItemBean.getData().getOwner().getAvatar_thumb();
-      if (TextUtils.isEmpty(avatar)) {
-        avatar = avatarJpgBean != null ? avatarJpgBean.getUrl_list().get(0) : avatar;
-      }
-      if (TextUtils.isEmpty(avatar)) {
-        avatar = avatarLargeBean != null ? avatarLargeBean.getUrl_list().get(0) : avatar;
-      }
-      if (TextUtils.isEmpty(avatar)) {
-        avatar = avatarThumbBean != null ? avatarThumbBean.getUrl_list().get(0) : avatar;
-      }
-    }
-
-    ARouter.getInstance()
-        .build("/video/play")
-        .withString(Constants.KEY_URL, url)
-        .withString(Constants.KEY_COVER_URL, coverUrl)
-        .withString(Constants.KEY_USER_NAME, userName)
-        .withString(Constants.KEY_USER_AVATAR, avatar)
-        .navigation();
-  }
 }

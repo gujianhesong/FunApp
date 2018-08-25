@@ -19,6 +19,7 @@ import com.pinery.base.mvp.IPresenter;
 import com.pinery.base.util.ViewUtil;
 import com.pinery.base.widget.RecycleViewDivider;
 import com.pinery.fun.video.R;
+import com.pinery.fun.video.ui.adapter.BaseAdapter;
 
 /**
  * 列表页面Fragment
@@ -30,7 +31,7 @@ public abstract class BaseListFragment<T extends IPresenter> extends BaseLazyFra
 
   protected LRecyclerView mRecyclerView;
 
-  protected RecyclerView.Adapter mAdapter;
+  protected BaseAdapter mAdapter;
   private LRecyclerViewAdapter mLRecyclerViewAdapter;
 
   protected Context mContext;
@@ -53,11 +54,27 @@ public abstract class BaseListFragment<T extends IPresenter> extends BaseLazyFra
     mRecyclerView.setOnRefreshListener(this);
     mRecyclerView.setOnLoadMoreListener(this);
     //mRecyclerView.addOnScrollListener(new ImageAutoLoadScrollListener());
+    setOnItemClickListener(new OnItemClickListener() {
+      @Override public void onItemClick(View view, int position) {
+        if (mAdapter != null) {
+          mAdapter.onItemClick(view, position);
+        }
+      }
+    });
+    setOnItemLongClickListener(new OnItemLongClickListener() {
+      @Override public void onItemLongClick(View view, int position) {
+        if (mAdapter != null) {
+          mAdapter.onItemLongClick(view, position);
+        }
+      }
+    });
   }
 
   public void notifyCompleteRefresh(int refreshCount) {
     mRecyclerView.refreshComplete(refreshCount);
-    mLRecyclerViewAdapter.notifyDataSetChanged();
+    //mLRecyclerViewAdapter.notifyDataSetChanged();
+    mLRecyclerViewAdapter.notifyItemRangeInserted(mAdapter.getItemCount() - refreshCount,
+        refreshCount);
   }
 
   public void showErrorMessage(boolean isRefresh, String message) {
@@ -96,7 +113,7 @@ public abstract class BaseListFragment<T extends IPresenter> extends BaseLazyFra
     }
   }
 
-  protected abstract RecyclerView.Adapter generateAdapter();
+  protected abstract BaseAdapter generateAdapter();
 
   public abstract void onLoadMore();
 

@@ -3,6 +3,7 @@ package com.pinery.fun.video.bean;
 import java.util.List;
 
 /**
+ * 直播
  */
 public class HuoLiveItemBean extends BaseVideoItemBean{
 

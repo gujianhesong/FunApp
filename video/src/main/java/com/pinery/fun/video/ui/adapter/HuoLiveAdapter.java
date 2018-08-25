@@ -8,121 +8,179 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.pinery.base.util.ViewUtil;
 import com.pinery.fun.video.R;
+import com.pinery.fun.video.bean.BaseVideoItemBean;
+import com.pinery.fun.video.bean.HuoAdItemBean;
 import com.pinery.fun.video.bean.HuoLiveItemBean;
+import com.pinery.fun.video.common.Constants;
+import java.util.ArrayList;
 import java.util.List;
 
-public class HuoLiveAdapter extends RecyclerView.Adapter<HuoLiveAdapter.ViewHolder> {
-  List<HuoLiveItemBean> list;
-  Context context;
-  RecyclerView recyclerView;
+public class HuoLiveAdapter extends HuoBaseVideoAdapter {
+  private static final int ITEM_TYPE_UNKNOWN = 0;
+  private static final int ITEM_TYPE_LIVE = 1;
 
-  public HuoLiveAdapter(Context context, List<HuoLiveItemBean> list) {
-    this.context = context;
-    this.list = list;
+  public HuoLiveAdapter(Context context, List<BaseVideoItemBean> list) {
+    super(context, list);
   }
 
   public void bindRecyclerView(RecyclerView recyclerView) {
     this.recyclerView = recyclerView;
   }
 
-  @Override public HuoLiveAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-    final View view =
-        LayoutInflater.from(parent.getContext()).inflate(R.layout.item_huo_live, parent, false);
-    return new HuoLiveAdapter.ViewHolder(view);
+  @Override
+  public BaseVideoAdapter.BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    if (viewType == ITEM_TYPE_LIVE) {
+      final View view =
+          LayoutInflater.from(parent.getContext()).inflate(R.layout.item_huo_live, parent, false);
+      return new LiveViewHolder(view);
+    }
+    return null;
   }
 
-  @Override public void onBindViewHolder(HuoLiveAdapter.ViewHolder viewHodler, int position) {
-    HuoLiveItemBean dataBeanX = list.get(position);
-    if (dataBeanX != null) {
-      //setLayoutParams(viewHodler, dataBeanX);
-
-      fillData(viewHodler, dataBeanX);
-
-      loadAvatarImage(viewHodler, dataBeanX);
+  @Override public int getItemViewType(int position) {
+    BaseVideoItemBean itemBean = list.get(position);
+    if (itemBean instanceof HuoLiveItemBean) {
+      return ITEM_TYPE_LIVE;
     }
+    return ITEM_TYPE_UNKNOWN;
   }
 
-  private void fillData(HuoLiveAdapter.ViewHolder viewHodler, HuoLiveItemBean dataBeanX) {
-    try {
-      viewHodler.tvLocation.setText(dataBeanX.getData().getOwner().getCity());
-    } catch (Exception ex) {
-    }
-
-    try {
-      viewHodler.tvName.setText(dataBeanX.getData().getOwner().getNickname());
-    } catch (Exception ex) {
-    }
-
-    try {
-      viewHodler.tvCount.setText(String.format("%d人", dataBeanX.getData().getUser_count()));
-    } catch (Exception ex) {
-    }
+  @Override protected List<BaseViewHolderHandler> provideViewHolderHandler() {
+    List<BaseViewHolderHandler> list = new ArrayList<>();
+    list.add(new LiveViewHolderHandler());
+    return list;
   }
 
-  private void loadAvatarImage(final HuoLiveAdapter.ViewHolder viewHodler,
-      final HuoLiveItemBean dataBeanX) {
-    String url = "";
+  @Override public void onItemClick(View view, int position) {
+    BaseVideoItemBean itemBean = list.get(position);
 
-    HuoLiveItemBean.DataBean.OwnerBean.AvatarJpgBean avatarJpgBean =
-        dataBeanX.getData().getOwner().getAvatar_jpg();
-    HuoLiveItemBean.DataBean.OwnerBean.AvatarLargeBean avatarLargeBean =
-        dataBeanX.getData().getOwner().getAvatar_large();
-    HuoLiveItemBean.DataBean.OwnerBean.AvatarThumbBean avatarThumbBean =
-        dataBeanX.getData().getOwner().getAvatar_thumb();
-    if (TextUtils.isEmpty(url)) {
-      url = avatarJpgBean != null ? avatarJpgBean.getUrl_list().get(0) : url;
-    }
-    if (TextUtils.isEmpty(url)) {
-      url = avatarLargeBean != null ? avatarLargeBean.getUrl_list().get(0) : url;
-    }
-    if (TextUtils.isEmpty(url)) {
-      url = avatarThumbBean != null ? avatarThumbBean.getUrl_list().get(0) : url;
-    }
-
-    Glide.with(context).load(url).into(new SimpleTarget<GlideDrawable>() {
-      @Override public void onResourceReady(GlideDrawable resource,
-          GlideAnimation<? super GlideDrawable> glideAnimation) {
-
-        viewHodler.ivImage.setImageDrawable(resource);
-
-        setLayoutParams(viewHodler, dataBeanX);
+    if (itemBean instanceof HuoLiveItemBean) {
+      HuoLiveItemBean liveItemBean = (HuoLiveItemBean) itemBean;
+      String url = liveItemBean.getData().getStream_url().getRtmp_pull_url();
+      String userName = liveItemBean.getData().getOwner().getNickname();
+      String avatar = "";
+      HuoLiveItemBean.DataBean.OwnerBean.AvatarJpgBean avatarJpgBean =
+          liveItemBean.getData().getOwner().getAvatar_jpg();
+      HuoLiveItemBean.DataBean.OwnerBean.AvatarLargeBean avatarLargeBean =
+          liveItemBean.getData().getOwner().getAvatar_large();
+      HuoLiveItemBean.DataBean.OwnerBean.AvatarThumbBean avatarThumbBean =
+          liveItemBean.getData().getOwner().getAvatar_thumb();
+      if (TextUtils.isEmpty(avatar)) {
+        avatar = avatarJpgBean != null ? avatarJpgBean.getUrl_list().get(0) : avatar;
       }
-    });
-  }
+      if (TextUtils.isEmpty(avatar)) {
+        avatar = avatarLargeBean != null ? avatarLargeBean.getUrl_list().get(0) : avatar;
+      }
+      if (TextUtils.isEmpty(avatar)) {
+        avatar = avatarThumbBean != null ? avatarThumbBean.getUrl_list().get(0) : avatar;
+      }
 
-  private void setLayoutParams(HuoLiveAdapter.ViewHolder holder, HuoLiveItemBean dataBeanX) {
-    try {
-      int parentWidth = recyclerView.getMeasuredWidth();
-      int videoWidth = holder.ivImage.getDrawable().getIntrinsicWidth();
-      int videoHeight = holder.ivImage.getDrawable().getIntrinsicHeight();
-
-      int height = (int) (videoHeight * 1f / videoWidth * (parentWidth / 2));
-
-      ViewGroup.LayoutParams params = holder.ivImage.getLayoutParams();
-      params.height = height;
-      holder.ivImage.setLayoutParams(params);
-    } catch (Exception ex) {
-      ex.printStackTrace();
+      ARouter.getInstance()
+          .build("/video/play")
+          .withString(Constants.KEY_URL, url)
+          .withString(Constants.KEY_USER_NAME, userName)
+          .withString(Constants.KEY_USER_AVATAR, avatar)
+          .navigation();
     }
   }
 
-  @Override public int getItemCount() {
-    return list != null ? list.size() : 0;
+  @Override public void onItemLongClick(View view, int position) {
+
   }
 
-  class ViewHolder extends RecyclerView.ViewHolder {
+  class LiveViewHolderHandler extends BaseViewHolderHandler<LiveViewHolder, HuoLiveItemBean> {
+
+    @Override
+    protected boolean shouldHandle(BaseViewHolder viewHodler, BaseVideoItemBean dataBeanX) {
+      if(viewHodler instanceof LiveViewHolder && dataBeanX instanceof HuoLiveItemBean){
+        return true;
+      }
+      return false;
+    }
+
+    @Override public void setLayoutParams(LiveViewHolder holder, HuoLiveItemBean dataBeanX) {
+      /*try {
+        int parentWidth = recyclerView.getMeasuredWidth();
+        int videoWidth = holder.ivImage.getDrawable().getIntrinsicWidth();
+        int videoHeight = holder.ivImage.getDrawable().getIntrinsicHeight();
+
+        int height = (int) (videoHeight * 1f / videoWidth * (parentWidth / 2));
+
+        ViewGroup.LayoutParams params = holder.ivImage.getLayoutParams();
+        params.height = height;
+        holder.ivImage.setLayoutParams(params);
+      } catch (Exception ex) {
+        ex.printStackTrace();
+      }*/
+    }
+
+    @Override public void fillData(LiveViewHolder viewHodler, HuoLiveItemBean dataBeanX) {
+      try {
+        viewHodler.tvLocation.setText(dataBeanX.getData().getOwner().getCity());
+      } catch (Exception ex) {
+      }
+
+      try {
+        viewHodler.tvName.setText(dataBeanX.getData().getOwner().getNickname());
+      } catch (Exception ex) {
+      }
+
+      try {
+        viewHodler.tvCount.setText(String.format("%d人", dataBeanX.getData().getUser_count()));
+      } catch (Exception ex) {
+      }
+    }
+
+    @Override
+    public void loadCoverImage(final LiveViewHolder viewHodler, final HuoLiveItemBean dataBeanX) {
+      String url = "";
+
+      HuoLiveItemBean.DataBean.OwnerBean.AvatarJpgBean avatarJpgBean =
+          dataBeanX.getData().getOwner().getAvatar_jpg();
+      HuoLiveItemBean.DataBean.OwnerBean.AvatarLargeBean avatarLargeBean =
+          dataBeanX.getData().getOwner().getAvatar_large();
+      HuoLiveItemBean.DataBean.OwnerBean.AvatarThumbBean avatarThumbBean =
+          dataBeanX.getData().getOwner().getAvatar_thumb();
+      if (TextUtils.isEmpty(url)) {
+        url = avatarJpgBean != null ? avatarJpgBean.getUrl_list().get(0) : url;
+      }
+      if (TextUtils.isEmpty(url)) {
+        url = avatarLargeBean != null ? avatarLargeBean.getUrl_list().get(0) : url;
+      }
+      if (TextUtils.isEmpty(url)) {
+        url = avatarThumbBean != null ? avatarThumbBean.getUrl_list().get(0) : url;
+      }
+
+      Glide.with(context).load(url).into(new SimpleTarget<GlideDrawable>() {
+        @Override public void onResourceReady(GlideDrawable resource,
+            GlideAnimation<? super GlideDrawable> glideAnimation) {
+
+          viewHodler.ivImage.setImageDrawable(resource);
+
+          setLayoutParams(viewHodler, dataBeanX);
+        }
+      });
+    }
+
+    @Override public void loadAvatarImage(LiveViewHolder viewHodler, HuoLiveItemBean dataBeanX) {
+
+    }
+  }
+
+  class LiveViewHolder extends BaseVideoAdapter.BaseViewHolder {
     ImageView ivImage;
     TextView tvLocation;
     TextView tvName;
     TextView tvCount;
 
-    ViewHolder(View itemView) {
+    LiveViewHolder(View itemView) {
       super(itemView);
       ivImage = ViewUtil.findViewById(itemView, R.id.iv_image);
       tvLocation = ViewUtil.findViewById(itemView, R.id.tv_location);

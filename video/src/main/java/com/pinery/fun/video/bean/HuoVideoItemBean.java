@@ -2,6 +2,9 @@ package com.pinery.fun.video.bean;
 
 import java.util.List;
 
+/**
+ * 视频
+ */
 public class HuoVideoItemBean extends BaseVideoItemBean{
 
   /**
@@ -655,9 +658,267 @@ public class HuoVideoItemBean extends BaseVideoItemBean{
     }
 
     public static class StatsBean {
+      private int comment_count;
+      private int digg_count;
+      private int play_count;
+      private int share_count;
+
+      public int getComment_count() {
+        return comment_count;
+      }
+
+      public void setComment_count(int comment_count) {
+        this.comment_count = comment_count;
+      }
+
+      public int getDigg_count() {
+        return digg_count;
+      }
+
+      public void setDigg_count(int digg_count) {
+        this.digg_count = digg_count;
+      }
+
+      public int getPlay_count() {
+        return play_count;
+      }
+
+      public void setPlay_count(int play_count) {
+        this.play_count = play_count;
+      }
+
+      public int getShare_count() {
+        return share_count;
+      }
+
+      public void setShare_count(int share_count) {
+        this.share_count = share_count;
+      }
     }
 
     public static class SongBean {
+
+      /**
+       * album :
+       * status : 1
+       * author : 金久哲
+       * play_url : {"url_list":["http://p3.pstatp.com/obj/7baf0005c7065f41adf0","http://pb9.pstatp.com/obj/7baf0005c7065f41adf0","http://pb3.pstatp.com/obj/7baf0005c7065f41adf0"],"uri":"7baf0005c7065f41adf0"}
+       * title : 男人的苦女人不清楚
+       * video_cnt : 10079
+       * share_url : https://reflow.huoshan.com/share/music/6544996791891266317/
+       * source_platform : 25
+       * cover_large : {"url_list":["http://sf3-hscdn-tos.pstatp.com/img/aweme-original-music/1597894694896648~720x720.webp","http://sf1-hscdn-tos.pstatp.com/img/aweme-original-music/1597894694896648~720x720.webp","http://sf6-hscdn-tos.pstatp.com/img/aweme-original-music/1597894694896648~720x720.webp"],"uri":"aweme-original-music/1597894694896648"}
+       * share_description : 玩视频上火山，快来围观！
+       * share_title : 玩视频上火山，快来围观！
+       * duration : 254
+       * id : 6544996791891266317
+       * cover_thumb : {"url_list":["http://sf3-hscdn-tos.pstatp.com/img/aweme-original-music/1597894694896648~100x100.webp","http://sf1-hscdn-tos.pstatp.com/img/aweme-original-music/1597894694896648~100x100.webp","http://sf6-hscdn-tos.pstatp.com/img/aweme-original-music/1597894694896648~100x100.webp"],"uri":"aweme-original-music/1597894694896648"}
+       */
+
+      private String album;
+      private int status;
+      private String author;
+      private PlayUrlBean play_url;
+      private String title;
+      private int video_cnt;
+      private String share_url;
+      private int source_platform;
+      private CoverLargeBean cover_large;
+      private String share_description;
+      private String share_title;
+      private int duration;
+      private long id;
+      private CoverThumbBean cover_thumb;
+
+      public String getAlbum() {
+        return album;
+      }
+
+      public void setAlbum(String album) {
+        this.album = album;
+      }
+
+      public int getStatus() {
+        return status;
+      }
+
+      public void setStatus(int status) {
+        this.status = status;
+      }
+
+      public String getAuthor() {
+        return author;
+      }
+
+      public void setAuthor(String author) {
+        this.author = author;
+      }
+
+      public PlayUrlBean getPlay_url() {
+        return play_url;
+      }
+
+      public void setPlay_url(PlayUrlBean play_url) {
+        this.play_url = play_url;
+      }
+
+      public String getTitle() {
+        return title;
+      }
+
+      public void setTitle(String title) {
+        this.title = title;
+      }
+
+      public int getVideo_cnt() {
+        return video_cnt;
+      }
+
+      public void setVideo_cnt(int video_cnt) {
+        this.video_cnt = video_cnt;
+      }
+
+      public String getShare_url() {
+        return share_url;
+      }
+
+      public void setShare_url(String share_url) {
+        this.share_url = share_url;
+      }
+
+      public int getSource_platform() {
+        return source_platform;
+      }
+
+      public void setSource_platform(int source_platform) {
+        this.source_platform = source_platform;
+      }
+
+      public CoverLargeBean getCover_large() {
+        return cover_large;
+      }
+
+      public void setCover_large(CoverLargeBean cover_large) {
+        this.cover_large = cover_large;
+      }
+
+      public String getShare_description() {
+        return share_description;
+      }
+
+      public void setShare_description(String share_description) {
+        this.share_description = share_description;
+      }
+
+      public String getShare_title() {
+        return share_title;
+      }
+
+      public void setShare_title(String share_title) {
+        this.share_title = share_title;
+      }
+
+      public int getDuration() {
+        return duration;
+      }
+
+      public void setDuration(int duration) {
+        this.duration = duration;
+      }
+
+      public long getId() {
+        return id;
+      }
+
+      public void setId(long id) {
+        this.id = id;
+      }
+
+      public CoverThumbBean getCover_thumb() {
+        return cover_thumb;
+      }
+
+      public void setCover_thumb(CoverThumbBean cover_thumb) {
+        this.cover_thumb = cover_thumb;
+      }
+
+      public static class PlayUrlBean {
+        /**
+         * url_list : ["http://p3.pstatp.com/obj/7baf0005c7065f41adf0","http://pb9.pstatp.com/obj/7baf0005c7065f41adf0","http://pb3.pstatp.com/obj/7baf0005c7065f41adf0"]
+         * uri : 7baf0005c7065f41adf0
+         */
+
+        private String uri;
+        private List<String> url_list;
+
+        public String getUri() {
+          return uri;
+        }
+
+        public void setUri(String uri) {
+          this.uri = uri;
+        }
+
+        public List<String> getUrl_list() {
+          return url_list;
+        }
+
+        public void setUrl_list(List<String> url_list) {
+          this.url_list = url_list;
+        }
+      }
+
+      public static class CoverLargeBean {
+        /**
+         * url_list : ["http://sf3-hscdn-tos.pstatp.com/img/aweme-original-music/1597894694896648~720x720.webp","http://sf1-hscdn-tos.pstatp.com/img/aweme-original-music/1597894694896648~720x720.webp","http://sf6-hscdn-tos.pstatp.com/img/aweme-original-music/1597894694896648~720x720.webp"]
+         * uri : aweme-original-music/1597894694896648
+         */
+
+        private String uri;
+        private List<String> url_list;
+
+        public String getUri() {
+          return uri;
+        }
+
+        public void setUri(String uri) {
+          this.uri = uri;
+        }
+
+        public List<String> getUrl_list() {
+          return url_list;
+        }
+
+        public void setUrl_list(List<String> url_list) {
+          this.url_list = url_list;
+        }
+      }
+
+      public static class CoverThumbBean {
+        /**
+         * url_list : ["http://sf3-hscdn-tos.pstatp.com/img/aweme-original-music/1597894694896648~100x100.webp","http://sf1-hscdn-tos.pstatp.com/img/aweme-original-music/1597894694896648~100x100.webp","http://sf6-hscdn-tos.pstatp.com/img/aweme-original-music/1597894694896648~100x100.webp"]
+         * uri : aweme-original-music/1597894694896648
+         */
+
+        private String uri;
+        private List<String> url_list;
+
+        public String getUri() {
+          return uri;
+        }
+
+        public void setUri(String uri) {
+          this.uri = uri;
+        }
+
+        public List<String> getUrl_list() {
+          return url_list;
+        }
+
+        public void setUrl_list(List<String> url_list) {
+          this.url_list = url_list;
+        }
+      }
     }
 
     public static class AuthorBean {

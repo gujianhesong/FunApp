@@ -17,6 +17,7 @@
       android:orientation="vertical"
       android:paddingBottom="8dp"
       android:paddingLeft="8dp"
+      android:paddingRight="8dp"
       >
 
     <TextView
@@ -30,8 +31,8 @@
 
     <com.pinery.fun.video.widget.CircleImageView
         android:id="@+id/iv_avatar"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginTop="8dp"
         />
   </LinearLayout>
@@ -40,11 +41,11 @@
       android:id="@+id/tv_distance"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:textColor="@color/white"
+      android:layout_alignParentBottom="true"
+      android:layout_alignParentRight="true"
       android:layout_marginBottom="8dp"
       android:layout_marginRight="8dp"
-      android:layout_alignParentRight="true"
-      android:layout_alignParentBottom="true"
+      android:textColor="@color/white"
       android:textSize="12sp"
       />
 

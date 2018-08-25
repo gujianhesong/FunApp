@@ -8,7 +8,7 @@ public class HuoLiveBean {
 
   private int status_code;
   private ExtraBean extra;
-  private List<HuoLiveItemBean> data;
+  private List<BaseVideoItemBean> data;
 
   public int getStatus_code() {
     return status_code;
@@ -26,11 +26,11 @@ public class HuoLiveBean {
     this.extra = extra;
   }
 
-  public List<HuoLiveItemBean> getData() {
+  public List<BaseVideoItemBean> getData() {
     return data;
   }
 
-  public void setData(List<HuoLiveItemBean> data) {
+  public void setData(List<BaseVideoItemBean> data) {
     this.data = data;
   }
 

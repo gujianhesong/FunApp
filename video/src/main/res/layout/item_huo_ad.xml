@@ -39,7 +39,23 @@
   </LinearLayout>
 
   <TextView
-      android:id="@+id/tv_focus_count"
+      android:id="@+id/tv_ad_label"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="8dp"
+      android:layout_marginTop="8dp"
+      android:background="@drawable/bg_ad_label"
+      android:paddingBottom="2dp"
+      android:paddingLeft="8dp"
+      android:paddingRight="8dp"
+      android:paddingTop="2dp"
+      android:text="广告"
+      android:textColor="@color/white"
+      android:textSize="14sp"
+      />
+
+  <TextView
+      android:id="@+id/tv_ad_btn_text"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_alignParentBottom="true"
@@ -47,7 +63,7 @@
       android:layout_marginBottom="8dp"
       android:layout_marginRight="8dp"
       android:textColor="@color/white"
-      android:textSize="15sp"
+      android:textSize="14sp"
       />
 
 </RelativeLayout>
