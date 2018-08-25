@@ -1,5 +1,6 @@
-package com.pinery.fun.video.ui.fragment;
+package com.pinery.fun.video.ui.viewproxy;
 
+import android.content.Context;
 import android.graphics.Rect;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
@@ -11,7 +12,7 @@ import com.pinery.base.util.ScreenUtil;
 import com.pinery.fun.video.R;
 import com.pinery.fun.video.bean.BaseVideoItemBean;
 import com.pinery.fun.video.bean.HuoVideoBean;
-import com.pinery.fun.video.dagger.DaggerHuoVideoFragmentComponent;
+import com.pinery.fun.video.dagger.DaggerHuoVideoViewProxyComponent;
 import com.pinery.fun.video.mvp.HuoVideoContract;
 import com.pinery.fun.video.mvp.HuoVideoPresenter;
 import com.pinery.fun.video.ui.adapter.BaseAdapter;
@@ -21,28 +22,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by gujian on 2018-08-12.
+ * Created by gujian on 2018-08-25.
  */
 
-public class HuoVideoListFragment extends BaseListFragment<HuoVideoPresenter>
+public class HuoVideoListViewProxy extends BaseListViewProxy<HuoVideoPresenter>
     implements HuoVideoContract.View {
 
   private List<BaseVideoItemBean> mDatas = new ArrayList<>();
   private int mPage;
   private boolean mFirstRefresh = true;
 
-  public static HuoVideoListFragment newInstance() {
-    return new HuoVideoListFragment();
+  public static HuoVideoListViewProxy newInstance(Context context) {
+    return new HuoVideoListViewProxy(context);
+  }
+
+  public HuoVideoListViewProxy(Context context){
+    super(context);
   }
 
   @Override protected void initInjector() {
-    DaggerHuoVideoFragmentComponent.create().inject(this);
+    DaggerHuoVideoViewProxyComponent.create().inject(this);
   }
 
   @Override protected void initData() {
-  }
-
-  @Override protected void onLazyLoad() {
     if (mDatas.isEmpty()) {
       mRecyclerView.forceToRefresh();
     } else {
@@ -50,7 +52,6 @@ public class HuoVideoListFragment extends BaseListFragment<HuoVideoPresenter>
   }
 
   @Override protected BaseAdapter<BaseVideoAdapter.BaseViewHolder> generateAdapter() {
-    //mDatas = new ArrayList<>();
     HuoVideoAdapter adapter = new HuoVideoAdapter(mContext, mDatas);
     adapter.bindRecyclerView(mRecyclerView);
     return adapter;

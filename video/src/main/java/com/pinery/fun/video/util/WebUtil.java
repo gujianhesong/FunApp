@@ -12,6 +12,11 @@ import android.text.TextUtils;
 
 public class WebUtil {
 
+  /**
+   * 打开网页
+   * @param context
+   * @param url
+   */
   public static void openUrl(Context context, String url){
     if(context == null || TextUtils.isEmpty(url)){
       return;
