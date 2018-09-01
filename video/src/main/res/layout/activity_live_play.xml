@@ -1,11 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_detail_player"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
+
   <com.shuyu.gsyvideoplayer.video.StandardGSYVideoPlayer
       android:id="@+id/detail_player"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       />
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_alignParentBottom="true"
+      android:layout_marginBottom="48dp"
+      android:background="#77ffff00"
+      >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        >
+
+      <com.pinery.fun.video.widget.CircleImageView
+          android:id="@+id/iv_avatar"
+          android:layout_width="48dp"
+          android:layout_height="48dp"
+          />
+
+      <TextView
+          android:id="@+id/tv_name"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="8dp"
+          android:maxLines="1"
+          android:textColor="@color/white"
+          android:textSize="16sp"
+          />
+
+    </LinearLayout>
+
+  </RelativeLayout>
+
 </RelativeLayout>

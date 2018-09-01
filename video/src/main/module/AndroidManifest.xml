@@ -31,6 +31,12 @@
         android:screenOrientation="portrait"
         android:theme="@style/FullScreenTheme" />
 
+    <activity
+        android:name=".ui.activity.LivePlayActivity"
+        android:configChanges="orientation|keyboardHidden|screenSize"
+        android:screenOrientation="portrait"
+        android:theme="@style/FullScreenTheme" />
+
   </application>
 
 </manifest>

@@ -5,9 +5,10 @@ import android.content.Intent;
 import android.support.v4.app.Fragment;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.pinery.base.activity.AgentActivity;
+import com.pinery.fun.video.common.Constants;
 import com.pinery.fun.video.ui.fragment.HomeFragment;
 
-@Route(path = "/video/main")
+@Route(path = Constants.PATH_MAIN)
 public class VideoActivity extends AgentActivity {
 
   public static void navigate(Context context){

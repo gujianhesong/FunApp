@@ -11,33 +11,102 @@
       android:layout_height="match_parent"
       />
 
-  <LinearLayout
+  <RelativeLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_alignParentBottom="true"
-      android:gravity="center_vertical"
-      android:orientation="horizontal"
-      android:paddingBottom="48dp"
-      android:paddingLeft="8dp"
-      android:paddingRight="8dp"
+      android:layout_marginBottom="48dp"
       >
-
-    <com.pinery.fun.video.widget.CircleImageView
-        android:id="@+id/iv_avatar"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        />
-
-    <TextView
-        android:id="@+id/tv_name"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:maxLines="1"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        />
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        >
 
-  </LinearLayout>
+      <com.pinery.fun.video.widget.CircleImageView
+          android:id="@+id/iv_avatar"
+          android:layout_width="48dp"
+          android:layout_height="48dp"
+          />
+
+      <TextView
+          android:id="@+id/tv_name"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="8dp"
+          android:maxLines="1"
+          android:textColor="@color/white"
+          android:textSize="16sp"
+          />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingRight="8dp"
+        >
+
+      <ImageView
+          android:id="@+id/iv_comments_count"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:src="@drawable/a5w"
+          />
+
+      <TextView
+          android:id="@+id/tv_comments_count"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="@color/white"
+          android:textSize="12sp"
+          />
+
+      <ImageView
+          android:id="@+id/iv_love_count"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:src="@drawable/a6r"
+          />
+
+      <TextView
+          android:id="@+id/tv_love_count"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="@color/white"
+          android:textSize="12sp"
+          />
+
+      <ImageView
+          android:id="@+id/iv_share_count"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:src="@drawable/a82"
+          />
+
+      <TextView
+          android:id="@+id/tv_share_count"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="@color/white"
+          android:textSize="12sp"
+          />
+
+    </LinearLayout>
+  </RelativeLayout>
+
+
+  <RelativeLayout
+      android:id="@+id/layout_comments"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      />
 
 </RelativeLayout>

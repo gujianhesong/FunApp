@@ -17,6 +17,8 @@ import com.pinery.fun.video.R;
 import com.pinery.fun.video.bean.BaseVideoItemBean;
 import com.pinery.fun.video.bean.HuoLiveItemBean;
 import com.pinery.fun.video.bean.HuoVideoItemBean;
+import com.pinery.fun.video.bean.LivePlayBean;
+import com.pinery.fun.video.bean.VideoPlayBean;
 import com.pinery.fun.video.common.Constants;
 import java.util.ArrayList;
 import java.util.List;
@@ -105,6 +107,22 @@ public class HuoCityAdapter extends HuoBaseVideoAdapter {
         }
       } catch (Exception ex) {
       }
+
+      VideoPlayBean bean = new VideoPlayBean();
+      bean.setId(videoItemBean.getData().getId_str());
+      bean.setUrl(url);
+      bean.setCoverUrl(coverUrl);
+      bean.setAuthorName(userName);
+      bean.setAuthorAvatar(avatar);
+      bean.setCommentCount(videoItemBean.getData().getStats().getComment_count());
+      bean.setLoveCount(videoItemBean.getData().getStats().getDigg_count());
+      bean.setShareCount(videoItemBean.getData().getStats().getShare_count());
+
+      ARouter.getInstance()
+          .build(Constants.PATH_VIDEO_PLAY)
+          .withSerializable(Constants.KEY_VIDEO_PLAY_BEAN, bean)
+          .navigation();
+
     } else if (itemBean instanceof HuoLiveItemBean) {
       HuoLiveItemBean liveItemBean = (HuoLiveItemBean) itemBean;
 
@@ -125,15 +143,18 @@ public class HuoCityAdapter extends HuoBaseVideoAdapter {
       if (TextUtils.isEmpty(avatar)) {
         avatar = avatarThumbBean != null ? avatarThumbBean.getUrl_list().get(0) : avatar;
       }
+
+      LivePlayBean bean = new LivePlayBean();
+      bean.setUrl(url);
+      bean.setAuthorName(userName);
+      bean.setAuthorAvatar(avatar);
+
+      ARouter.getInstance()
+          .build(Constants.PATH_LIVE_PLAY)
+          .withSerializable(Constants.KEY_LIVE_PLAY_BEAN, bean)
+          .navigation();
     }
 
-    ARouter.getInstance()
-        .build("/video/play")
-        .withString(Constants.KEY_URL, url)
-        .withString(Constants.KEY_COVER_URL, coverUrl)
-        .withString(Constants.KEY_USER_NAME, userName)
-        .withString(Constants.KEY_USER_AVATAR, avatar)
-        .navigation();
   }
 
   @Override public void onItemLongClick(View view, int position) {
@@ -253,7 +274,7 @@ public class HuoCityAdapter extends HuoBaseVideoAdapter {
       } catch (Exception ex) {
       }
 
-      Glide.with(context).load(avatar).into(viewHodler.ivAvatar);
+      Glide.with(context).load(avatar).error(R.drawable.a0b).into(viewHodler.ivAvatar);
     }
   }
 
@@ -317,7 +338,7 @@ public class HuoCityAdapter extends HuoBaseVideoAdapter {
         url = avatarThumbBean != null ? avatarThumbBean.getUrl_list().get(0) : url;
       }
 
-      Glide.with(context).load(url).into(new SimpleTarget<GlideDrawable>() {
+      Glide.with(context).load(url).error(R.drawable.a0b).into(new SimpleTarget<GlideDrawable>() {
         @Override public void onResourceReady(GlideDrawable resource,
             GlideAnimation<? super GlideDrawable> glideAnimation) {
 

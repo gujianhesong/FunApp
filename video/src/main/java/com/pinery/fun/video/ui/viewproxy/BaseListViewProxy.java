@@ -1,6 +1,5 @@
 package com.pinery.fun.video.ui.viewproxy;
 
-import android.app.Activity;
 import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
@@ -21,15 +20,15 @@ import com.pinery.fun.video.ui.adapter.BaseAdapter;
  * Created by gujian on 2018-08-25.
  */
 
-public abstract class BaseListViewProxy<T extends IPresenter> extends BaseViewProxy<T> implements OnRefreshListener,
-    OnLoadMoreListener {
+public abstract class BaseListViewProxy<T extends IPresenter> extends BaseViewProxy<T>
+    implements OnRefreshListener, OnLoadMoreListener {
 
   protected LRecyclerView mRecyclerView;
 
   protected BaseAdapter mAdapter;
   private LRecyclerViewAdapter mLRecyclerViewAdapter;
 
-  public BaseListViewProxy(Context context){
+  public BaseListViewProxy(Context context) {
     super(context);
   }
 
@@ -65,19 +64,14 @@ public abstract class BaseListViewProxy<T extends IPresenter> extends BaseViewPr
     });
   }
 
-  @Override public View getView() {
-    return null;
-  }
-
-  @Override public void requestData() {
-
-  }
-
   public void notifyCompleteRefresh(int refreshCount) {
     mRecyclerView.refreshComplete(refreshCount);
-    mLRecyclerViewAdapter.notifyDataSetChanged();
-    //mLRecyclerViewAdapter.notifyItemRangeInserted(mAdapter.getItemCount() - refreshCount,
-    //    refreshCount);
+    if (mAdapter.getItemCount() == refreshCount) {
+      mLRecyclerViewAdapter.notifyDataSetChanged();
+    } else {
+      mLRecyclerViewAdapter.notifyItemRangeInserted(mAdapter.getItemCount() - refreshCount,
+          refreshCount);
+    }
   }
 
   public void showErrorMessage(boolean isRefresh, String message) {
@@ -101,7 +95,7 @@ public abstract class BaseListViewProxy<T extends IPresenter> extends BaseViewPr
     LinearLayoutManager layoutManager = new LinearLayoutManager(mContext);
     recyclerView.setLayoutManager(layoutManager);
 
-    mRecyclerView.addItemDecoration(new RecycleViewDivider(mContext));
+    //mRecyclerView.addItemDecoration(new RecycleViewDivider(mContext));
   }
 
   public void setOnItemClickListener(OnItemClickListener listener) {
@@ -117,6 +111,4 @@ public abstract class BaseListViewProxy<T extends IPresenter> extends BaseViewPr
   }
 
   protected abstract BaseAdapter generateAdapter();
-
-
 }

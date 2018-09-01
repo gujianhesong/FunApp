@@ -14,6 +14,7 @@ import com.pinery.fun.video.R;
 import com.pinery.fun.video.bean.BaseVideoItemBean;
 import com.pinery.fun.video.bean.HuoAdItemBean;
 import com.pinery.fun.video.bean.HuoVideoItemBean;
+import com.pinery.fun.video.bean.VideoPlayBean;
 import com.pinery.fun.video.common.Constants;
 import com.pinery.fun.video.util.NumberUtil;
 import com.pinery.fun.video.util.WebUtil;
@@ -65,6 +66,7 @@ public class HuoVideoAdapter extends HuoBaseVideoAdapter {
 
     if (itemBean instanceof HuoVideoItemBean) {
       HuoVideoItemBean videoBean = (HuoVideoItemBean) itemBean;
+      String id = videoBean.getData().getId_str();
       String url = videoBean.getData().getVideo().getUrl_list().get(0);
 
       String coverUrl = "";
@@ -103,12 +105,19 @@ public class HuoVideoAdapter extends HuoBaseVideoAdapter {
       } catch (Exception ex) {
       }
 
+      VideoPlayBean bean = new VideoPlayBean();
+      bean.setId(id);
+      bean.setUrl(url);
+      bean.setCoverUrl(coverUrl);
+      bean.setAuthorName(userName);
+      bean.setAuthorAvatar(avatar);
+      bean.setCommentCount(videoBean.getData().getStats().getComment_count());
+      bean.setLoveCount(videoBean.getData().getStats().getDigg_count());
+      bean.setShareCount(videoBean.getData().getStats().getShare_count());
+
       ARouter.getInstance()
-          .build("/video/play")
-          .withString(Constants.KEY_URL, url)
-          .withString(Constants.KEY_COVER_URL, coverUrl)
-          .withString(Constants.KEY_USER_NAME, userName)
-          .withString(Constants.KEY_USER_AVATAR, avatar)
+          .build(Constants.PATH_VIDEO_PLAY)
+          .withSerializable(Constants.KEY_VIDEO_PLAY_BEAN, bean)
           .navigation();
     }
 
@@ -202,7 +211,7 @@ public class HuoVideoAdapter extends HuoBaseVideoAdapter {
       } catch (Exception ex) {
       }
 
-      Glide.with(context).load(avatar).into(viewHodler.ivAvatar);
+      Glide.with(context).load(avatar).error(R.drawable.a0b).into(viewHodler.ivAvatar);
     }
   }
 
@@ -279,7 +288,7 @@ public class HuoVideoAdapter extends HuoBaseVideoAdapter {
         ex.printStackTrace();
       }
 
-      Glide.with(context).load(avatar).into(viewHodler.ivAvatar);
+      Glide.with(context).load(avatar).error(R.drawable.a0b).into(viewHodler.ivAvatar);
     }
   }
 

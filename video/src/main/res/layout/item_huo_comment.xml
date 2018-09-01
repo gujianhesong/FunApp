@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:padding="8dp"
+      >
+
+    <com.pinery.fun.video.widget.CircleImageView
+        android:id="@+id/iv_avatar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        >
+
+      <TextView
+          android:id="@+id/tv_user_nickname"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="@color/color999"
+          android:textSize="14sp"
+          />
+
+      <TextView
+          android:id="@+id/tv_user_comment"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="8dp"
+          android:textColor="@color/text_black"
+          android:textSize="14sp"
+          />
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="8dp"
+          android:orientation="vertical"
+          >
+        <LinearLayout
+            android:id="@+id/ll_author_reply"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            >
+          <TextView
+              android:id="@+id/tv_reply_username"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textColor="@color/text_link"
+              android:textSize="14sp"
+              />
+
+          <TextView
+              android:id="@+id/tv_reply_content"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textColor="@color/text_black"
+              android:textSize="14sp"
+              />
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tv_feedback_count"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/white"
+            android:paddingBottom="4dp"
+            android:paddingRight="4dp"
+            android:paddingTop="4dp"
+            android:text="查看全部xx回复>"
+            android:textColor="@color/text_link"
+            android:textSize="14sp"
+            />
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="8dp"
+          android:orientation="horizontal"
+          >
+        <TextView
+            android:id="@+id/tv_create_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_gray"
+            android:textSize="14sp"
+            />
+        <TextView
+            android:id="@+id/tv_author_digg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="作者赞了这条评论"
+            android:textColor="@color/text_gray"
+            android:textSize="14sp"
+            />
+      </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        >
+      <ImageView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:src="@drawable/x8"
+          />
+
+      <TextView
+          android:id="@+id/tv_digg_count"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="1K"
+          android:textColor="@color/text_gray"
+          android:textSize="14sp"
+          />
+
+    </LinearLayout>
+  </LinearLayout>
+
+  <View
+      android:id="@+id/divide_line"
+      android:layout_width="match_parent"
+      android:background="@color/divide_line"
+      android:layout_marginLeft="56dp"
+      android:layout_height="1px"/>
+
+</LinearLayout>

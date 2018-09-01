@@ -1,17 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#D1E99F</color>
-    <color name="colorPrimaryDark">#61A706</color>
-    <color name="colorBackground">#FFF3E0</color>
-    <color name="colorAccent">#F57C00</color>
+  <color name="colorPrimary">#D1E99F</color>
+  <color name="colorPrimaryDark">#61A706</color>
+  <color name="colorBackground">#f8f8f8</color>
+  <color name="colorAccent">#F57C00</color>
 
-    <color name="colorPrimaryAlpha">#ccD1E99F</color>
-    <color name="colorPrimarkDarkAlpha">#eeD1E99F</color>
+  <color name="colorPrimaryAlpha">#ccD1E99F</color>
+  <color name="colorPrimarkDarkAlpha">#eeD1E99F</color>
 
-    <color name="design_black">@color/black</color>
-    <color name="alpha_white">#77ffffff</color>
+  <color name="design_black">@color/black</color>
+  <color name="alpha_white">#77ffffff</color>
 
-    <color name="black">#2F2F2F</color>
-    <color name="white">#FFFFFF</color>
+  <color name="divide_line">#e1e1e1</color>
+  <color name="gray">#7C7C7C</color>
+
+  <!-- 加粗标题 -->
+  <color name="text_black">#282828</color>
+  <!-- 普通文字（特殊场景）/标题文字/重要内容/类目名称-->
+  <color name="text_gray">#bfbfbf</color>
+  <color name="text_link">#1C86EE</color>
+
+  <color name="color666">#666666</color>
+  <color name="color333">#333333</color>
+  <color name="color999">#999999</color>
+
+  <color name="transparent">#00000000</color>
+  <color name="colorDim">#55000000</color>
+
+  <color name="color_background">#f8f8f8</color>
+
+  <!--basic color-->
+  <color name="white">#ffffff</color>
+  <color name="black">#040404</color>
+  <color name="colorTextIcon">#ffffff</color>
+  <color name="colorPrimaryText">#212121</color>
+  <color name="colorSecondText">#727272</color>
+  <color name="colorHint">#999999</color>
+  <color name="colorBackgroundAccent">#ffffff</color>
 
 </resources>

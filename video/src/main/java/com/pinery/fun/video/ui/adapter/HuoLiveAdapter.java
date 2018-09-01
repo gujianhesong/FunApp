@@ -18,6 +18,7 @@ import com.pinery.fun.video.R;
 import com.pinery.fun.video.bean.BaseVideoItemBean;
 import com.pinery.fun.video.bean.HuoAdItemBean;
 import com.pinery.fun.video.bean.HuoLiveItemBean;
+import com.pinery.fun.video.bean.LivePlayBean;
 import com.pinery.fun.video.common.Constants;
 import java.util.ArrayList;
 import java.util.List;
@@ -82,11 +83,14 @@ public class HuoLiveAdapter extends HuoBaseVideoAdapter {
         avatar = avatarThumbBean != null ? avatarThumbBean.getUrl_list().get(0) : avatar;
       }
 
+      LivePlayBean bean = new LivePlayBean();
+      bean.setUrl(url);
+      bean.setAuthorName(userName);
+      bean.setAuthorAvatar(avatar);
+
       ARouter.getInstance()
-          .build("/video/play")
-          .withString(Constants.KEY_URL, url)
-          .withString(Constants.KEY_USER_NAME, userName)
-          .withString(Constants.KEY_USER_AVATAR, avatar)
+          .build(Constants.PATH_LIVE_PLAY)
+          .withSerializable(Constants.KEY_LIVE_PLAY_BEAN, bean)
           .navigation();
     }
   }
@@ -108,14 +112,14 @@ public class HuoLiveAdapter extends HuoBaseVideoAdapter {
     @Override public void setLayoutParams(LiveViewHolder holder, HuoLiveItemBean dataBeanX) {
       /*try {
         int parentWidth = recyclerView.getMeasuredWidth();
-        int videoWidth = holder.ivImage.getDrawable().getIntrinsicWidth();
-        int videoHeight = holder.ivImage.getDrawable().getIntrinsicHeight();
+        int videoWidth = holder.ivAvatar.getDrawable().getIntrinsicWidth();
+        int videoHeight = holder.ivAvatar.getDrawable().getIntrinsicHeight();
 
         int height = (int) (videoHeight * 1f / videoWidth * (parentWidth / 2));
 
-        ViewGroup.LayoutParams params = holder.ivImage.getLayoutParams();
+        ViewGroup.LayoutParams params = holder.ivAvatar.getLayoutParams();
         params.height = height;
-        holder.ivImage.setLayoutParams(params);
+        holder.ivAvatar.setLayoutParams(params);
       } catch (Exception ex) {
         ex.printStackTrace();
       }*/
@@ -158,7 +162,7 @@ public class HuoLiveAdapter extends HuoBaseVideoAdapter {
         url = avatarThumbBean != null ? avatarThumbBean.getUrl_list().get(0) : url;
       }
 
-      Glide.with(context).load(url).into(new SimpleTarget<GlideDrawable>() {
+      Glide.with(context).load(url).error(R.drawable.a0b).into(new SimpleTarget<GlideDrawable>() {
         @Override public void onResourceReady(GlideDrawable resource,
             GlideAnimation<? super GlideDrawable> glideAnimation) {
 
