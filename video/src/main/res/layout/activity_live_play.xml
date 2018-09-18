@@ -16,7 +16,6 @@
       android:layout_height="wrap_content"
       android:layout_alignParentBottom="true"
       android:layout_marginBottom="48dp"
-      android:background="#77ffff00"
       >
     <LinearLayout
         android:layout_width="match_parent"

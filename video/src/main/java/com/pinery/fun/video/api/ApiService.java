@@ -4,6 +4,7 @@ import com.pinery.fun.video.bean.CommentListBean;
 import com.pinery.fun.video.bean.CommentReplyListBean;
 import com.pinery.fun.video.bean.HuoCityBean;
 import com.pinery.fun.video.bean.HuoLiveBean;
+import com.pinery.fun.video.bean.HuoUserCenterBean;
 import com.pinery.fun.video.bean.HuoVideoBean;
 import io.reactivex.Flowable;
 import java.util.HashMap;
@@ -133,6 +134,23 @@ public interface ApiService {
       + "&language=zh&uuid=99000821058393&openudid=ebc5a2ef6694b29"
       + "&_rticket=1534559660964&ts=1534559661&as=a2e538b77d1aab05672236&cp=85a2b75fdd717c57e2ezdg&mas=003f08210dc11c93846a5894d4da7f447864ae228a8000a8e8")
   Flowable<CommentReplyListBean> loadCommentReply(@Path("id") String id, @QueryMap HashMap<String, Object> map);
+
+  /**
+   * 用户中心
+   * @param map
+   * @return
+   */
+  //@GET("/hotsoon/user/{id}/?live_sdk_version=373&ac=wifi&channel=local"
+  //    + "&aid=1112&app_name=live_stream&device_platform=android&ssmix=a"
+  //    + "&language=zh&uuid=99000821058393&openudid=ebc5a2ef6694b29"
+  //    + "&_rticket=1534559660964&ts=1534559661&as=a2e538b77d1aab05672236&cp=85a2b75fdd717c57e2ezdg&mas=003f08210dc11c93846a5894d4da7f447864ae228a8000a8e8")
+  @GET("/hotsoon/user/{id}/?live_sdk_version=430&iid=42991411996&device_id=57063848101&ac=wifi&channel=360"
+      + "&aid=1112&app_name=live_stream&version_code=430&version_name=4.3.0&device_platform=android&ssmix=a"
+      + "&device_type=SM-G9350&device_brand=samsung&language=zh&os_api=22&os_version=5.1.1&uuid=867268209422257"
+      + "&openudid=4055041127922850&manifest_version_code=420&resolution=768*1366&dpi=254"
+      + "&update_version_code=4315&_rticket=1535877312875&ts=1535877312&as=a2050a6860ac3bb00b4355"
+      + "&cp=a4cbbe520eb98f0ae2IcQg&mas=00efd8137646c47339e67520d06fca94d160c48e4006686ec4")
+  Flowable<HuoUserCenterBean> requestUserCenterInfo(@Path("id") String userId, @QueryMap HashMap<String, Object> map);
 
 
   ////    @GET("hotsoon/feed/?type=city&min_time=0&count=20&req_from=enter_auto&live_sdk_version=273")

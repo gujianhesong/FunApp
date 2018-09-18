@@ -33,6 +33,8 @@ public class CommentsListViewProxy extends BaseListViewProxy<HuoCommentPresenter
 
   private int mState = STATE_HIDE_COMMENT;
 
+  private float screenRatio = 2 / 3f;
+
   private List<CommentsItemBean> mDatas = new ArrayList<>();
   private int mPage;
   private String id;
@@ -167,7 +169,8 @@ public class CommentsListViewProxy extends BaseListViewProxy<HuoCommentPresenter
   public void showInContainer(RelativeLayout container){
     if(getView().getParent() == null){
       int parentHeight = container.getHeight();
-      RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, parentHeight / 2);
+      RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+          (int) (parentHeight * screenRatio));
       params.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
       container.addView(getView(), params);
       onCreateView();
@@ -196,7 +199,7 @@ public class CommentsListViewProxy extends BaseListViewProxy<HuoCommentPresenter
       ViewGroup parent = (ViewGroup) view.getParent();
       int parentHeight = parent.getHeight();
 
-      ObjectAnimator animator = ObjectAnimator.ofFloat(view, "translationY", parentHeight/2, 0);
+      ObjectAnimator animator = ObjectAnimator.ofFloat(view, "translationY", (int) (parentHeight * screenRatio), 0);
       animator.setDuration(300).start();
     }
 
@@ -208,7 +211,7 @@ public class CommentsListViewProxy extends BaseListViewProxy<HuoCommentPresenter
       ViewGroup parent = (ViewGroup) view.getParent();
       int parentHeight = parent.getHeight();
 
-      ObjectAnimator animator = ObjectAnimator.ofFloat(view, "translationY", 0, parentHeight/2);
+      ObjectAnimator animator = ObjectAnimator.ofFloat(view, "translationY", 0, (int) (parentHeight * screenRatio));
       animator.setDuration(300).start();
     }
 

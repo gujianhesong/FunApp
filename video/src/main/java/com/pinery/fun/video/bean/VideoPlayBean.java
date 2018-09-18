@@ -16,6 +16,7 @@ public class VideoPlayBean implements Serializable{
   private int commentCount;
   private int loveCount;
   private int shareCount;
+  private String userId;
 
   public String getId() {
     return id;
@@ -79,5 +80,13 @@ public class VideoPlayBean implements Serializable{
 
   public void setShareCount(int shareCount) {
     this.shareCount = shareCount;
+  }
+
+  public String getUserId() {
+    return userId;
+  }
+
+  public void setUserId(String userId) {
+    this.userId = userId;
   }
 }

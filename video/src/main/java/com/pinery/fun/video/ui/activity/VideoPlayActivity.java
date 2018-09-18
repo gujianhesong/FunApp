@@ -5,6 +5,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.bumptech.glide.Glide;
 import com.pinery.base.common.CommonViewRepository;
 import com.pinery.base.util.ViewUtil;
@@ -44,6 +45,7 @@ import com.shuyu.gsyvideoplayer.video.StandardGSYVideoPlayer;
 
     TextView tvName = ViewUtil.findViewById(this, R.id.tv_name);
     ImageView ivAvatar = ViewUtil.findViewById(this, R.id.iv_avatar);
+    ivAvatar.setOnClickListener(this);
 
     ImageView ivCommentsCount = ViewUtil.findViewById(this, R.id.iv_comments_count);
     ImageView ivLoveCount = ViewUtil.findViewById(this, R.id.iv_love_count);
@@ -112,6 +114,13 @@ import com.shuyu.gsyvideoplayer.video.StandardGSYVideoPlayer;
         break;
       case R.id.iv_share_count:
       case R.id.tv_share_count:
+        break;
+      case R.id.iv_avatar:
+
+        ARouter.getInstance().build(Constants.PATH_USER_CENTER)
+            .withString("user_id", videoPlayBean.getUserId())
+            .navigation();
+
         break;
     }
   }

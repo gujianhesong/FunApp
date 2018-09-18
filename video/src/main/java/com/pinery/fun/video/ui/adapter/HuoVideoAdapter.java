@@ -114,6 +114,7 @@ public class HuoVideoAdapter extends HuoBaseVideoAdapter {
       bean.setCommentCount(videoBean.getData().getStats().getComment_count());
       bean.setLoveCount(videoBean.getData().getStats().getDigg_count());
       bean.setShareCount(videoBean.getData().getStats().getShare_count());
+      bean.setUserId(videoBean.getData().getAuthor().getId_str());
 
       ARouter.getInstance()
           .build(Constants.PATH_VIDEO_PLAY)
