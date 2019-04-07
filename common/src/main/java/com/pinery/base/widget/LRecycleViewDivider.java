@@ -10,7 +10,6 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import com.pinery.base.util.LogUtil;
 import com.pinery.base.util.ScreenUtil;
 
 /**
@@ -19,7 +18,7 @@ import com.pinery.base.util.ScreenUtil;
  * Created by hesong on 16/7/22.
  */
 
-public class RecycleViewDivider extends RecyclerView.ItemDecoration {
+public class LRecycleViewDivider extends RecyclerView.ItemDecoration {
 
   private Paint mPaint;
   private Drawable mDivider;
@@ -30,7 +29,7 @@ public class RecycleViewDivider extends RecyclerView.ItemDecoration {
   /**
    * 默认分割线：高度为2px，颜色为灰色
    */
-  public RecycleViewDivider(Context context) {
+  public LRecycleViewDivider(Context context) {
     this(context, LinearLayoutManager.HORIZONTAL);
     mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     mPaint.setColor(0x33aaaaaa);
@@ -44,7 +43,7 @@ public class RecycleViewDivider extends RecyclerView.ItemDecoration {
    *
    * @param orientation 列表方向
    */
-  public RecycleViewDivider(Context context, int orientation) {
+  public LRecycleViewDivider(Context context, int orientation) {
     if (orientation != LinearLayoutManager.VERTICAL
         && orientation != LinearLayoutManager.HORIZONTAL) {
       throw new IllegalArgumentException("请输入正确的参数！");
@@ -62,7 +61,7 @@ public class RecycleViewDivider extends RecyclerView.ItemDecoration {
    * @param orientation 列表方向
    * @param drawableId 分割线图片
    */
-  public RecycleViewDivider(Context context, int orientation, int drawableId) {
+  public LRecycleViewDivider(Context context, int orientation, int drawableId) {
     this(context, orientation);
     mDivider = ContextCompat.getDrawable(context, drawableId);
     mDividerHeight = mDivider.getIntrinsicHeight();
@@ -75,7 +74,7 @@ public class RecycleViewDivider extends RecyclerView.ItemDecoration {
    * @param dividerHeight 分割线高度
    * @param dividerColor 分割线颜色
    */
-  public RecycleViewDivider(Context context, int orientation, int dividerHeight, int dividerColor) {
+  public LRecycleViewDivider(Context context, int orientation, int dividerHeight, int dividerColor) {
     this(context, orientation);
     mDividerHeight = dividerHeight;
     mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -87,11 +86,6 @@ public class RecycleViewDivider extends RecyclerView.ItemDecoration {
   @Override public void getItemOffsets(Rect outRect, View view, RecyclerView parent,
       RecyclerView.State state) {
     super.getItemOffsets(outRect, view, parent, state);
-
-    if (parent.getAdapter().getItemCount() == 2){
-      outRect.set(0, 0, 0, 0);
-      return;
-    }
 
     int index = parent.getChildLayoutPosition(view);
 
@@ -125,7 +119,13 @@ public class RecycleViewDivider extends RecyclerView.ItemDecoration {
     final int left = parent.getPaddingLeft();
     final int right = parent.getMeasuredWidth() - parent.getPaddingRight();
     final int childSize = parent.getChildCount();
-    for (int i = 0; i < childSize - 1; i++) {
+
+    int start = 0;
+    if (parent.getAdapter().getItemCount() == 2){
+      start = 1;
+    }
+
+    for (int i = start; i < childSize - 1; i++) {
       final View child = parent.getChildAt(i);
       RecyclerView.LayoutParams layoutParams = (RecyclerView.LayoutParams) child.getLayoutParams();
       final int top = child.getBottom() + layoutParams.bottomMargin;

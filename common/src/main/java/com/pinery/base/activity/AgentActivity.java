@@ -14,7 +14,7 @@ import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 /**
  * Fragment的代理类
  */
-public class AgentActivity extends RxAppCompatActivity {
+public class AgentActivity extends BActivity {
   public static final String EXTRA_FRAGMENT_CLASSNAME = "extra_fragment_classname";
   public static final String EXTRA_FRAGMENT_BUNDLE = "extra_fragment_bundle";
 

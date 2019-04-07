@@ -10,4 +10,6 @@ public interface IPresenter<T extends IView>{
     void detachView();
 
     void onStart();
+
+    void dispose();
 }

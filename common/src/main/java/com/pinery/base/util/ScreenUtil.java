@@ -22,7 +22,7 @@ public class ScreenUtil {
    * 获取窗口尺寸，不包含状态栏的高度
    */
   public static Point getWindowSize(Context context) {
-    WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+    WindowManager wm = (WindowManager) context.getApplicationContext().getSystemService(Context.WINDOW_SERVICE);
     Point point = new Point();
     wm.getDefaultDisplay().getSize(point);
 
@@ -33,7 +33,7 @@ public class ScreenUtil {
    * 获取可适配横竖屏的,窗口尺寸，不包含状态栏的高度
    */
   public static Point getWindowSizeFitOriatation(Context context) {
-    WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+    WindowManager wm = (WindowManager) context.getApplicationContext().getSystemService(Context.WINDOW_SERVICE);
     Point point = new Point();
     wm.getDefaultDisplay().getSize(point);
     final int wWidth = point.x;
@@ -60,7 +60,7 @@ public class ScreenUtil {
   @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1) public static Point getScreenSize(
       Context context) {
     DisplayMetrics displayMetrics = new DisplayMetrics();
-    WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+    WindowManager windowManager = (WindowManager) context.getApplicationContext().getSystemService(Context.WINDOW_SERVICE);
     windowManager.getDefaultDisplay().getRealMetrics(displayMetrics);
     final int width = displayMetrics.widthPixels;
     final int height = displayMetrics.heightPixels;

@@ -14,7 +14,7 @@ public class NetWorkUtil {
    */
   public static boolean isNetWorkAvailable(Context context) {
     ConnectivityManager connectivityManager =
-        (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        (ConnectivityManager) context.getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
     NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
     return networkInfo != null && networkInfo.isConnected();
   }
@@ -24,7 +24,7 @@ public class NetWorkUtil {
    */
   public static boolean isWifiConnected(Context context) {
     ConnectivityManager cm =
-        (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        (ConnectivityManager) context.getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
     NetworkInfo networkInfo = cm.getActiveNetworkInfo();
     return networkInfo != null && networkInfo.getType() == ConnectivityManager.TYPE_WIFI;
   }
@@ -34,7 +34,7 @@ public class NetWorkUtil {
    */
   public static boolean is3gConnected(Context context) {
     ConnectivityManager cm =
-        (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        (ConnectivityManager) context.getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
     NetworkInfo networkInfo = cm.getActiveNetworkInfo();
     return networkInfo != null && networkInfo.getType() == ConnectivityManager.TYPE_MOBILE;
   }
