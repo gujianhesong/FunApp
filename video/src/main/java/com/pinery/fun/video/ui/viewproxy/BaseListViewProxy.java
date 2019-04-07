@@ -10,11 +10,10 @@ import com.github.jdsjlzx.interfaces.OnNetWorkErrorListener;
 import com.github.jdsjlzx.interfaces.OnRefreshListener;
 import com.github.jdsjlzx.recyclerview.LRecyclerView;
 import com.github.jdsjlzx.recyclerview.LRecyclerViewAdapter;
+import com.pinery.base.adapter.BaseAdapter;
 import com.pinery.base.mvp.IPresenter;
 import com.pinery.base.util.ViewUtil;
-import com.pinery.base.widget.RecycleViewDivider;
 import com.pinery.fun.video.R;
-import com.pinery.fun.video.ui.adapter.BaseAdapter;
 
 /**
  * Created by gujian on 2018-08-25.

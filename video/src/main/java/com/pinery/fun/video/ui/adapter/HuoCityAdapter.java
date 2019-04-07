@@ -70,43 +70,15 @@ public class HuoCityAdapter extends HuoBaseVideoAdapter {
 
     if (itemBean instanceof HuoVideoItemBean) {
       HuoVideoItemBean videoItemBean = (HuoVideoItemBean) itemBean;
-
-      url = videoItemBean.getData().getVideo().getUrl_list().get(0);
-
       try {
-        HuoVideoItemBean.DataBean.VideoBean.CoverBean coverBean =
-            videoItemBean.getData().getVideo().getCover();
-        if (TextUtils.isEmpty(coverUrl)) {
-          coverUrl = coverBean != null ? coverBean.getUrl_list().get(0) : coverUrl;
-        }
+        url = videoItemBean.getData().getVideo().getUrl_list().get(0);
+        coverUrl = videoItemBean.getData().getVideo().getCover().getUrl_list().get(0);
+        avatar = videoItemBean.getData().getAuthor().getAvatar_jpg().getUrl_list().get(0);
       } catch (Exception ex) {
         ex.printStackTrace();
       }
 
       userName = videoItemBean.getData().getAuthor().getNickname();
-
-      avatar = "";
-      try {
-        HuoVideoItemBean.DataBean.AuthorBean authorBean = videoItemBean.getData().getAuthor();
-        if (authorBean != null) {
-          if (TextUtils.isEmpty(avatar)) {
-            avatar =
-                authorBean.getAvatar_jpg() != null ? authorBean.getAvatar_jpg().getUrl_list().get(0)
-                    : avatar;
-          }
-          if (TextUtils.isEmpty(avatar)) {
-            avatar = authorBean.getAvatar_large() != null ? authorBean.getAvatar_large()
-                .getUrl_list()
-                .get(0) : avatar;
-          }
-          if (TextUtils.isEmpty(avatar)) {
-            avatar = authorBean.getAvatar_thumb() != null ? authorBean.getAvatar_thumb()
-                .getUrl_list()
-                .get(0) : avatar;
-          }
-        }
-      } catch (Exception ex) {
-      }
 
       VideoPlayBean bean = new VideoPlayBean();
       bean.setId(videoItemBean.getData().getId_str());
@@ -126,22 +98,12 @@ public class HuoCityAdapter extends HuoBaseVideoAdapter {
     } else if (itemBean instanceof HuoLiveItemBean) {
       HuoLiveItemBean liveItemBean = (HuoLiveItemBean) itemBean;
 
-      url = liveItemBean.getData().getStream_url().getRtmp_pull_url();
       userName = liveItemBean.getData().getOwner().getNickname();
-      HuoLiveItemBean.DataBean.OwnerBean.AvatarJpgBean avatarJpgBean =
-          liveItemBean.getData().getOwner().getAvatar_jpg();
-      HuoLiveItemBean.DataBean.OwnerBean.AvatarLargeBean avatarLargeBean =
-          liveItemBean.getData().getOwner().getAvatar_large();
-      HuoLiveItemBean.DataBean.OwnerBean.AvatarThumbBean avatarThumbBean =
-          liveItemBean.getData().getOwner().getAvatar_thumb();
-      if (TextUtils.isEmpty(avatar)) {
-        avatar = avatarJpgBean != null ? avatarJpgBean.getUrl_list().get(0) : avatar;
-      }
-      if (TextUtils.isEmpty(avatar)) {
-        avatar = avatarLargeBean != null ? avatarLargeBean.getUrl_list().get(0) : avatar;
-      }
-      if (TextUtils.isEmpty(avatar)) {
-        avatar = avatarThumbBean != null ? avatarThumbBean.getUrl_list().get(0) : avatar;
+      try {
+        url = liveItemBean.getData().getStream_url().getRtmp_pull_url();
+        avatar = liveItemBean.getData().getOwner().getAvatar_jpg().getUrl_list().get(0);
+      } catch (Exception ex) {
+        ex.printStackTrace();
       }
 
       LivePlayBean bean = new LivePlayBean();
@@ -235,13 +197,8 @@ public class HuoCityAdapter extends HuoBaseVideoAdapter {
     @Override
     public void loadCoverImage(CityVideoViewHolder viewHodler, HuoVideoItemBean dataBeanX) {
       String url = "";
-
       try {
-        HuoVideoItemBean.DataBean.VideoBean.CoverBean coverBean =
-            dataBeanX.getData().getVideo().getCover();
-        if (TextUtils.isEmpty(url)) {
-          url = coverBean != null ? coverBean.getUrl_list().get(0) : url;
-        }
+        url = dataBeanX.getData().getVideo().getCover().getUrl_list().get(0);
       } catch (Exception ex) {
         ex.printStackTrace();
       }
@@ -253,24 +210,7 @@ public class HuoCityAdapter extends HuoBaseVideoAdapter {
     public void loadAvatarImage(CityVideoViewHolder viewHodler, HuoVideoItemBean dataBeanX) {
       String avatar = "";
       try {
-        HuoVideoItemBean.DataBean.AuthorBean authorBean = dataBeanX.getData().getAuthor();
-        if (authorBean != null) {
-          if (TextUtils.isEmpty(avatar)) {
-            avatar =
-                authorBean.getAvatar_jpg() != null ? authorBean.getAvatar_jpg().getUrl_list().get(0)
-                    : avatar;
-          }
-          if (TextUtils.isEmpty(avatar)) {
-            avatar = authorBean.getAvatar_large() != null ? authorBean.getAvatar_large()
-                .getUrl_list()
-                .get(0) : avatar;
-          }
-          if (TextUtils.isEmpty(avatar)) {
-            avatar = authorBean.getAvatar_thumb() != null ? authorBean.getAvatar_thumb()
-                .getUrl_list()
-                .get(0) : avatar;
-          }
-        }
+        avatar = dataBeanX.getData().getAuthor().getAvatar_thumb().getUrl_list().get(0);
       } catch (Exception ex) {
       }
 
@@ -289,7 +229,26 @@ public class HuoCityAdapter extends HuoBaseVideoAdapter {
     }
 
     @Override public void setLayoutParams(CityLiveViewHolder holder, HuoLiveItemBean dataBeanX) {
+      try {
+        int parentWidth = recyclerView.getMeasuredWidth();
+        int videoWidth = dataBeanX.getData().getCover().getWidth();
+        int videoHeight = dataBeanX.getData().getCover().getHeight();
+        if (holder.ivImage.getDrawable() != null) {
+          videoWidth = holder.ivImage.getDrawable().getIntrinsicWidth();
+          videoHeight = holder.ivImage.getDrawable().getIntrinsicHeight();
+        }
 
+        int width = parentWidth/2;
+        int height = (int) (videoHeight * 1f / videoWidth * width);
+
+        ViewGroup.LayoutParams params = holder.ivImage.getLayoutParams();
+        params.width = width;
+        params.height = height;
+
+        holder.ivImage.setScaleType(ImageView.ScaleType.FIT_XY);
+      } catch (Exception ex) {
+        ex.printStackTrace();
+      }
     }
 
     @Override public void fillData(CityLiveViewHolder viewHodler, HuoLiveItemBean dataBeanX) {
@@ -314,28 +273,11 @@ public class HuoCityAdapter extends HuoBaseVideoAdapter {
       }
     }
 
-    @Override public void loadCoverImage(CityLiveViewHolder viewHodler, HuoLiveItemBean dataBeanX) {
-
-    }
-
-    @Override public void loadAvatarImage(final CityLiveViewHolder viewHodler,
-        final HuoLiveItemBean dataBeanX) {
+    @Override public void loadCoverImage(final CityLiveViewHolder viewHodler, final HuoLiveItemBean dataBeanX) {
       String url = "";
-
-      HuoLiveItemBean.DataBean.OwnerBean.AvatarJpgBean avatarJpgBean =
-          dataBeanX.getData().getOwner().getAvatar_jpg();
-      HuoLiveItemBean.DataBean.OwnerBean.AvatarLargeBean avatarLargeBean =
-          dataBeanX.getData().getOwner().getAvatar_large();
-      HuoLiveItemBean.DataBean.OwnerBean.AvatarThumbBean avatarThumbBean =
-          dataBeanX.getData().getOwner().getAvatar_thumb();
-      if (TextUtils.isEmpty(url)) {
-        url = avatarJpgBean != null ? avatarJpgBean.getUrl_list().get(0) : url;
-      }
-      if (TextUtils.isEmpty(url)) {
-        url = avatarLargeBean != null ? avatarLargeBean.getUrl_list().get(0) : url;
-      }
-      if (TextUtils.isEmpty(url)) {
-        url = avatarThumbBean != null ? avatarThumbBean.getUrl_list().get(0) : url;
+      try {
+        url = dataBeanX.getData().getCover().getUrl_list().get(0);
+      }catch (Exception ex){
       }
 
       Glide.with(context).load(url).error(R.drawable.a0b).into(new SimpleTarget<GlideDrawable>() {
@@ -347,6 +289,11 @@ public class HuoCityAdapter extends HuoBaseVideoAdapter {
           setLayoutParams(viewHodler, dataBeanX);
         }
       });
+    }
+
+    @Override public void loadAvatarImage(final CityLiveViewHolder viewHodler,
+        final HuoLiveItemBean dataBeanX) {
+
     }
   }
 }

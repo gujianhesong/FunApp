@@ -1,12 +1,12 @@
 package com.pinery.fun.video.ui.viewproxy;
 
 import android.animation.ObjectAnimator;
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import com.pinery.base.adapter.BaseAdapter;
 import com.pinery.base.util.NetWorkUtil;
 import com.pinery.base.util.ViewUtil;
 import com.pinery.fun.video.R;
@@ -15,7 +15,6 @@ import com.pinery.fun.video.bean.CommentsItemBean;
 import com.pinery.fun.video.dagger.DaggerCommentsViewProxyComponent;
 import com.pinery.fun.video.mvp.HuoCommentPresenter;
 import com.pinery.fun.video.mvp.HuoCommentsContract;
-import com.pinery.fun.video.ui.adapter.BaseAdapter;
 import com.pinery.fun.video.ui.adapter.HuoCommentAdapter;
 import java.util.ArrayList;
 import java.util.List;

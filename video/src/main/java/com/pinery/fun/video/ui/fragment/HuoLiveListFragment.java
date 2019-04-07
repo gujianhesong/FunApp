@@ -1,20 +1,19 @@
 package com.pinery.fun.video.ui.fragment;
 
-import android.graphics.Rect;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.view.View;
+import android.support.v7.widget.LinearLayoutManager;
+import com.github.jdsjlzx.ItemDecoration.DividerDecoration;
 import com.github.jdsjlzx.recyclerview.LRecyclerView;
+import com.pinery.base.adapter.BaseAdapter;
+import com.pinery.base.fragment.BaseListFragment;
 import com.pinery.base.util.LogUtil;
 import com.pinery.base.util.NetWorkUtil;
-import com.pinery.base.util.ScreenUtil;
 import com.pinery.fun.video.R;
 import com.pinery.fun.video.bean.BaseVideoItemBean;
 import com.pinery.fun.video.bean.HuoLiveBean;
+import com.pinery.fun.video.bean.HuoLiveItemBean;
 import com.pinery.fun.video.dagger.DaggerHuoLiveFragmentComponent;
 import com.pinery.fun.video.mvp.HuoLiveContract;
 import com.pinery.fun.video.mvp.HuoLivePresenter;
-import com.pinery.fun.video.ui.adapter.BaseAdapter;
 import com.pinery.fun.video.ui.adapter.BaseVideoAdapter;
 import com.pinery.fun.video.ui.adapter.HuoLiveAdapter;
 import java.util.ArrayList;
@@ -58,15 +57,11 @@ public class HuoLiveListFragment extends BaseListFragment<HuoLivePresenter>
   }
 
   @Override protected void setLayoutManager(LRecyclerView recyclerView) {
-    recyclerView.setLayoutManager(
-        new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
-    recyclerView.addItemDecoration(new RecyclerView.ItemDecoration() {
-      @Override public void getItemOffsets(Rect outRect, View view, RecyclerView parent,
-          RecyclerView.State state) {
-        int width = ScreenUtil.dp2px(mContext, 1);
-        outRect.set(width, width, width, width);
-      }
-    });
+    recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+    recyclerView.addItemDecoration(new DividerDecoration.Builder(getContext())
+        .setHeight(R.dimen.dp_4)
+        .setColorResource(R.color.divide_line)
+        .build());
   }
 
   @Override public void onRefresh() {
@@ -100,9 +95,11 @@ public class HuoLiveListFragment extends BaseListFragment<HuoLivePresenter>
     LogUtil.printStack("add page:" + mPage);
     mPage++;
 
-    List<BaseVideoItemBean> list = huoLivebean.getData();
-    if (list != null) {
-      mDatas.addAll(list);
+    List<HuoLiveItemBean> list = huoLivebean.getData();
+    if (huoLivebean.getData() != null) {
+      for(HuoLiveItemBean bean : list){
+        mDatas.add(bean);
+      }
     }
 
     notifyCompleteRefresh(list != null ? list.size() : 0);

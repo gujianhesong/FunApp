@@ -16,7 +16,6 @@ import com.bumptech.glide.request.target.SimpleTarget;
 import com.pinery.base.util.ViewUtil;
 import com.pinery.fun.video.R;
 import com.pinery.fun.video.bean.BaseVideoItemBean;
-import com.pinery.fun.video.bean.HuoAdItemBean;
 import com.pinery.fun.video.bean.HuoLiveItemBean;
 import com.pinery.fun.video.bean.LivePlayBean;
 import com.pinery.fun.video.common.Constants;
@@ -66,22 +65,7 @@ public class HuoLiveAdapter extends HuoBaseVideoAdapter {
       HuoLiveItemBean liveItemBean = (HuoLiveItemBean) itemBean;
       String url = liveItemBean.getData().getStream_url().getRtmp_pull_url();
       String userName = liveItemBean.getData().getOwner().getNickname();
-      String avatar = "";
-      HuoLiveItemBean.DataBean.OwnerBean.AvatarJpgBean avatarJpgBean =
-          liveItemBean.getData().getOwner().getAvatar_jpg();
-      HuoLiveItemBean.DataBean.OwnerBean.AvatarLargeBean avatarLargeBean =
-          liveItemBean.getData().getOwner().getAvatar_large();
-      HuoLiveItemBean.DataBean.OwnerBean.AvatarThumbBean avatarThumbBean =
-          liveItemBean.getData().getOwner().getAvatar_thumb();
-      if (TextUtils.isEmpty(avatar)) {
-        avatar = avatarJpgBean != null ? avatarJpgBean.getUrl_list().get(0) : avatar;
-      }
-      if (TextUtils.isEmpty(avatar)) {
-        avatar = avatarLargeBean != null ? avatarLargeBean.getUrl_list().get(0) : avatar;
-      }
-      if (TextUtils.isEmpty(avatar)) {
-        avatar = avatarThumbBean != null ? avatarThumbBean.getUrl_list().get(0) : avatar;
-      }
+      String avatar = liveItemBean.getData().getOwner().getAvatar_thumb().getUrl_list().get(0);
 
       LivePlayBean bean = new LivePlayBean();
       bean.setUrl(url);
@@ -110,19 +94,26 @@ public class HuoLiveAdapter extends HuoBaseVideoAdapter {
     }
 
     @Override public void setLayoutParams(LiveViewHolder holder, HuoLiveItemBean dataBeanX) {
-      /*try {
+      try {
         int parentWidth = recyclerView.getMeasuredWidth();
-        int videoWidth = holder.ivAvatar.getDrawable().getIntrinsicWidth();
-        int videoHeight = holder.ivAvatar.getDrawable().getIntrinsicHeight();
+        int videoWidth = dataBeanX.getData().getCover().getWidth();
+        int videoHeight = dataBeanX.getData().getCover().getHeight();
+        if (holder.ivImage.getDrawable() != null) {
+          videoWidth = holder.ivImage.getDrawable().getIntrinsicWidth();
+          videoHeight = holder.ivImage.getDrawable().getIntrinsicHeight();
+        }
 
-        int height = (int) (videoHeight * 1f / videoWidth * (parentWidth / 2));
+        int width = parentWidth;
+        int height = (int) (videoHeight * 1f / videoWidth * width);
 
-        ViewGroup.LayoutParams params = holder.ivAvatar.getLayoutParams();
+        ViewGroup.LayoutParams params = holder.ivImage.getLayoutParams();
+        params.width = width;
         params.height = height;
-        holder.ivAvatar.setLayoutParams(params);
+
+        holder.ivImage.setScaleType(ImageView.ScaleType.FIT_XY);
       } catch (Exception ex) {
         ex.printStackTrace();
-      }*/
+      }
     }
 
     @Override public void fillData(LiveViewHolder viewHodler, HuoLiveItemBean dataBeanX) {
@@ -144,24 +135,7 @@ public class HuoLiveAdapter extends HuoBaseVideoAdapter {
 
     @Override
     public void loadCoverImage(final LiveViewHolder viewHodler, final HuoLiveItemBean dataBeanX) {
-      String url = "";
-
-      HuoLiveItemBean.DataBean.OwnerBean.AvatarJpgBean avatarJpgBean =
-          dataBeanX.getData().getOwner().getAvatar_jpg();
-      HuoLiveItemBean.DataBean.OwnerBean.AvatarLargeBean avatarLargeBean =
-          dataBeanX.getData().getOwner().getAvatar_large();
-      HuoLiveItemBean.DataBean.OwnerBean.AvatarThumbBean avatarThumbBean =
-          dataBeanX.getData().getOwner().getAvatar_thumb();
-      if (TextUtils.isEmpty(url)) {
-        url = avatarJpgBean != null ? avatarJpgBean.getUrl_list().get(0) : url;
-      }
-      if (TextUtils.isEmpty(url)) {
-        url = avatarLargeBean != null ? avatarLargeBean.getUrl_list().get(0) : url;
-      }
-      if (TextUtils.isEmpty(url)) {
-        url = avatarThumbBean != null ? avatarThumbBean.getUrl_list().get(0) : url;
-      }
-
+      String url = dataBeanX.getData().getCover().getUrl_list().get(0);
       Glide.with(context).load(url).error(R.drawable.a0b).into(new SimpleTarget<GlideDrawable>() {
         @Override public void onResourceReady(GlideDrawable resource,
             GlideAnimation<? super GlideDrawable> glideAnimation) {

@@ -11,6 +11,8 @@ import com.github.jdsjlzx.ItemDecoration.DividerDecoration;
 import com.github.jdsjlzx.interfaces.OnNetWorkErrorListener;
 import com.github.jdsjlzx.recyclerview.LRecyclerView;
 import com.github.jdsjlzx.recyclerview.LRecyclerViewAdapter;
+import com.pinery.base.adapter.BaseAdapter;
+import com.pinery.base.fragment.BaseListFragment;
 import com.pinery.base.util.LogUtil;
 import com.pinery.base.util.NetWorkUtil;
 import com.pinery.base.util.ScreenUtil;

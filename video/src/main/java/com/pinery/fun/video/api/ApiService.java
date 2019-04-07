@@ -2,13 +2,20 @@ package com.pinery.fun.video.api;
 
 import com.pinery.fun.video.bean.CommentListBean;
 import com.pinery.fun.video.bean.CommentReplyListBean;
+import com.pinery.fun.video.bean.HashTagItemsBean;
 import com.pinery.fun.video.bean.HuoCityBean;
 import com.pinery.fun.video.bean.HuoLiveBean;
 import com.pinery.fun.video.bean.HuoUserCenterBean;
+import com.pinery.fun.video.bean.HuoUserVideoListBean;
 import com.pinery.fun.video.bean.HuoVideoBean;
-import io.reactivex.Flowable;
+import com.pinery.fun.video.bean.SearchTagItemsBean;
+import com.pinery.fun.video.bean.SearchTagListBean;
+
 import java.util.HashMap;
+
+import io.reactivex.Flowable;
 import retrofit2.http.GET;
+import retrofit2.http.Headers;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
 
@@ -152,20 +159,91 @@ public interface ApiService {
       + "&cp=a4cbbe520eb98f0ae2IcQg&mas=00efd8137646c47339e67520d06fca94d160c48e4006686ec4")
   Flowable<HuoUserCenterBean> requestUserCenterInfo(@Path("id") String userId, @QueryMap HashMap<String, Object> map);
 
+  /**
+   * 首次刷新用户视频列表
+   * @param map
+   * @return
+   */
+//  @GET("hotsoon/user/56018910559/items/?min_time=0&offset=0&count=20"
+//          + "&req_from=enter_auto&diff_stream=0&live_sdk_version=430&iid=42991411996&device_id=57063848101&ac=wifi&channel=360"
+//          + "&aid=1112&app_name=live_stream&version_code=430&version_name=4.3.0&device_platform=android&ssmix=a"
+//          + "&device_type=SM-G9350&device_brand=samsung&language=zh&os_api=22&os_version=5.1.1&uuid=867268209422257"
+//          + "&openudid=4055041127922850&manifest_version_code=420&resolution=576*1024&dpi=191"
+//          + "&update_version_code=4315&_rticket=1550394785754&ts=1550394785&as=a255f216f19a4c75094355"
+//          + "&cp=2fadc553149c655ee2KcSg&mas=00b8cafd28eee7016402877f0cf4f3479e6ace54ed06686e94")
+  @GET("hotsoon/user/{id}/items/?min_time=0&offset=0&count=20"
+          + "&req_from=enter_auto&diff_stream=0&live_sdk_version=430&iid=42991411996&device_id=57063848101&ac=wifi&channel=360"
+          + "&aid=1112&app_name=live_stream&version_code=430&version_name=4.3.0&device_platform=android&ssmix=a"
+          + "&device_type=SM-G9350&device_brand=samsung&language=zh&os_api=22&os_version=5.1.1&uuid=867268209422257"
+          + "&openudid=4055041127922850&manifest_version_code=420&resolution=768*1366&dpi=254"
+          + "&update_version_code=4315&_rticket=1535877312875&ts=1535877312&as=a2050a6860ac3bb00b4355"
+          + "&cp=a4cbbe520eb98f0ae2IcQg&mas=00efd8137646c47339e67520d06fca94d160c48e4006686ec4")
+  Flowable<HuoUserVideoListBean> requestUserVideoList(@Path("id") String userId, @QueryMap HashMap<String, Object> map);
 
-  ////    @GET("hotsoon/feed/?type=city&min_time=0&count=20&req_from=enter_auto&live_sdk_version=273")
-  ////    Observable<SameCityBean> sameCityBean();
-  //@GET("hotsoon/feed/?type=video&min_time=0&count=20&req_from=enter_auto&live_sdk_version=273&iid=20058720887&device_id=39500980677&ac=wifi&channel=360&aid=1112&app_name=live_stream&version_code=273&version_name=2.7.3&device_platform=android&ssmix=a&device_type=GT-P5210&device_brand=samsung&os_api=19&os_version=4.4.4&uuid=865854081230173&openudid=4058040115108878&manifest_version_code=273&resolution=480*800&dpi=128&update_version_code=2732&ts=1513384710&as=a235f643b670ca1b74&cp=6206ab58694835b0e2")
-  //Observable<SameCityBean> sameCityBean();
-  //
-  ////轮播图
-  //@GET("hotsoon/feed/?type=live&live_source=live_big_picture&min_time=0&offset=7&count=20&req_from=feed_refresh&live_sdk_version=300&iid=22011786718&device_id=39901824739&ac=wifi&channel=360&aid=1112&app_name=live_stream&version_code=300&version_name=3.0.0&device_platform=android&ssmix=a&device_type=2014811&device_brand=Xiaomi&language=zh&os_api=19&os_version=4.4.2&uuid=866048010542381&openudid=54ee7588ea182536&manifest_version_code=300&resolution=480*800&dpi=160&update_version_code=3003&_rticket=1514711700564&ts=1514711700&as=a2a54a34b469ea9a48&cp=aa9aa55d4e8545a1e2&mas=005f05d7bd059a5c71d8659b129f747ea44b40da17")
-  //Observable<Livebean> getNoParams();
-  //
-  //@GET("hotsoon/search/recommend/?offset=0&count=20&type=user&live_sdk_version=273&iid=20058720887&device_id=39500980677&ac=wifi&channel=360&aid=1112&app_name=live_stream&version_code=273&version_name=2.7.3&device_platform=android&ssmix=a&device_type=GT-P5210&device_brand=samsung&os_api=19&os_version=4.4.4&uuid=865854081230173&openudid=4058040115108878&manifest_version_code=273&resolution=480*800&dpi=128&update_version_code=2732&ts=1513385604&as=a215069374089a3ed4&cp=6881a05b444137ebe2")
-  //Observable<SearchBean> getSearchs();
+  /**
+   * 加载用户视频列表
+   * @param map
+   * @return
+   */
+  @GET("hotsoon/user/{id}/items/?count=20"
+          + "&req_from=enter_auto&diff_stream=0&live_sdk_version=430&iid=42991411996&device_id=57063848101&ac=wifi&channel=360"
+          + "&aid=1112&app_name=live_stream&version_code=430&version_name=4.3.0&device_platform=android&ssmix=a"
+          + "&device_type=SM-G9350&device_brand=samsung&language=zh&os_api=22&os_version=5.1.1&uuid=867268209422257"
+          + "&openudid=4055041127922850&manifest_version_code=420&resolution=768*1366&dpi=254"
+          + "&update_version_code=4315&_rticket=1535877312875&ts=1535877312&as=a2050a6860ac3bb00b4355"
+          + "&cp=a4cbbe520eb98f0ae2IcQg&mas=00efd8137646c47339e67520d06fca94d160c48e4006686ec4")
+  Flowable<HuoUserVideoListBean> requestMoreUserVideoList(@Path("id") String userId, @QueryMap HashMap<String, Object> map);
 
 
+  /**
+   * 搜索-标签列表
+   * @param map
+   * @return
+   */
+  @GET("/hotsoon/search/tag_list/?live_sdk_version=430&iid=42991411996&device_id=57063848101&ac=wifi&channel=360"
+          + "&aid=1112&app_name=live_stream&version_code=430&version_name=4.3.0&device_platform=android&ssmix=a"
+          + "&device_type=SM-G9350&device_brand=samsung&language=zh&os_api=22&os_version=5.1.1&uuid=867268209422257"
+          + "&openudid=4055041127922850&manifest_version_code=420&resolution=768*1366&dpi=254"
+          + "&update_version_code=4315&_rticket=1535877312875&ts=1535877312&as=a2050a6860ac3bb00b4355"
+          + "&cp=a4cbbe520eb98f0ae2IcQg&mas=00efd8137646c47339e67520d06fca94d160c48e4006686ec4")
+  Flowable<SearchTagListBean> requestSearchTagList(@QueryMap HashMap<String, Object> map);
 
+  /**
+   * 搜索-指定标签的列表
+   * @param map
+   * @return
+   */
+  //@Headers({
+  //        "User-Agent: Mozilla/5.0 (Linux; Android 4.4.2; Nexus 4 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.114 Mobile Safari/537.36"
+  //})
+  @GET("/hotsoon/search/tag/{id}/items/?live_sdk_version=430&iid=42991411996&device_id=57063848101&ac=wifi&channel=360"
+          + "&aid=1112&app_name=live_stream&version_code=430&version_name=4.3.0&device_platform=android&ssmix=a"
+          + "&device_type=SM-G9350&device_brand=samsung&language=zh&os_api=22&os_version=5.1.1&uuid=867268209422257"
+          + "&openudid=4055041127922850&manifest_version_code=420&resolution=768*1366&dpi=254"
+          + "&update_version_code=4315&_rticket=1535877312875&ts=1535877312&as=a2050a6860ac3bb00b4355"
+          + "&cp=a4cbbe520eb98f0ae2IcQg&mas=00efd8137646c47339e67520d06fca94d160c48e4006686ec4")
+//  @GET("/hotsoon/search/tag/{id}/items/?live_sdk_version=430&iid=42991411996&device_id=57063848101&ac=wifi&channel=360&aid=1112&app_name=live_stream&version_code=430&version_name=4.3.0&device_platform=android&ssmix=a&device_type=SM-G9350&device_brand=samsung&language=zh&os_api=22&os_version=5.1.1&uuid=867268209422257&openudid=4055041127922850&manifest_version_code=420&resolution=576*1024&dpi=191&update_version_code=4315&_rticket=1553870683001&ts=1553870682&as=a2a502c9aa95dcdfde4355&cp=2255c058a4e891f1e2OcWg&mas=0043708cb145a9f1cd30b1d8938542356b0c48cc4e06686ef2")
+  Flowable<SearchTagItemsBean> requestSearchTagItems(@Path("id") int tagId, @QueryMap HashMap<String, Object> map);
 
+  /**
+   * 指定标签的视频列表
+   * @param map
+   * @return
+   */
+  @Headers({
+             "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
+             "Accept-Encoding: gzip, deflate",
+             "Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7,und;q=0.6",
+             "Upgrade-Insecure-Requests: 1",
+             "Cache-Control: no-cache",
+             "Pragma: no-cache",
+             "Cookie: odin_tt=bcc2a3f66576892aca0ace828c7ee82ec1bf24cfb2e9e330af9f75c285a417823b8037ac9bcede3997b4a72fa05accdb995b00003e3947153b80f633e35e5f0c; _ga=GA1.2.247662212.1553926145; _gid=GA1.2.462043801.1553926145",
+      })
+  @GET("/hotsoon/hashtag/{id}/items/?live_sdk_version=430&iid=42991411996&device_id=57063848101&ac=wifi&channel=360"
+      + "&aid=1112&app_name=live_stream&version_code=430&version_name=4.3.0&device_platform=android&ssmix=a"
+      + "&device_type=SM-G9350&device_brand=samsung&language=zh&os_api=22&os_version=5.1.1&uuid=867268209422257"
+      + "&openudid=4055041127922850&manifest_version_code=420&resolution=768*1366&dpi=254"
+      + "&update_version_code=4315&_rticket=1535877312875&ts=1535877312&as=a2050a6860ac3bb00b4355"
+      + "&cp=a4cbbe520eb98f0ae2IcQg&mas=00efd8137646c47339e67520d06fca94d160c48e4006686ec4")
+  Flowable<HashTagItemsBean> requestHashTagItems(@Path("id") String hashTag, @QueryMap HashMap<String, Object> map);
 }

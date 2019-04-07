@@ -1,4 +1,4 @@
-package com.pinery.fun.joke.ui.fragment;
+package com.pinery.base.fragment;
 
 import android.app.Activity;
 import android.content.Context;
@@ -14,13 +14,12 @@ import com.github.jdsjlzx.interfaces.OnNetWorkErrorListener;
 import com.github.jdsjlzx.interfaces.OnRefreshListener;
 import com.github.jdsjlzx.recyclerview.LRecyclerView;
 import com.github.jdsjlzx.recyclerview.LRecyclerViewAdapter;
-import com.pinery.base.fragment.BaseLazyFragment;
+import com.pinery.base.adapter.BaseAdapter;
 import com.pinery.base.mvp.IPresenter;
 import com.pinery.base.util.LogUtil;
 import com.pinery.base.util.ViewUtil;
 import com.pinery.base.widget.RecycleViewDivider;
-import com.pinery.fun.joke.R;
-import com.pinery.fun.joke.ui.adapter.BaseAdapter;
+import com.pinery.fun.commonlib.R;
 import io.reactivex.Flowable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;

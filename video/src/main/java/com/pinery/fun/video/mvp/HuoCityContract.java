@@ -3,7 +3,6 @@ package com.pinery.fun.video.mvp;
 import com.pinery.base.mvp.IPresenter;
 import com.pinery.base.mvp.IView;
 import com.pinery.fun.video.bean.HuoCityBean;
-import com.pinery.fun.video.bean.HuoVideoBean;
 
 /**
  * @author hesong

@@ -4,13 +4,16 @@ import com.pinery.base.rxjava.RetryWithDelayFunc;
 import com.pinery.fun.video.api.ApiService;
 import com.pinery.fun.video.api.HuoApi;
 import com.pinery.fun.video.bean.HuoUserCenterBean;
+import com.pinery.fun.video.bean.HuoUserVideoListBean;
 import com.pinery.fun.video.callback.OnDataCallback;
+
+import java.util.HashMap;
+
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
-import java.util.HashMap;
 
 public class HuoUserCenterModel extends BaseModel<HuoUserCenterBean> {
 
@@ -36,6 +39,53 @@ public class HuoUserCenterModel extends BaseModel<HuoUserCenterBean> {
         });
   }
 
+  public Disposable refreshData(final String userId, final OnDataCallback<HuoUserVideoListBean> callback) {
+    HashMap<String, Object> hashMap = createHashMapWithCommonParams();
+
+    return getApiService(HuoApi.Main, ApiService.class).requestUserVideoList(userId, hashMap)
+            .retryWhen(new RetryWithDelayFunc())
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(new Consumer<HuoUserVideoListBean>() {
+              @Override public void accept(@NonNull HuoUserVideoListBean huoVideoBean) throws Exception {
+                if (callback != null) {
+                  callback.onSuccess(huoVideoBean);
+                }
+              }
+            }, new Consumer<Throwable>() {
+              @Override public void accept(@NonNull Throwable throwable) throws Exception {
+                if (callback != null) {
+                  callback.onError(throwable);
+                }
+              }
+            });
+  }
+
+
+   public Disposable loadMoreData(final String userId, final int page, final OnDataCallback<HuoUserVideoListBean> callback) {
+    HashMap<String, Object> hashMap = createHashMapWithCommonParams();
+    hashMap.put("max_time", System.currentTimeMillis());
+    hashMap.put("offset", page * 12 + 1);
+
+    return getApiService(HuoApi.Main, ApiService.class).requestMoreUserVideoList(userId, hashMap)
+            .retryWhen(new RetryWithDelayFunc())
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(new Consumer<HuoUserVideoListBean>() {
+              @Override public void accept(@NonNull HuoUserVideoListBean huoVideoBean) throws Exception {
+                if (callback != null) {
+                  callback.onSuccess(huoVideoBean);
+                }
+              }
+            }, new Consumer<Throwable>() {
+              @Override public void accept(@NonNull Throwable throwable) throws Exception {
+                if (callback != null) {
+                  callback.onError(throwable);
+                }
+              }
+            });
+  }
+
   private HashMap createHashMapWithCommonParams() {
     HashMap<String, Object> hashMap = new HashMap<>();
 
@@ -57,4 +107,5 @@ public class HuoUserCenterModel extends BaseModel<HuoUserCenterBean> {
 
     return hashMap;
   }
+
 }

@@ -2,7 +2,6 @@ package com.pinery.fun.video.ui.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
+import com.pinery.base.adapter.BaseAdapter;
 import com.pinery.base.util.ViewUtil;
 import com.pinery.fun.video.R;
 import com.pinery.fun.video.bean.CommentsItemBean;
@@ -17,7 +17,9 @@ import com.pinery.fun.video.util.NumberUtil;
 import com.pinery.fun.video.util.TimeUtil;
 import java.util.List;
 
-public class HuoCommentAdapter extends BaseAdapter<HuoCommentAdapter.CommentViewHolder> {
+public class HuoCommentAdapter extends BaseAdapter<HuoCommentAdapter.CommentViewHolder>
+    implements com.github.jdsjlzx.interfaces.OnItemClickListener,
+    com.github.jdsjlzx.interfaces.OnItemLongClickListener {
   private Context context;
   private List<CommentsItemBean> list;
   private View.OnClickListener mOnClickListener;
@@ -101,24 +103,7 @@ public class HuoCommentAdapter extends BaseAdapter<HuoCommentAdapter.CommentView
   private void loadAvatarImage(CommentViewHolder viewHodler, CommentsItemBean bean) {
     String avatar = "";
     try {
-      CommentsItemBean.UserBean authorBean = bean.getUser();
-      if (authorBean != null) {
-        if (TextUtils.isEmpty(avatar)) {
-          avatar =
-              authorBean.getAvatar_jpg() != null ? authorBean.getAvatar_jpg().getUrl_list().get(0)
-                  : avatar;
-        }
-        if (TextUtils.isEmpty(avatar)) {
-          avatar = authorBean.getAvatar_large() != null ? authorBean.getAvatar_large()
-              .getUrl_list()
-              .get(0) : avatar;
-        }
-        if (TextUtils.isEmpty(avatar)) {
-          avatar = authorBean.getAvatar_thumb() != null ? authorBean.getAvatar_thumb()
-              .getUrl_list()
-              .get(0) : avatar;
-        }
-      }
+      avatar = bean.getUser().getAvatar_thumb().getUrl_list().get(0);
     } catch (Exception ex) {
     }
 

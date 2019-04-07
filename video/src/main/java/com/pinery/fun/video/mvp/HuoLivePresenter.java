@@ -1,6 +1,5 @@
 package com.pinery.fun.video.mvp;
 
-import com.google.gson.Gson;
 import com.pinery.base.mvp.BaseRxJavaPresenter;
 import com.pinery.base.util.LogUtil;
 import com.pinery.fun.video.bean.HuoLiveBean;

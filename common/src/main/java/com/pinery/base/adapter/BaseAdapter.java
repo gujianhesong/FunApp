@@ -1,4 +1,4 @@
-package com.pinery.fun.video.ui.adapter;
+package com.pinery.base.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import com.github.jdsjlzx.interfaces.OnItemClickListener;

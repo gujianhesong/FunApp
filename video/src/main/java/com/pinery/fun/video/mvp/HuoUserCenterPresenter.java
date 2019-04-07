@@ -1,9 +1,12 @@
 package com.pinery.fun.video.mvp;
 
 import com.pinery.base.mvp.BaseRxJavaPresenter;
+import com.pinery.base.util.LogUtil;
 import com.pinery.fun.video.bean.HuoUserCenterBean;
+import com.pinery.fun.video.bean.HuoUserVideoListBean;
 import com.pinery.fun.video.callback.OnDataCallback;
 import com.pinery.fun.video.model.HuoUserCenterModel;
+
 import javax.inject.Inject;
 
 /**
@@ -21,7 +24,7 @@ public class HuoUserCenterPresenter extends BaseRxJavaPresenter<HuoUserCenterCon
   @Override public void onStart() {
   }
 
-  @Override public void refreshData(String userId) {
+  @Override public void requestUserInfo(String userId) {
     addDisposable(model.requestUserCenterInfo(userId, new OnDataCallback<HuoUserCenterBean>() {
       @Override public void onSuccess(HuoUserCenterBean bean) {
         if (mView != null) {
@@ -31,6 +34,42 @@ public class HuoUserCenterPresenter extends BaseRxJavaPresenter<HuoUserCenterCon
 
       @Override public void onError(Throwable throwable) {
         if (mView != null) {
+          mView.error(throwable);
+        }
+      }
+    }));
+  }
+
+  @Override
+  public void refreshVideoList(String userId, boolean firstRefresh) {
+    addDisposable(model.refreshData(userId, new OnDataCallback<HuoUserVideoListBean>() {
+      @Override public void onSuccess(HuoUserVideoListBean bean) {
+        if(mView != null){
+          mView.updateList(true, bean);
+        }
+      }
+
+      @Override public void onError(Throwable throwable) {
+        if(mView != null){
+          mView.error(throwable);
+        }
+      }
+    }));
+  }
+
+  @Override
+  public void loadMoreVideoList(String userId, int page) {
+    LogUtil.printStack("page:" + page);
+    addDisposable(model.loadMoreData(userId, page, new OnDataCallback<HuoUserVideoListBean>() {
+      @Override public void onSuccess(HuoUserVideoListBean bean) {
+        LogUtil.i("page:" + bean);
+        if(mView != null){
+          mView.updateList(false, bean);
+        }
+      }
+
+      @Override public void onError(Throwable throwable) {
+        if(mView != null){
           mView.error(throwable);
         }
       }

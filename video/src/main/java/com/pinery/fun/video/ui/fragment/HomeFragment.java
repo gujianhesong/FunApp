@@ -5,9 +5,13 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.View;
+import android.widget.ImageView;
+
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.pinery.base.fragment.BaseFragment;
 import com.pinery.base.util.ViewUtil;
 import com.pinery.fun.video.R;
+import com.pinery.fun.video.common.Constants;
 import com.pinery.fun.video.ui.adapter.ViewPagerAdapter;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +21,7 @@ import java.util.List;
  */
 
 public class HomeFragment extends BaseFragment {
+  private ImageView mIvSearch;
   private TabLayout mIndicator;
   private ViewPager mViewPager;
   private List<Fragment> mFragmentList;
@@ -31,8 +36,18 @@ public class HomeFragment extends BaseFragment {
   }
 
   @Override protected void initViews(View view, Bundle savedInstanceState) {
-    mIndicator = ViewUtil.findViewById(view, R.id.indicator1);
-    mViewPager = ViewUtil.findViewById(view, R.id.viewPager1);
+    mIvSearch = ViewUtil.findViewById(view, R.id.iv_search);
+    mIndicator = ViewUtil.findViewById(view, R.id.indicator);
+    mViewPager = ViewUtil.findViewById(view, R.id.viewPager);
+
+    mIvSearch.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        ARouter.getInstance()
+                .build(Constants.PATH_SEARCH_CENTER)
+                .navigation();
+      }
+    });
 
     initTitile();
     initFragment();

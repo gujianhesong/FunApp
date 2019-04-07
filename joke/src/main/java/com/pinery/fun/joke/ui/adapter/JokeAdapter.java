@@ -1,10 +1,6 @@
 package com.pinery.fun.joke.ui.adapter;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.PointF;
-import android.net.Uri;
-import android.os.Environment;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,25 +9,17 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.animation.GlideAnimation;
-import com.bumptech.glide.request.target.SimpleTarget;
-import com.davemorrissey.labs.subscaleview.ImageSource;
-import com.davemorrissey.labs.subscaleview.ImageViewState;
-import com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView;
-import com.pinery.base.util.LogUtil;
+import com.pinery.base.adapter.BaseAdapter;
 import com.pinery.base.util.ScreenUtil;
 import com.pinery.base.util.ViewUtil;
 import com.pinery.fun.joke.R;
 import com.pinery.fun.joke.bean.JokeDatasBean;
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.util.List;
 
 public class JokeAdapter extends BaseAdapter<JokeAdapter.ViewHolder>
-    implements View.OnClickListener {
+    implements View.OnClickListener, com.github.jdsjlzx.interfaces.OnItemClickListener,
+    com.github.jdsjlzx.interfaces.OnItemLongClickListener {
   private static final int ITEM_TYPE_TEXT = 0;
   private static final int ITEM_TYPE_IMAGE = 1;
   private static final int ITEM_TYPE_VIDEO = 2;

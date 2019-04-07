@@ -3,7 +3,6 @@ package com.pinery.fun.video.ui.adapter;
 import android.content.Context;
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
+import com.pinery.base.adapter.BaseAdapter;
 import com.pinery.base.util.ViewUtil;
 import com.pinery.fun.video.R;
 import com.pinery.fun.video.bean.CommentReplyItemBean;
@@ -19,7 +19,9 @@ import com.pinery.fun.video.util.NumberUtil;
 import com.pinery.fun.video.util.TimeUtil;
 import java.util.List;
 
-public class HuoCommentReplyAdapter extends BaseAdapter<RecyclerView.ViewHolder> {
+public class HuoCommentReplyAdapter extends BaseAdapter<RecyclerView.ViewHolder>
+    implements com.github.jdsjlzx.interfaces.OnItemClickListener,
+    com.github.jdsjlzx.interfaces.OnItemLongClickListener {
   private static final int ITEM_POSITION_COMMENT = 0;
   private static final int ITEM_POSITION_COMMENT_REPLY_COUNT = 1;
 
@@ -163,24 +165,7 @@ public class HuoCommentReplyAdapter extends BaseAdapter<RecyclerView.ViewHolder>
         CommentReplyListBean.DataBean.OriginCommentBean bean) {
       String avatar = "";
       try {
-        CommentReplyListBean.DataBean.OriginCommentBean.UserBean authorBean = bean.getUser();
-        if (authorBean != null) {
-          if (TextUtils.isEmpty(avatar)) {
-            avatar =
-                authorBean.getAvatar_jpg() != null ? authorBean.getAvatar_jpg().getUrl_list().get(0)
-                    : avatar;
-          }
-          if (TextUtils.isEmpty(avatar)) {
-            avatar = authorBean.getAvatar_large() != null ? authorBean.getAvatar_large()
-                .getUrl_list()
-                .get(0) : avatar;
-          }
-          if (TextUtils.isEmpty(avatar)) {
-            avatar = authorBean.getAvatar_thumb() != null ? authorBean.getAvatar_thumb()
-                .getUrl_list()
-                .get(0) : avatar;
-          }
-        }
+        avatar = bean.getUser().getAvatar_thumb().getUrl_list().get(0);
       } catch (Exception ex) {
       }
 
@@ -237,24 +222,7 @@ public class HuoCommentReplyAdapter extends BaseAdapter<RecyclerView.ViewHolder>
     private void loadAvatarImage(CommentReplyViewHolder viewHolder, CommentReplyItemBean bean) {
       String avatar = "";
       try {
-        CommentReplyItemBean.UserBeanX authorBean = bean.getUser();
-        if (authorBean != null) {
-          if (TextUtils.isEmpty(avatar)) {
-            avatar =
-                authorBean.getAvatar_jpg() != null ? authorBean.getAvatar_jpg().getUrl_list().get(0)
-                    : avatar;
-          }
-          if (TextUtils.isEmpty(avatar)) {
-            avatar = authorBean.getAvatar_large() != null ? authorBean.getAvatar_large()
-                .getUrl_list()
-                .get(0) : avatar;
-          }
-          if (TextUtils.isEmpty(avatar)) {
-            avatar = authorBean.getAvatar_thumb() != null ? authorBean.getAvatar_thumb()
-                .getUrl_list()
-                .get(0) : avatar;
-          }
-        }
+        avatar = bean.getUser().getAvatar_thumb().getUrl_list().get(0);
       } catch (Exception ex) {
       }
 

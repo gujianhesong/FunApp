@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="8dp"
     >
@@ -42,7 +42,7 @@
               android:id="@+id/tv_follower_count"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:text="10万"
+              android:text="0"
               android:textColor="@color/text_black"
               android:textSize="16sp"
               />
@@ -69,7 +69,7 @@
               android:id="@+id/tv_following_count"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:text="10万"
+              android:text="0"
               android:textColor="@color/text_black"
               android:textSize="16sp"
               />
@@ -96,7 +96,7 @@
               android:id="@+id/tv_fan_ticket_count"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:text="10万"
+              android:text="0"
               android:textColor="@color/text_black"
               android:textSize="16sp"
               />
@@ -127,7 +127,7 @@
         android:id="@+id/tv_user_gender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="女"
+        android:text="未知"
         android:textColor="@color/text_black"
         android:textSize="12sp"
         />
@@ -137,7 +137,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="12dp"
-        android:text="90后"
+        android:text="未知"
         android:textColor="@color/text_black"
         android:textSize="12sp"
         />
@@ -147,7 +147,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="12dp"
-        android:text="送出100"
+        android:text="送出0"
         android:textColor="@color/text_black"
         android:textSize="12sp"
         />
@@ -164,9 +164,8 @@
       android:id="@+id/tv_user_signature"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginBottom="8dp"
       android:layout_marginTop="8dp"
-      android:text="虽然我走的很慢，但是。。。。。。"
+      android:text="暂无"
       android:textColor="@color/text_gray"
       android:textSize="12sp"
       />

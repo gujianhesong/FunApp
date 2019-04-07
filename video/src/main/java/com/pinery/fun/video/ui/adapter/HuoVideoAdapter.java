@@ -71,11 +71,7 @@ public class HuoVideoAdapter extends HuoBaseVideoAdapter {
 
       String coverUrl = "";
       try {
-        HuoVideoItemBean.DataBean.VideoBean.CoverBean coverBean =
-            videoBean.getData().getVideo().getCover();
-        if (TextUtils.isEmpty(coverUrl)) {
-          coverUrl = coverBean != null ? coverBean.getUrl_list().get(0) : coverUrl;
-        }
+          coverUrl = videoBean.getData().getVideo().getCover().getUrl_list().get(0);
       } catch (Exception ex) {
         ex.printStackTrace();
       }
@@ -84,24 +80,7 @@ public class HuoVideoAdapter extends HuoBaseVideoAdapter {
 
       String avatar = "";
       try {
-        HuoVideoItemBean.DataBean.AuthorBean authorBean = videoBean.getData().getAuthor();
-        if (authorBean != null) {
-          if (TextUtils.isEmpty(avatar)) {
-            avatar =
-                authorBean.getAvatar_jpg() != null ? authorBean.getAvatar_jpg().getUrl_list().get(0)
-                    : avatar;
-          }
-          if (TextUtils.isEmpty(avatar)) {
-            avatar = authorBean.getAvatar_large() != null ? authorBean.getAvatar_large()
-                .getUrl_list()
-                .get(0) : avatar;
-          }
-          if (TextUtils.isEmpty(avatar)) {
-            avatar = authorBean.getAvatar_thumb() != null ? authorBean.getAvatar_thumb()
-                .getUrl_list()
-                .get(0) : avatar;
-          }
-        }
+        avatar = videoBean.getData().getAuthor().getAvatar_thumb().getUrl_list().get(0);
       } catch (Exception ex) {
       }
 
@@ -132,7 +111,7 @@ public class HuoVideoAdapter extends HuoBaseVideoAdapter {
 
   }
 
-  class VideoViewHolderHandler extends BaseViewHolderHandler<VideoViewHolder, HuoVideoItemBean> {
+  class VideoViewHolderHandler extends BaseViewHolderHandler<VideoViewHolder, HuoVideoItemBean> implements View.OnClickListener{
 
     @Override
     protected boolean shouldHandle(BaseViewHolder viewHodler, BaseVideoItemBean dataBeanX) {
@@ -174,13 +153,8 @@ public class HuoVideoAdapter extends HuoBaseVideoAdapter {
 
     @Override public void loadCoverImage(VideoViewHolder viewHodler, HuoVideoItemBean dataBeanX) {
       String url = "";
-
       try {
-        HuoVideoItemBean.DataBean.VideoBean.CoverBean coverBean =
-            dataBeanX.getData().getVideo().getCover();
-        if (TextUtils.isEmpty(url)) {
-          url = coverBean != null ? coverBean.getUrl_list().get(0) : url;
-        }
+          url = dataBeanX.getData().getVideo().getCover().getUrl_list().get(0);
       } catch (Exception ex) {
         ex.printStackTrace();
       }
@@ -191,28 +165,21 @@ public class HuoVideoAdapter extends HuoBaseVideoAdapter {
     @Override public void loadAvatarImage(VideoViewHolder viewHodler, HuoVideoItemBean dataBeanX) {
       String avatar = "";
       try {
-        HuoVideoItemBean.DataBean.AuthorBean authorBean = dataBeanX.getData().getAuthor();
-        if (authorBean != null) {
-          if (TextUtils.isEmpty(avatar)) {
-            avatar =
-                authorBean.getAvatar_jpg() != null ? authorBean.getAvatar_jpg().getUrl_list().get(0)
-                    : avatar;
-          }
-          if (TextUtils.isEmpty(avatar)) {
-            avatar = authorBean.getAvatar_large() != null ? authorBean.getAvatar_large()
-                .getUrl_list()
-                .get(0) : avatar;
-          }
-          if (TextUtils.isEmpty(avatar)) {
-            avatar = authorBean.getAvatar_thumb() != null ? authorBean.getAvatar_thumb()
-                .getUrl_list()
-                .get(0) : avatar;
-          }
-        }
+        avatar = dataBeanX.getData().getAuthor().getAvatar_thumb().getUrl_list().get(0);
       } catch (Exception ex) {
       }
 
       Glide.with(context).load(avatar).error(R.drawable.a0b).into(viewHodler.ivAvatar);
+      viewHodler.ivAvatar.setOnClickListener(this);
+      viewHodler.ivAvatar.setTag(viewHodler.ivAvatar.getId(), dataBeanX.getData().getAuthor().getId_str());
+    }
+
+    @Override
+    public void onClick(View view) {
+      String userId = (String) view.getTag(view.getId());
+      ARouter.getInstance().build(Constants.PATH_USER_CENTER)
+              .withString("user_id", userId)
+              .navigation();
     }
   }
 
@@ -261,12 +228,8 @@ public class HuoVideoAdapter extends HuoBaseVideoAdapter {
 
     @Override public void loadCoverImage(AdViewHolder viewHodler, HuoAdItemBean dataBeanX) {
       String url = "";
-
       try {
-        HuoAdItemBean.DataBean.ImageListBean coverBean = dataBeanX.getData().getImage_list().get(0);
-        if (TextUtils.isEmpty(url)) {
-          url = coverBean != null ? coverBean.getUrl_list().get(0) : url;
-        }
+        url = dataBeanX.getData().getImage_list().get(0).getUrl_list().get(0);
       } catch (Exception ex) {
         ex.printStackTrace();
       }
@@ -277,14 +240,7 @@ public class HuoVideoAdapter extends HuoBaseVideoAdapter {
     @Override public void loadAvatarImage(AdViewHolder viewHodler, HuoAdItemBean dataBeanX) {
       String avatar = "";
       try {
-        HuoAdItemBean.DataBean.AuthorBean.AvatarBean authorBean =
-            dataBeanX.getData().getAuthor().getAvatar();
-        if (TextUtils.isEmpty(avatar)) {
-          avatar = authorBean.getUri();
-        }
-        if (TextUtils.isEmpty(avatar)) {
-          avatar = authorBean.getUrl_list() != null ? authorBean.getUrl_list().get(0) : avatar;
-        }
+        avatar = dataBeanX.getData().getAuthor().getAvatar().getUrl_list().get(0);
       } catch (Exception ex) {
         ex.printStackTrace();
       }

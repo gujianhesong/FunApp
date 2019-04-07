@@ -2,13 +2,16 @@ package com.pinery.fun.video.ui.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import com.pinery.base.adapter.BaseAdapter;
 import com.pinery.fun.video.bean.BaseVideoItemBean;
 
 /**
  * Created by gujian on 2018-08-25.
  */
 
-public abstract class BaseVideoAdapter<VH extends BaseVideoAdapter.BaseViewHolder> extends BaseAdapter<VH> {
+public abstract class BaseVideoAdapter<VH extends BaseVideoAdapter.BaseViewHolder> extends
+    BaseAdapter<VH> implements com.github.jdsjlzx.interfaces.OnItemClickListener,
+    com.github.jdsjlzx.interfaces.OnItemLongClickListener {
 
   protected interface IViewHolderHandler<VH extends BaseViewHolder, T extends BaseVideoItemBean> {
     void setLayoutParams(VH holder, T dataBeanX);
