@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.pinery.base.callback.OnClickRefreshCallback;
 import com.pinery.base.fragment.BaseFragment;
 import com.pinery.base.util.ViewUtil;
 import com.pinery.fun.video.R;
@@ -44,7 +45,7 @@ public class HomeFragment extends BaseFragment {
       @Override
       public void onClick(View view) {
         ARouter.getInstance()
-                .build(Constants.PATH_SEARCH_CENTER)
+                .build(Constants.PATH_TAG_CENTER)
                 .navigation();
       }
     });
@@ -69,12 +70,26 @@ public class HomeFragment extends BaseFragment {
     for(String title : mTitleList){
       mIndicator.addTab(mIndicator.newTab().setText(title));
     }
+    mIndicator.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+      @Override public void onTabSelected(TabLayout.Tab tab) {
+      }
+
+      @Override public void onTabUnselected(TabLayout.Tab tab) {
+      }
+
+      @Override public void onTabReselected(TabLayout.Tab tab) {
+        Fragment fragment =  mFragmentList.get(tab.getPosition());
+        if (fragment instanceof OnClickRefreshCallback){
+          ((OnClickRefreshCallback)fragment).onClickRefresh();
+        }
+      }
+    });
   }
 
   private void initFragment() {
     mFragmentList = new ArrayList<>();
-    mFragmentList.add(HuoVideoListFragment.newInstance());
     mFragmentList.add(HuoVideoListFragment2.newInstance());
+    mFragmentList.add(HuoVideoListFragment.newInstance());
     mFragmentList.add(HuoLiveListFragment.newInstance());
     mFragmentList.add(HuoCityListFragment.newInstance());
   }

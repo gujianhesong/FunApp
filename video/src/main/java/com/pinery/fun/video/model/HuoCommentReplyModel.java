@@ -1,41 +1,44 @@
 package com.pinery.fun.video.model;
 
-import com.pinery.base.rxjava.RetryWithDelayFunc;
+import com.pinery.base.callback.OnDataCallback;
+import com.pinery.base.model.BCacheModel;
 import com.pinery.fun.video.api.ApiService;
 import com.pinery.fun.video.api.HuoApi;
+import com.pinery.fun.video.api.RetrofitClient;
 import com.pinery.fun.video.bean.CommentReplyListBean;
-import com.pinery.fun.video.callback.OnDataCallback;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.annotations.NonNull;
+import io.reactivex.Flowable;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
-import io.reactivex.schedulers.Schedulers;
 import java.util.HashMap;
 
-public class HuoCommentReplyModel extends BaseModel<CommentReplyListBean> {
+public class HuoCommentReplyModel extends BCacheModel {
+  private static final int COUNT = 20;
 
-  public Disposable loadData(String id, int page,
+  public <T> T getApiService(String url, Class<T> cl) {
+    return RetrofitClient.getInstance().getApiService(url, cl);
+  }
+
+  public Disposable loadData(final String id, final int page,
       final OnDataCallback<CommentReplyListBean> callback) {
-    HashMap<String, Object> hashMap = createHashMapWithCommonParams();
-    hashMap.put("offset", page * 20);
+    HashMap<String, Object> params = createHashMapWithCommonParams();
+    params.put("offset", page * COUNT);
+    params.put("count", COUNT);
 
-    return getApiService(HuoApi.Main, ApiService.class).loadCommentReply(id, hashMap)
-        .retryWhen(new RetryWithDelayFunc())
-        .subscribeOn(Schedulers.io())
-        .observeOn(AndroidSchedulers.mainThread())
-        .subscribe(new Consumer<CommentReplyListBean>() {
-          @Override public void accept(@NonNull CommentReplyListBean commentBean) throws Exception {
-            if (callback != null) {
-              callback.onSuccess(commentBean);
-            }
-          }
-        }, new Consumer<Throwable>() {
-          @Override public void accept(@NonNull Throwable throwable) throws Exception {
-            if (callback != null) {
-              callback.onError(throwable);
-            }
-          }
-        });
+    return requestData(params, callback, new OnRequestHandler<CommentReplyListBean>() {
+      @Override public Flowable<CommentReplyListBean> onRequest(HashMap<String, Object> params) {
+        return getApiService(HuoApi.Main, ApiService.class).loadCommentReply(id, params);
+      }
+
+      @Override public HashMap<String, Object> onPrepareNextParams(CommentReplyListBean data) {
+        HashMap<String, Object> params = createHashMapWithCommonParams();
+        params.put("offset", (page+1) * COUNT);
+        params.put("count", COUNT);
+        return params;
+      }
+
+      @Override public String onPrepareCacheKey(HashMap<String, Object> params) {
+        return "key_comment_reply" + "_" + params.get("offset") + "_" + params.get("count");
+      }
+    });
   }
 
   private HashMap createHashMapWithCommonParams() {

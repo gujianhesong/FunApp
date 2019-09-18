@@ -1,9 +1,9 @@
 package com.pinery.fun.video.mvp;
 
+import com.pinery.base.callback.OnDataCallback;
 import com.pinery.base.mvp.BaseRxJavaPresenter;
 import com.pinery.fun.video.bean.HashTagItemsBean;
-import com.pinery.fun.video.callback.OnDataCallback;
-import com.pinery.fun.video.model.SearchModel;
+import com.pinery.fun.video.model.TagModel;
 import javax.inject.Inject;
 
 /**
@@ -12,11 +12,11 @@ import javax.inject.Inject;
 public class HashTagItemsPresenter extends BaseRxJavaPresenter<HashTagContract.HashTagItemsView>
     implements HashTagContract.HashTagItemsPresenter {
 
-  private SearchModel model;
+  private TagModel model;
 
   @Inject
   public HashTagItemsPresenter() {
-    model = new SearchModel();
+    model = new TagModel();
   }
 
   @Override

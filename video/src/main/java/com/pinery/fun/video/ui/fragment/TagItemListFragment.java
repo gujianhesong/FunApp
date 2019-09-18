@@ -9,11 +9,11 @@ import com.pinery.base.fragment.BaseListFragment;
 import com.pinery.base.util.NetWorkUtil;
 import com.pinery.base.widget.RecycleViewDivider;
 import com.pinery.fun.video.R;
-import com.pinery.fun.video.bean.SearchTagItemsBean;
+import com.pinery.fun.video.bean.TagItemsBean;
 import com.pinery.fun.video.dagger.DaggerSearchTagItemListComponent;
-import com.pinery.fun.video.mvp.SearchContract;
-import com.pinery.fun.video.mvp.SearchTagItemsPresenter;
-import com.pinery.fun.video.ui.adapter.SearchTagItemsAdapter;
+import com.pinery.fun.video.mvp.TagContract;
+import com.pinery.fun.video.mvp.TagItemsPresenter;
+import com.pinery.fun.video.ui.adapter.TagItemsAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,15 +22,15 @@ import java.util.List;
  * Created by gujian on 2019-03-21.
  */
 
-public class SearchTagItemListFragment extends BaseListFragment<SearchTagItemsPresenter>
-    implements SearchContract.TagItemsView {
+public class TagItemListFragment extends BaseListFragment<TagItemsPresenter>
+    implements TagContract.TagItemsView {
 
-  private List<SearchTagItemsBean.DataBean> mDatas = new ArrayList<>();
+  private List<TagItemsBean.DataBean> mDatas = new ArrayList<>();
   private int mPage;
   private int mTagId;
 
-  public static SearchTagItemListFragment newInstance(int tagId) {
-    SearchTagItemListFragment fragment = new SearchTagItemListFragment();
+  public static TagItemListFragment newInstance(int tagId) {
+    TagItemListFragment fragment = new TagItemListFragment();
     Bundle bundle = new Bundle();
     bundle.putInt("tagId", tagId);
     fragment.setArguments(bundle);
@@ -52,9 +52,9 @@ public class SearchTagItemListFragment extends BaseListFragment<SearchTagItemsPr
     }
   }
 
-  @Override protected BaseAdapter<SearchTagItemsAdapter.SearchTagViewHolder> generateAdapter() {
+  @Override protected BaseAdapter<TagItemsAdapter.SearchTagViewHolder> generateAdapter() {
     //mDatas = new ArrayList<>();
-    SearchTagItemsAdapter adapter = new SearchTagItemsAdapter(mContext, mDatas);
+    TagItemsAdapter adapter = new TagItemsAdapter(mContext, mDatas);
 //    adapter.bindRecyclerView(mRecyclerView);
     return adapter;
   }
@@ -84,14 +84,14 @@ public class SearchTagItemListFragment extends BaseListFragment<SearchTagItemsPr
   }
 
   @Override
-  public void updateTagItems(SearchTagItemsBean bean, boolean isRefresh) {
+  public void updateTagItems(TagItemsBean bean, boolean isRefresh) {
     if (isRefresh) {
       mDatas.clear();
       mPage = 0;
     }
     mPage++;
 
-    List<SearchTagItemsBean.DataBean> list = bean.getData();
+    List<TagItemsBean.DataBean> list = bean.getData();
     if (list != null) {
       mDatas.addAll(list);
     }

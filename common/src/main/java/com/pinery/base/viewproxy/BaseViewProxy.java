@@ -1,4 +1,4 @@
-package com.pinery.fun.video.ui.viewproxy;
+package com.pinery.base.viewproxy;
 
 import android.content.Context;
 import android.view.LayoutInflater;

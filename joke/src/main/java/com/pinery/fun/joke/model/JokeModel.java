@@ -1,12 +1,12 @@
 package com.pinery.fun.joke.model;
 
+import com.pinery.base.callback.OnDataCallback;
 import com.pinery.base.rxjava.RetryWithDelayFunc;
 import com.pinery.base.util.LogUtil;
 import com.pinery.fun.joke.api.ApiService;
 import com.pinery.fun.joke.api.JokeApi;
 import com.pinery.fun.joke.bean.CancelException;
 import com.pinery.fun.joke.bean.JokeDatasBean;
-import com.pinery.fun.joke.callback.OnDataCallback;
 import io.reactivex.Flowable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;

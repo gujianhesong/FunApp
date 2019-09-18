@@ -8,8 +8,8 @@ import java.util.List;
 
 public class HuoUserVideoItemBean extends BaseVideoItemBean {
     /**
-     * data : {"allow_comment":true,"allow_dislike":true,"allow_share":true,"at_users":[],"author":{"allow_be_located":true,"allow_find_by_contacts":true,"allow_others_download_video":true,"allow_others_download_when_sharing_video":true,"allow_share_show_profile":true,"allow_show_in_gossip":true,"allow_strange_comment":true,"allow_unfollower_comment":true,"avatar_jpg":{"uri":"mosaic-legacy/124000049c8590a49e8f","url_list":["http://p1-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~100x100.jpg","http://p3-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~100x100.jpg","http://p3-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~100x100.jpg"]},"avatar_large":{"uri":"mosaic-legacy/124000049c8590a49e8f","url_list":["http://p3-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~1080x1080.webp","http://p1-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~1080x1080.webp","http://p1-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~1080x1080.webp"]},"avatar_medium":{"uri":"mosaic-legacy/124000049c8590a49e8f","url_list":["http://p3-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~720x720.webp","http://p9-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~720x720.webp","http://p9-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~720x720.webp"]},"avatar_thumb":{"uri":"mosaic-legacy/124000049c8590a49e8f","url_list":["http://p3-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~100x100.webp","http://p1-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~100x100.webp","http://p1-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~100x100.webp"]},"bg_img_url":"","birthday":776390400,"birthday_description":"90后","birthday_valid":true,"block_status":0,"city":"","comment_restrict":1,"constellation":"狮子座","disable_ichat":0,"enable_ichat_img":1,"exp":0,"fan_ticket_count":4188,"fold_stranger_chat":false,"follow_status":0,"gender":1,"hotsoon_verified":false,"hotsoon_verified_reason":"","ichat_restrict_type":1,"id":54190054499,"id_str":"54190054499","income_share_percent":30,"is_follower":false,"is_following":false,"level":1,"need_profile_guide":false,"nickname":"阿福啊","pay_grade":{"diamond_icon":{"uri":"mosaic-legacy/12400003aba3dd42e213","url_list":["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/12400003aba3dd42e213","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/12400003aba3dd42e213","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/12400003aba3dd42e213"]},"grade_banner":"7级可获房间展示升级通告","grade_describe":"当前无等级，消费1钻石即可升级获勋章","grade_icon_list":[{"icon":{"uri":"mosaic-legacy/3b60000a6308f74aec4e","url_list":["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/3b60000a6308f74aec4e","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/3b60000a6308f74aec4e","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/3b60000a6308f74aec4e"]},"icon_diamond":0,"level":0,"level_str":"暂无"},{"icon":{"uri":"mosaic-legacy/3b65000678af61a99a1b","url_list":["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/3b65000678af61a99a1b","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/3b65000678af61a99a1b","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/3b65000678af61a99a1b"]},"icon_diamond":0,"level":0,"level_str":"Lv.0"},{"icon":{"uri":"mosaic-legacy/3b620006b1e388185513","url_list":["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/3b620006b1e388185513","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/3b620006b1e388185513","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/3b620006b1e388185513"]},"icon_diamond":1,"level":1,"level_str":"Lv.1"}],"icon":{"uri":"mosaic-legacy/f2100085e55a62833b1","url_list":["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/f2100085e55a62833b1","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/f2100085e55a62833b1","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/f2100085e55a62833b1"]},"level":0,"live_icon":{"uri":"mosaic-legacy/2bd200048a6d1f88860b","url_list":["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/2bd200048a6d1f88860b","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/2bd200048a6d1f88860b","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/2bd200048a6d1f88860b"]},"name":"暂无","new_live_icon":{"uri":"mosaic-legacy/2bd200048a6d1f88860b","url_list":["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/2bd200048a6d1f88860b","http://p9-hs.bytecdn.cn/obj/mosaic-legacy/2bd200048a6d1f88860b","http://p9-hs.bytecdn.cn/obj/mosaic-legacy/2bd200048a6d1f88860b"]},"next_diamond":1,"next_icon":{"uri":"mosaic-legacy/30eb0000a12588d9bb3e","url_list":["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/30eb0000a12588d9bb3e","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/30eb0000a12588d9bb3e","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/30eb0000a12588d9bb3e"]},"next_name":"树苗","now_diamond":0,"pay_diamond_bak":0,"profile_dialog_bg":{"uri":"mosaic-legacy/","url_list":["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/","http://p9-hs.bytecdn.cn/obj/mosaic-legacy/","http://p9-hs.bytecdn.cn/obj/mosaic-legacy/"]},"profile_dialog_bg_back":{"uri":"mosaic-legacy/","url_list":["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/"]},"screen_chat_type":1,"this_grade_max_diamond":0,"this_grade_min_diamond":0,"total_diamond_count":0,"upgrade_need_consume":1},"pay_scores":0,"push_comment_status":true,"push_digg":true,"push_follow":true,"push_ichat":true,"push_status":true,"push_video_post":true,"push_video_recommend":true,"short_id":75553105,"signature":"","type_a1":1,"verified":false,"verified_mobile":false,"verified_reason":""},"can_duet":1,"comment_delay":-1,"create_time":1489231411,"description":"","disable_watermark":false,"follow_display":false,"follow_status_tag":"","id":6396200153518181634,"id_str":"6396200153518181634","location":"","media_type":4,"prefetch_comment":false,"prefetch_profile":false,"share_description":"这个视频居然有 687823 次播放，快来围观>>","share_enable":true,"share_strong_guide":0,"share_title":"「阿福啊」的这个视频好6，快来围观！","share_url":"http://reflow.huoshan.com/share/item/6396200153518181634/?tag=214&timestamp=1550398050&watermark=2&media_type=4&","stats":{"comment_count":178,"digg_count":3388,"play_count":687823,"share_count":2138},"status":102,"tips":"","tips_url":"https://hotsoon.snssdk.com/hotsoon/in_app/pyramid_selling/?source=money","title":"","user_bury":0,"user_digg":0,"video":{"allow_cache":true,"cover":{"avg_color":"#FADCDC","uri":"large/18b60001104831fa133d","url_list":["http://p3-hs.bytecdn.cn/large/18b60001104831fa133d.webp","http://p1-hs.bytecdn.cn/large/18b60001104831fa133d.webp","http://p6-hs.bytecdn.cn/large/18b60001104831fa133d.webp"]},"cover_animated":null,"cover_medium":{"avg_color":"#3D3D3D","uri":"medium/18b60001104831fa133d","url_list":["http://p3-hs.bytecdn.cn/medium/18b60001104831fa133d.webp","http://p1-hs.bytecdn.cn/medium/18b60001104831fa133d.webp","http://p6-hs.bytecdn.cn/medium/18b60001104831fa133d.webp"]},"cover_thumb":{"avg_color":"#FADCF0","uri":"live/100x100/18b60001104831fa133d","url_list":["http://p3-hs.bytecdn.cn/live/100x100/18b60001104831fa133d.webp","http://p1-hs.bytecdn.cn/live/100x100/18b60001104831fa133d.webp","http://p6-hs.bytecdn.cn/live/100x100/18b60001104831fa133d.webp"]},"download_url":["https://api-hl.huoshan.com/hotsoon/item/video/_playback/?video_id=897937be13a345dd859c268206dd810c&line=0&app_id=1112&vquality=normal&watermark=2&long_video=0&sf=3&ts=1550398050","https://api-hl.huoshan.com/hotsoon/item/video/_playback/?video_id=897937be13a345dd859c268206dd810c&line=1&app_id=1112&vquality=normal&watermark=2&long_video=0&sf=3&ts=1550398050"],"duration":14.982,"height":640,"preload_size":512000,"uri":"897937be13a345dd859c268206dd810c_720p","url_list":["http://v6-hs.ixigua.com/730aa8cbe214527e1135909c2ef0bc10/5c694080/video/m/220d5d8a8d77c294e5a88e9018e137455d311441fa000042ca7d10d8fb/?rc=ZjRnOTU5ZjhnODY2aDo8PEApQHRAbzs6NTs7MzUzMzYzNDQzNDVvQGg2dSlAZjV1KWZzcHcxeW9mNTRALTVhLTUvNjVhMV4uXzA0NXMtbyNvIzAyLy0zLy0uLTQ1NC82LTojbyM6YS1xIzpgaF4rYmZiZjojLi5e","http://v9-hs.ixigua.com/dbe6a374aa4349d847967086ebc79b55/5c694080/video/m/220d5d8a8d77c294e5a88e9018e137455d311441fa000042ca7d10d8fb/?rc=ZjRnOTU5ZjhnODY2aDo8PEApQHRAbzs6NTs7MzUzMzYzNDQzNDVvQGg2dSlAZjV1KWZzcHcxeW9mNTRALTVhLTUvNjVhMV4uXzA0NXMtbyNvIzAyLy0zLy0uLTQ1NC82LTojbyM6YS1xIzpgaF4rYmZiZjojLi5e","https://api.huoshan.com/hotsoon/item/video/_playback/?video_id=897937be13a345dd859c268206dd810c&line=0&app_id=1112&vquality=normal&quality=720p&codec=h264&sf=3&origin=0&ts=1550398050"],"video_id":"897937be13a345dd859c268206dd810c","watermark":true,"width":360},"weibo_share_title":"#玩视频上火山#阿福啊在火山上分享了视频，快来围观！传送门戳我>>http://reflow.huoshan.com/share/item/6396200153518181634/?tag=214&timestamp=1550398050&watermark=2&media_type=4&"}
-     * rid : 2019021718073001002206808225738
+     * data : {"allow_comment":true,"allow_dislike":true,"allow_share":true,"at_users":[],"author":{"allow_be_located":true,"allow_find_by_contacts":true,"allow_others_download_video":true,"allow_others_download_when_sharing_video":true,"allow_share_show_profile":true,"allow_show_in_gossip":true,"allow_show_my_action":true,"allow_strange_comment":true,"allow_unfollower_comment":true,"anchor_level":{"experience":362,"highest_experience_this_level":460,"level":10,"lowest_experience_this_level":311,"profile_dialog_bg":{"uri":"hotsoon-resource/anchor_level_1.1_3x.png","url_list":["http://p3-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1.1_3x.png","http://p1-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1.1_3x.png","http://p1-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1.1_3x.png"]},"profile_dialog_bg_back":{"uri":"hotsoon-resource/anchor_level_1.2_3x.png","url_list":["http://p1-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1.2_3x.png","http://p3-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1.2_3x.png","http://p3-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1.2_3x.png"]},"small_icon":{"uri":"hotsoon-resource/anchor_level_small_10_3x.png","url_list":["http://p1-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_small_10_3x.png","http://p3-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_small_10_3x.png","http://p3-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_small_10_3x.png"]},"stage_level":{"uri":"hotsoon-resource/anchor_level_1_3x.png","url_list":["http://p3-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1_3x.png","http://p1-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1_3x.png","http://p1-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1_3x.png"]},"task_decrease_experience":0,"task_end_time":1548345540,"task_start_experience":0,"task_start_time":1545853824,"task_target_experience":0},"avatar_jpg":{"uri":"hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f","url_list":["http://p3-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~100x100.jpg","http://p1-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~100x100.jpg","http://p1-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~100x100.jpg"]},"avatar_large":{"uri":"hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f","url_list":["http://p9-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~1080x1080.webp","http://p3-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~1080x1080.webp","http://p3-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~1080x1080.webp"]},"avatar_medium":{"uri":"hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f","url_list":["http://p1-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~720x720.webp","http://p3-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~720x720.webp","http://p3-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~720x720.webp"]},"avatar_thumb":{"uri":"hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f","url_list":["http://p3-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~100x100.webp","http://p1-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~100x100.webp","http://p1-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~100x100.webp"]},"bg_img_url":"","birthday":0,"birthday_description":"90后","birthday_valid":true,"block_status":0,"city":"周口","comment_restrict":1,"constellation":"","disable_ichat":0,"enable_ichat_img":1,"encrypted_id":"MS4wLjABAAAAwK0u7wpNiQ5WQLSur67XJfyGaeK2iB8TGllwDC5TSPc","exp":0,"fan_ticket_count":63670,"fold_stranger_chat":false,"follow_status":0,"gender":2,"has_hashtag_item":true,"hotsoon_verified":false,"hotsoon_verified_reason":"","ichat_restrict_type":1,"id":60178817263,"id_str":"60178817263","income_share_percent":0,"is_follower":false,"is_following":false,"level":1,"need_profile_guide":false,"nickname":"幸福相伴^O^","pay_grade":{"diamond_icon":{"uri":"mosaic-legacy/12400003aba3dd42e213","url_list":["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/12400003aba3dd42e213","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/12400003aba3dd42e213","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/12400003aba3dd42e213"]},"grade_banner":"7级可获房间展示升级通告","grade_describe":"距升级还需消费94钻","grade_icon_list":[{"icon":{"uri":"mosaic-legacy/3b65000678eac77af1d9","url_list":["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/3b65000678eac77af1d9","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/3b65000678eac77af1d9","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/3b65000678eac77af1d9"]},"icon_diamond":51,"level":5,"level_str":"Lv.5"},{"icon":{"uri":"mosaic-legacy/3b65000678eac77af1d9","url_list":["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/3b65000678eac77af1d9","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/3b65000678eac77af1d9","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/3b65000678eac77af1d9"]},"icon_diamond":100,"level":6,"level_str":"Lv.6"},{"icon":{"uri":"mosaic-legacy/3b620006b1e388185513","url_list":["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/3b620006b1e388185513","http://p9-hs.bytecdn.cn/obj/mosaic-legacy/3b620006b1e388185513","http://p9-hs.bytecdn.cn/obj/mosaic-legacy/3b620006b1e388185513"]},"icon_diamond":200,"level":7,"level_str":"Lv.7"}],"icon":{"uri":"mosaic-legacy/30eb0000a101d40eea0c","url_list":["http://p9-hs.bytecdn.cn/obj/mosaic-legacy/30eb0000a101d40eea0c","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/30eb0000a101d40eea0c","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/30eb0000a101d40eea0c"]},"im_icon":{"uri":"mosaic-legacy/2ea8000962099e965ff0","url_list":["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/2ea8000962099e965ff0","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/2ea8000962099e965ff0","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/2ea8000962099e965ff0"]},"im_icon_with_level":{"uri":"mosaic-legacy/78a30076591d3cd2dc07","url_list":["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/78a30076591d3cd2dc07","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/78a30076591d3cd2dc07","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/78a30076591d3cd2dc07"]},"level":6,"live_icon":{"uri":"mosaic-legacy/30ee0007ccef28b99639","url_list":["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/30ee0007ccef28b99639","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/30ee0007ccef28b99639","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/30ee0007ccef28b99639"]},"name":"树苗","new_im_icon_with_level":{"uri":"mosaic-legacy/78a500926ba4dd74b0fa","url_list":["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/78a500926ba4dd74b0fa","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/78a500926ba4dd74b0fa","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/78a500926ba4dd74b0fa"]},"new_live_icon":{"uri":"mosaic-legacy/78a10056e336cb6eb911","url_list":["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/78a10056e336cb6eb911","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/78a10056e336cb6eb911","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/78a10056e336cb6eb911"]},"new_nav_live_icon":{"uri":"hotsoon-resource/new_nva_level_icon_6.png","url_list":["http://p9-hs.bytecdn.cn/obj/hotsoon-resource/new_nva_level_icon_6.png","http://p3-hs.bytecdn.cn/obj/hotsoon-resource/new_nva_level_icon_6.png","http://p3-hs.bytecdn.cn/obj/hotsoon-resource/new_nva_level_icon_6.png"]},"next_diamond":500,"next_icon":{"uri":"mosaic-legacy/12400003aae89daccd69","url_list":["http://p9-hs.bytecdn.cn/obj/mosaic-legacy/12400003aae89daccd69","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/12400003aae89daccd69","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/12400003aae89daccd69"]},"next_name":"树叶","now_diamond":106,"pay_diamond_bak":0,"profile_dialog_bg":{"uri":"hotsoon-resource/user_level_1.1_3x.png","url_list":["http://p3-hs.bytecdn.cn/obj/hotsoon-resource/user_level_1.1_3x.png","http://p1-hs.bytecdn.cn/obj/hotsoon-resource/user_level_1.1_3x.png","http://p1-hs.bytecdn.cn/obj/hotsoon-resource/user_level_1.1_3x.png"]},"profile_dialog_bg_back":{"uri":"hotsoon-resource/user_level_1.2_3x.png","url_list":["http://p1-hs.bytecdn.cn/obj/hotsoon-resource/user_level_1.2_3x.png","http://p3-hs.bytecdn.cn/obj/hotsoon-resource/user_level_1.2_3x.png","http://p3-hs.bytecdn.cn/obj/hotsoon-resource/user_level_1.2_3x.png"]},"screen_chat_type":2,"this_grade_max_diamond":199,"this_grade_min_diamond":100,"total_diamond_count":184,"upgrade_need_consume":94},"pay_scores":20,"push_comment_status":true,"push_digg":true,"push_follow":true,"push_friend_action":true,"push_ichat":true,"push_status":true,"push_video_post":true,"push_video_recommend":true,"short_id":192757941,"signature":"各位老铁们，我发视频是为了记录每场婚礼的幸福时刻，希望你们多多祝福，有些人不会说人话可以不说，希望那些小黑人，嘴下丢情，","type_a1":1,"verified":false,"verified_mobile":false,"verified_reason":""},"can_duet":1,"comment_delay":-1,"create_time":1555217376,"description":"婚礼誓言新娘感动哭了，","disable_watermark":false,"extra_scheme_url":"sslocal://webview?url=https%3A%2F%2Fhotsoon.snssdk.com%2Ffalcon%2Flive_inapp%2Fpage%2Fpush_hot%2Findex.html%23%2F%3Fitem_id%3D6679599728998599943&hide_nav_bar=1&hide_more=1&disable_bounces=1","follow_display":false,"follow_status_tag":"","friend_action_list":null,"id":6679599728998599943,"id_str":"6679599728998599943","item_log_extra":"{\"item_type\":\"item\"}","location":"","media_type":4,"prefetch_comment":false,"prefetch_profile":false,"share_description":"婚礼誓言新娘感动哭了，","share_enable":true,"share_strong_guide":0,"share_title":"「幸福相伴^O^」的这个视频好6，快来围观！","share_url":"http://reflow.huoshan.com/share/item/6679599728998599943/?tag=0&timestamp=1555254680&watermark=2&media_type=4&","song":null,"stats":{"comment_count":2,"digg_count":43,"play_count":3240,"share_count":0},"status":102,"tips":"","tips_url":"https://hotsoon.snssdk.com/hotsoon/in_app/pyramid_selling/?source=money","title":"婚礼誓言新娘感动哭了，","user_bury":0,"user_digg":0,"video":{"allow_cache":true,"cover":{"avg_color":"#89A37C","uri":"large/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912","url_list":["http://p1-hs.bytecdn.cn/large/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912.webp","http://p9-hs.bytecdn.cn/large/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912.webp","http://p6-hs.bytecdn.cn/large/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912.webp"]},"cover_animated":null,"cover_medium":{"avg_color":"#A37C7C","uri":"medium/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912","url_list":["http://p1-hs.bytecdn.cn/medium/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912.webp","http://p9-hs.bytecdn.cn/medium/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912.webp","http://p6-hs.bytecdn.cn/medium/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912.webp"]},"cover_thumb":{"avg_color":"#8F8F8F","uri":"live/100x100/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912","url_list":["http://p1-hs.bytecdn.cn/live/100x100/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912.webp","http://p9-hs.bytecdn.cn/live/100x100/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912.webp","http://p6-hs.bytecdn.cn/live/100x100/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912.webp"]},"download_url":["https://api.huoshan.com/hotsoon/item/video/_playback/?video_id=v0200c250000bipbnmsmavf81s5igggg&line=0&app_id=1112&vquality=normal&watermark=2&long_video=0&sf=3&ts=1555254680","https://api.huoshan.com/hotsoon/item/video/_playback/?video_id=v0200c250000bipbnmsmavf81s5igggg&line=1&app_id=1112&vquality=normal&watermark=2&long_video=0&sf=3&ts=1555254680"],"duration":15.047,"gif_uri":"1ed89000954de90340b01","gif_url_list":["http://p1-hs.bytecdn.cn/img/mosaic-legacy/1ed89000954de90340b01~noop.image","http://p3-hs.bytecdn.cn/img/mosaic-legacy/1ed89000954de90340b01~noop.image","http://p3-hs.bytecdn.cn/img/mosaic-legacy/1ed89000954de90340b01~noop.image"],"h265_uri":"h265/v0200c250000bipbnmsmavf81s5igggg_720p","h265_url":["http://v9-hs.ixigua.com/6ae79d21994340311afd9b7fa45a69c0/5cb35bb7/video/m/220bfdb80a213194242919a229a4e0cd8151161cdbbe00005e3a293e1bdf/?rc=ampsdjt5cHBlbDMzOGYzM0ApQHRAbzc2NzY5MzQzMzU0NTQzNDVvQGg2dSlAZjV1KWZzcHcxeW9mNTRAZGQyLmNecGttXy0tLy0vc3MtbyNvIzEtMy4uNi0uLS4wMTE2LTojbyM6YS1xIzpgaF4rYmZiZjojLi5e","http://v1-hs.ixigua.com/e37c9fc9507c04687c9eb39e9925ed37/5cb35bb7/video/m/220bfdb80a213194242919a229a4e0cd8151161cdbbe00005e3a293e1bdf/?rc=ampsdjt5cHBlbDMzOGYzM0ApQHRAbzc2NzY5MzQzMzU0NTQzNDVvQGg2dSlAZjV1KWZzcHcxeW9mNTRAZGQyLmNecGttXy0tLy0vc3MtbyNvIzEtMy4uNi0uLS4wMTE2LTojbyM6YS1xIzpgaF4rYmZiZjojLi5e","https://api.huoshan.com/hotsoon/item/video/_playback/?video_id=v0200c250000bipbnmsmavf81s5igggg&line=0&app_id=1112&vquality=normal&quality=720p&codec=h265&sf=3&origin=0&ts=1555254680"],"height":1024,"preload_size":375000,"uri":"v0200c250000bipbnmsmavf81s5igggg","url_list":["https://api.huoshan.com/hotsoon/item/video/_playback/?video_id=v0200c250000bipbnmsmavf81s5igggg&line=0&app_id=1112&vquality=normal&watermark=0&long_video=0&sf=3&ts=1555254680","https://api.huoshan.com/hotsoon/item/video/_playback/?video_id=v0200c250000bipbnmsmavf81s5igggg&line=1&app_id=1112&vquality=normal&watermark=0&long_video=0&sf=3&ts=1555254680"],"video_id":"v0200c250000bipbnmsmavf81s5igggg","watermark":true,"width":576},"weibo_share_title":"#玩视频上火山#幸福相伴^O^在火山上分享了视频，快来围观！传送门戳我>>http://reflow.huoshan.com/share/item/6679599728998599943/?tag=0&timestamp=1555254680&watermark=2&media_type=4&"}
+     * rid : 2019041423112001001901613640344
      * tags : []
      * type : 3
      */
@@ -57,49 +57,56 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
          * allow_dislike : true
          * allow_share : true
          * at_users : []
-         * author : {"allow_be_located":true,"allow_find_by_contacts":true,"allow_others_download_video":true,"allow_others_download_when_sharing_video":true,"allow_share_show_profile":true,"allow_show_in_gossip":true,"allow_strange_comment":true,"allow_unfollower_comment":true,"avatar_jpg":{"uri":"mosaic-legacy/124000049c8590a49e8f","url_list":["http://p1-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~100x100.jpg","http://p3-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~100x100.jpg","http://p3-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~100x100.jpg"]},"avatar_large":{"uri":"mosaic-legacy/124000049c8590a49e8f","url_list":["http://p3-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~1080x1080.webp","http://p1-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~1080x1080.webp","http://p1-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~1080x1080.webp"]},"avatar_medium":{"uri":"mosaic-legacy/124000049c8590a49e8f","url_list":["http://p3-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~720x720.webp","http://p9-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~720x720.webp","http://p9-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~720x720.webp"]},"avatar_thumb":{"uri":"mosaic-legacy/124000049c8590a49e8f","url_list":["http://p3-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~100x100.webp","http://p1-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~100x100.webp","http://p1-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~100x100.webp"]},"bg_img_url":"","birthday":776390400,"birthday_description":"90后","birthday_valid":true,"block_status":0,"city":"","comment_restrict":1,"constellation":"狮子座","disable_ichat":0,"enable_ichat_img":1,"exp":0,"fan_ticket_count":4188,"fold_stranger_chat":false,"follow_status":0,"gender":1,"hotsoon_verified":false,"hotsoon_verified_reason":"","ichat_restrict_type":1,"id":54190054499,"id_str":"54190054499","income_share_percent":30,"is_follower":false,"is_following":false,"level":1,"need_profile_guide":false,"nickname":"阿福啊","pay_grade":{"diamond_icon":{"uri":"mosaic-legacy/12400003aba3dd42e213","url_list":["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/12400003aba3dd42e213","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/12400003aba3dd42e213","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/12400003aba3dd42e213"]},"grade_banner":"7级可获房间展示升级通告","grade_describe":"当前无等级，消费1钻石即可升级获勋章","grade_icon_list":[{"icon":{"uri":"mosaic-legacy/3b60000a6308f74aec4e","url_list":["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/3b60000a6308f74aec4e","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/3b60000a6308f74aec4e","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/3b60000a6308f74aec4e"]},"icon_diamond":0,"level":0,"level_str":"暂无"},{"icon":{"uri":"mosaic-legacy/3b65000678af61a99a1b","url_list":["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/3b65000678af61a99a1b","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/3b65000678af61a99a1b","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/3b65000678af61a99a1b"]},"icon_diamond":0,"level":0,"level_str":"Lv.0"},{"icon":{"uri":"mosaic-legacy/3b620006b1e388185513","url_list":["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/3b620006b1e388185513","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/3b620006b1e388185513","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/3b620006b1e388185513"]},"icon_diamond":1,"level":1,"level_str":"Lv.1"}],"icon":{"uri":"mosaic-legacy/f2100085e55a62833b1","url_list":["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/f2100085e55a62833b1","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/f2100085e55a62833b1","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/f2100085e55a62833b1"]},"level":0,"live_icon":{"uri":"mosaic-legacy/2bd200048a6d1f88860b","url_list":["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/2bd200048a6d1f88860b","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/2bd200048a6d1f88860b","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/2bd200048a6d1f88860b"]},"name":"暂无","new_live_icon":{"uri":"mosaic-legacy/2bd200048a6d1f88860b","url_list":["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/2bd200048a6d1f88860b","http://p9-hs.bytecdn.cn/obj/mosaic-legacy/2bd200048a6d1f88860b","http://p9-hs.bytecdn.cn/obj/mosaic-legacy/2bd200048a6d1f88860b"]},"next_diamond":1,"next_icon":{"uri":"mosaic-legacy/30eb0000a12588d9bb3e","url_list":["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/30eb0000a12588d9bb3e","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/30eb0000a12588d9bb3e","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/30eb0000a12588d9bb3e"]},"next_name":"树苗","now_diamond":0,"pay_diamond_bak":0,"profile_dialog_bg":{"uri":"mosaic-legacy/","url_list":["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/","http://p9-hs.bytecdn.cn/obj/mosaic-legacy/","http://p9-hs.bytecdn.cn/obj/mosaic-legacy/"]},"profile_dialog_bg_back":{"uri":"mosaic-legacy/","url_list":["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/"]},"screen_chat_type":1,"this_grade_max_diamond":0,"this_grade_min_diamond":0,"total_diamond_count":0,"upgrade_need_consume":1},"pay_scores":0,"push_comment_status":true,"push_digg":true,"push_follow":true,"push_ichat":true,"push_status":true,"push_video_post":true,"push_video_recommend":true,"short_id":75553105,"signature":"","type_a1":1,"verified":false,"verified_mobile":false,"verified_reason":""}
+         * author : {"allow_be_located":true,"allow_find_by_contacts":true,"allow_others_download_video":true,"allow_others_download_when_sharing_video":true,"allow_share_show_profile":true,"allow_show_in_gossip":true,"allow_show_my_action":true,"allow_strange_comment":true,"allow_unfollower_comment":true,"anchor_level":{"experience":362,"highest_experience_this_level":460,"level":10,"lowest_experience_this_level":311,"profile_dialog_bg":{"uri":"hotsoon-resource/anchor_level_1.1_3x.png","url_list":["http://p3-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1.1_3x.png","http://p1-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1.1_3x.png","http://p1-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1.1_3x.png"]},"profile_dialog_bg_back":{"uri":"hotsoon-resource/anchor_level_1.2_3x.png","url_list":["http://p1-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1.2_3x.png","http://p3-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1.2_3x.png","http://p3-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1.2_3x.png"]},"small_icon":{"uri":"hotsoon-resource/anchor_level_small_10_3x.png","url_list":["http://p1-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_small_10_3x.png","http://p3-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_small_10_3x.png","http://p3-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_small_10_3x.png"]},"stage_level":{"uri":"hotsoon-resource/anchor_level_1_3x.png","url_list":["http://p3-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1_3x.png","http://p1-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1_3x.png","http://p1-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1_3x.png"]},"task_decrease_experience":0,"task_end_time":1548345540,"task_start_experience":0,"task_start_time":1545853824,"task_target_experience":0},"avatar_jpg":{"uri":"hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f","url_list":["http://p3-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~100x100.jpg","http://p1-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~100x100.jpg","http://p1-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~100x100.jpg"]},"avatar_large":{"uri":"hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f","url_list":["http://p9-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~1080x1080.webp","http://p3-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~1080x1080.webp","http://p3-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~1080x1080.webp"]},"avatar_medium":{"uri":"hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f","url_list":["http://p1-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~720x720.webp","http://p3-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~720x720.webp","http://p3-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~720x720.webp"]},"avatar_thumb":{"uri":"hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f","url_list":["http://p3-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~100x100.webp","http://p1-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~100x100.webp","http://p1-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~100x100.webp"]},"bg_img_url":"","birthday":0,"birthday_description":"90后","birthday_valid":true,"block_status":0,"city":"周口","comment_restrict":1,"constellation":"","disable_ichat":0,"enable_ichat_img":1,"encrypted_id":"MS4wLjABAAAAwK0u7wpNiQ5WQLSur67XJfyGaeK2iB8TGllwDC5TSPc","exp":0,"fan_ticket_count":63670,"fold_stranger_chat":false,"follow_status":0,"gender":2,"has_hashtag_item":true,"hotsoon_verified":false,"hotsoon_verified_reason":"","ichat_restrict_type":1,"id":60178817263,"id_str":"60178817263","income_share_percent":0,"is_follower":false,"is_following":false,"level":1,"need_profile_guide":false,"nickname":"幸福相伴^O^","pay_grade":{"diamond_icon":{"uri":"mosaic-legacy/12400003aba3dd42e213","url_list":["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/12400003aba3dd42e213","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/12400003aba3dd42e213","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/12400003aba3dd42e213"]},"grade_banner":"7级可获房间展示升级通告","grade_describe":"距升级还需消费94钻","grade_icon_list":[{"icon":{"uri":"mosaic-legacy/3b65000678eac77af1d9","url_list":["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/3b65000678eac77af1d9","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/3b65000678eac77af1d9","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/3b65000678eac77af1d9"]},"icon_diamond":51,"level":5,"level_str":"Lv.5"},{"icon":{"uri":"mosaic-legacy/3b65000678eac77af1d9","url_list":["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/3b65000678eac77af1d9","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/3b65000678eac77af1d9","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/3b65000678eac77af1d9"]},"icon_diamond":100,"level":6,"level_str":"Lv.6"},{"icon":{"uri":"mosaic-legacy/3b620006b1e388185513","url_list":["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/3b620006b1e388185513","http://p9-hs.bytecdn.cn/obj/mosaic-legacy/3b620006b1e388185513","http://p9-hs.bytecdn.cn/obj/mosaic-legacy/3b620006b1e388185513"]},"icon_diamond":200,"level":7,"level_str":"Lv.7"}],"icon":{"uri":"mosaic-legacy/30eb0000a101d40eea0c","url_list":["http://p9-hs.bytecdn.cn/obj/mosaic-legacy/30eb0000a101d40eea0c","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/30eb0000a101d40eea0c","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/30eb0000a101d40eea0c"]},"im_icon":{"uri":"mosaic-legacy/2ea8000962099e965ff0","url_list":["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/2ea8000962099e965ff0","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/2ea8000962099e965ff0","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/2ea8000962099e965ff0"]},"im_icon_with_level":{"uri":"mosaic-legacy/78a30076591d3cd2dc07","url_list":["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/78a30076591d3cd2dc07","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/78a30076591d3cd2dc07","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/78a30076591d3cd2dc07"]},"level":6,"live_icon":{"uri":"mosaic-legacy/30ee0007ccef28b99639","url_list":["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/30ee0007ccef28b99639","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/30ee0007ccef28b99639","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/30ee0007ccef28b99639"]},"name":"树苗","new_im_icon_with_level":{"uri":"mosaic-legacy/78a500926ba4dd74b0fa","url_list":["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/78a500926ba4dd74b0fa","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/78a500926ba4dd74b0fa","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/78a500926ba4dd74b0fa"]},"new_live_icon":{"uri":"mosaic-legacy/78a10056e336cb6eb911","url_list":["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/78a10056e336cb6eb911","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/78a10056e336cb6eb911","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/78a10056e336cb6eb911"]},"new_nav_live_icon":{"uri":"hotsoon-resource/new_nva_level_icon_6.png","url_list":["http://p9-hs.bytecdn.cn/obj/hotsoon-resource/new_nva_level_icon_6.png","http://p3-hs.bytecdn.cn/obj/hotsoon-resource/new_nva_level_icon_6.png","http://p3-hs.bytecdn.cn/obj/hotsoon-resource/new_nva_level_icon_6.png"]},"next_diamond":500,"next_icon":{"uri":"mosaic-legacy/12400003aae89daccd69","url_list":["http://p9-hs.bytecdn.cn/obj/mosaic-legacy/12400003aae89daccd69","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/12400003aae89daccd69","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/12400003aae89daccd69"]},"next_name":"树叶","now_diamond":106,"pay_diamond_bak":0,"profile_dialog_bg":{"uri":"hotsoon-resource/user_level_1.1_3x.png","url_list":["http://p3-hs.bytecdn.cn/obj/hotsoon-resource/user_level_1.1_3x.png","http://p1-hs.bytecdn.cn/obj/hotsoon-resource/user_level_1.1_3x.png","http://p1-hs.bytecdn.cn/obj/hotsoon-resource/user_level_1.1_3x.png"]},"profile_dialog_bg_back":{"uri":"hotsoon-resource/user_level_1.2_3x.png","url_list":["http://p1-hs.bytecdn.cn/obj/hotsoon-resource/user_level_1.2_3x.png","http://p3-hs.bytecdn.cn/obj/hotsoon-resource/user_level_1.2_3x.png","http://p3-hs.bytecdn.cn/obj/hotsoon-resource/user_level_1.2_3x.png"]},"screen_chat_type":2,"this_grade_max_diamond":199,"this_grade_min_diamond":100,"total_diamond_count":184,"upgrade_need_consume":94},"pay_scores":20,"push_comment_status":true,"push_digg":true,"push_follow":true,"push_friend_action":true,"push_ichat":true,"push_status":true,"push_video_post":true,"push_video_recommend":true,"short_id":192757941,"signature":"各位老铁们，我发视频是为了记录每场婚礼的幸福时刻，希望你们多多祝福，有些人不会说人话可以不说，希望那些小黑人，嘴下丢情，","type_a1":1,"verified":false,"verified_mobile":false,"verified_reason":""}
          * can_duet : 1
          * comment_delay : -1
-         * create_time : 1489231411
-         * description :
+         * create_time : 1555217376
+         * description : 婚礼誓言新娘感动哭了，
          * disable_watermark : false
+         * extra_scheme_url : sslocal://webview?url=https%3A%2F%2Fhotsoon.snssdk.com%2Ffalcon%2Flive_inapp%2Fpage%2Fpush_hot%2Findex.html%23%2F%3Fitem_id%3D6679599728998599943&hide_nav_bar=1&hide_more=1&disable_bounces=1
          * follow_display : false
          * follow_status_tag :
-         * id : 6396200153518181634
-         * id_str : 6396200153518181634
+         * friend_action_list : null
+         * id : 6679599728998599943
+         * id_str : 6679599728998599943
+         * item_log_extra : {"item_type":"item"}
          * location :
          * media_type : 4
          * prefetch_comment : false
          * prefetch_profile : false
-         * share_description : 这个视频居然有 687823 次播放，快来围观>>
+         * share_description : 婚礼誓言新娘感动哭了，
          * share_enable : true
          * share_strong_guide : 0
-         * share_title : 「阿福啊」的这个视频好6，快来围观！
-         * share_url : http://reflow.huoshan.com/share/item/6396200153518181634/?tag=214&timestamp=1550398050&watermark=2&media_type=4&
-         * stats : {"comment_count":178,"digg_count":3388,"play_count":687823,"share_count":2138}
+         * share_title : 「幸福相伴^O^」的这个视频好6，快来围观！
+         * share_url : http://reflow.huoshan.com/share/item/6679599728998599943/?tag=0&timestamp=1555254680&watermark=2&media_type=4&
+         * song : null
+         * stats : {"comment_count":2,"digg_count":43,"play_count":3240,"share_count":0}
          * status : 102
          * tips :
          * tips_url : https://hotsoon.snssdk.com/hotsoon/in_app/pyramid_selling/?source=money
-         * title :
+         * title : 婚礼誓言新娘感动哭了，
          * user_bury : 0
          * user_digg : 0
-         * video : {"allow_cache":true,"cover":{"avg_color":"#FADCDC","uri":"large/18b60001104831fa133d","url_list":["http://p3-hs.bytecdn.cn/large/18b60001104831fa133d.webp","http://p1-hs.bytecdn.cn/large/18b60001104831fa133d.webp","http://p6-hs.bytecdn.cn/large/18b60001104831fa133d.webp"]},"cover_animated":null,"cover_medium":{"avg_color":"#3D3D3D","uri":"medium/18b60001104831fa133d","url_list":["http://p3-hs.bytecdn.cn/medium/18b60001104831fa133d.webp","http://p1-hs.bytecdn.cn/medium/18b60001104831fa133d.webp","http://p6-hs.bytecdn.cn/medium/18b60001104831fa133d.webp"]},"cover_thumb":{"avg_color":"#FADCF0","uri":"live/100x100/18b60001104831fa133d","url_list":["http://p3-hs.bytecdn.cn/live/100x100/18b60001104831fa133d.webp","http://p1-hs.bytecdn.cn/live/100x100/18b60001104831fa133d.webp","http://p6-hs.bytecdn.cn/live/100x100/18b60001104831fa133d.webp"]},"download_url":["https://api-hl.huoshan.com/hotsoon/item/video/_playback/?video_id=897937be13a345dd859c268206dd810c&line=0&app_id=1112&vquality=normal&watermark=2&long_video=0&sf=3&ts=1550398050","https://api-hl.huoshan.com/hotsoon/item/video/_playback/?video_id=897937be13a345dd859c268206dd810c&line=1&app_id=1112&vquality=normal&watermark=2&long_video=0&sf=3&ts=1550398050"],"duration":14.982,"height":640,"preload_size":512000,"uri":"897937be13a345dd859c268206dd810c_720p","url_list":["http://v6-hs.ixigua.com/730aa8cbe214527e1135909c2ef0bc10/5c694080/video/m/220d5d8a8d77c294e5a88e9018e137455d311441fa000042ca7d10d8fb/?rc=ZjRnOTU5ZjhnODY2aDo8PEApQHRAbzs6NTs7MzUzMzYzNDQzNDVvQGg2dSlAZjV1KWZzcHcxeW9mNTRALTVhLTUvNjVhMV4uXzA0NXMtbyNvIzAyLy0zLy0uLTQ1NC82LTojbyM6YS1xIzpgaF4rYmZiZjojLi5e","http://v9-hs.ixigua.com/dbe6a374aa4349d847967086ebc79b55/5c694080/video/m/220d5d8a8d77c294e5a88e9018e137455d311441fa000042ca7d10d8fb/?rc=ZjRnOTU5ZjhnODY2aDo8PEApQHRAbzs6NTs7MzUzMzYzNDQzNDVvQGg2dSlAZjV1KWZzcHcxeW9mNTRALTVhLTUvNjVhMV4uXzA0NXMtbyNvIzAyLy0zLy0uLTQ1NC82LTojbyM6YS1xIzpgaF4rYmZiZjojLi5e","https://api.huoshan.com/hotsoon/item/video/_playback/?video_id=897937be13a345dd859c268206dd810c&line=0&app_id=1112&vquality=normal&quality=720p&codec=h264&sf=3&origin=0&ts=1550398050"],"video_id":"897937be13a345dd859c268206dd810c","watermark":true,"width":360}
-         * weibo_share_title : #玩视频上火山#阿福啊在火山上分享了视频，快来围观！传送门戳我>>http://reflow.huoshan.com/share/item/6396200153518181634/?tag=214&timestamp=1550398050&watermark=2&media_type=4&
+         * video : {"allow_cache":true,"cover":{"avg_color":"#89A37C","uri":"large/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912","url_list":["http://p1-hs.bytecdn.cn/large/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912.webp","http://p9-hs.bytecdn.cn/large/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912.webp","http://p6-hs.bytecdn.cn/large/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912.webp"]},"cover_animated":null,"cover_medium":{"avg_color":"#A37C7C","uri":"medium/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912","url_list":["http://p1-hs.bytecdn.cn/medium/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912.webp","http://p9-hs.bytecdn.cn/medium/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912.webp","http://p6-hs.bytecdn.cn/medium/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912.webp"]},"cover_thumb":{"avg_color":"#8F8F8F","uri":"live/100x100/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912","url_list":["http://p1-hs.bytecdn.cn/live/100x100/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912.webp","http://p9-hs.bytecdn.cn/live/100x100/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912.webp","http://p6-hs.bytecdn.cn/live/100x100/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912.webp"]},"download_url":["https://api.huoshan.com/hotsoon/item/video/_playback/?video_id=v0200c250000bipbnmsmavf81s5igggg&line=0&app_id=1112&vquality=normal&watermark=2&long_video=0&sf=3&ts=1555254680","https://api.huoshan.com/hotsoon/item/video/_playback/?video_id=v0200c250000bipbnmsmavf81s5igggg&line=1&app_id=1112&vquality=normal&watermark=2&long_video=0&sf=3&ts=1555254680"],"duration":15.047,"gif_uri":"1ed89000954de90340b01","gif_url_list":["http://p1-hs.bytecdn.cn/img/mosaic-legacy/1ed89000954de90340b01~noop.image","http://p3-hs.bytecdn.cn/img/mosaic-legacy/1ed89000954de90340b01~noop.image","http://p3-hs.bytecdn.cn/img/mosaic-legacy/1ed89000954de90340b01~noop.image"],"h265_uri":"h265/v0200c250000bipbnmsmavf81s5igggg_720p","h265_url":["http://v9-hs.ixigua.com/6ae79d21994340311afd9b7fa45a69c0/5cb35bb7/video/m/220bfdb80a213194242919a229a4e0cd8151161cdbbe00005e3a293e1bdf/?rc=ampsdjt5cHBlbDMzOGYzM0ApQHRAbzc2NzY5MzQzMzU0NTQzNDVvQGg2dSlAZjV1KWZzcHcxeW9mNTRAZGQyLmNecGttXy0tLy0vc3MtbyNvIzEtMy4uNi0uLS4wMTE2LTojbyM6YS1xIzpgaF4rYmZiZjojLi5e","http://v1-hs.ixigua.com/e37c9fc9507c04687c9eb39e9925ed37/5cb35bb7/video/m/220bfdb80a213194242919a229a4e0cd8151161cdbbe00005e3a293e1bdf/?rc=ampsdjt5cHBlbDMzOGYzM0ApQHRAbzc2NzY5MzQzMzU0NTQzNDVvQGg2dSlAZjV1KWZzcHcxeW9mNTRAZGQyLmNecGttXy0tLy0vc3MtbyNvIzEtMy4uNi0uLS4wMTE2LTojbyM6YS1xIzpgaF4rYmZiZjojLi5e","https://api.huoshan.com/hotsoon/item/video/_playback/?video_id=v0200c250000bipbnmsmavf81s5igggg&line=0&app_id=1112&vquality=normal&quality=720p&codec=h265&sf=3&origin=0&ts=1555254680"],"height":1024,"preload_size":375000,"uri":"v0200c250000bipbnmsmavf81s5igggg","url_list":["https://api.huoshan.com/hotsoon/item/video/_playback/?video_id=v0200c250000bipbnmsmavf81s5igggg&line=0&app_id=1112&vquality=normal&watermark=0&long_video=0&sf=3&ts=1555254680","https://api.huoshan.com/hotsoon/item/video/_playback/?video_id=v0200c250000bipbnmsmavf81s5igggg&line=1&app_id=1112&vquality=normal&watermark=0&long_video=0&sf=3&ts=1555254680"],"video_id":"v0200c250000bipbnmsmavf81s5igggg","watermark":true,"width":576}
+         * weibo_share_title : #玩视频上火山#幸福相伴^O^在火山上分享了视频，快来围观！传送门戳我>>http://reflow.huoshan.com/share/item/6679599728998599943/?tag=0&timestamp=1555254680&watermark=2&media_type=4&
          */
 
         private boolean allow_comment;
         private boolean allow_dislike;
         private boolean allow_share;
-        private AuthorBean author;
+        private DataBean.AuthorBean author;
         private int can_duet;
         private int comment_delay;
         private int create_time;
         private String description;
         private boolean disable_watermark;
+        private String extra_scheme_url;
         private boolean follow_display;
         private String follow_status_tag;
+        private Object friend_action_list;
         private long id;
         private String id_str;
+        private String item_log_extra;
         private String location;
         private int media_type;
         private boolean prefetch_comment;
@@ -109,14 +116,15 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
         private int share_strong_guide;
         private String share_title;
         private String share_url;
-        private StatsBean stats;
+        private Object song;
+        private DataBean.StatsBean stats;
         private int status;
         private String tips;
         private String tips_url;
         private String title;
         private int user_bury;
         private int user_digg;
-        private VideoBean video;
+        private DataBean.VideoBean video;
         private String weibo_share_title;
         private List<?> at_users;
 
@@ -144,11 +152,11 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
             this.allow_share = allow_share;
         }
 
-        public AuthorBean getAuthor() {
+        public DataBean.AuthorBean getAuthor() {
             return author;
         }
 
-        public void setAuthor(AuthorBean author) {
+        public void setAuthor(DataBean.AuthorBean author) {
             this.author = author;
         }
 
@@ -192,6 +200,14 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
             this.disable_watermark = disable_watermark;
         }
 
+        public String getExtra_scheme_url() {
+            return extra_scheme_url;
+        }
+
+        public void setExtra_scheme_url(String extra_scheme_url) {
+            this.extra_scheme_url = extra_scheme_url;
+        }
+
         public boolean isFollow_display() {
             return follow_display;
         }
@@ -208,6 +224,14 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
             this.follow_status_tag = follow_status_tag;
         }
 
+        public Object getFriend_action_list() {
+            return friend_action_list;
+        }
+
+        public void setFriend_action_list(Object friend_action_list) {
+            this.friend_action_list = friend_action_list;
+        }
+
         public long getId() {
             return id;
         }
@@ -222,6 +246,14 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
 
         public void setId_str(String id_str) {
             this.id_str = id_str;
+        }
+
+        public String getItem_log_extra() {
+            return item_log_extra;
+        }
+
+        public void setItem_log_extra(String item_log_extra) {
+            this.item_log_extra = item_log_extra;
         }
 
         public String getLocation() {
@@ -296,11 +328,19 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
             this.share_url = share_url;
         }
 
-        public StatsBean getStats() {
+        public Object getSong() {
+            return song;
+        }
+
+        public void setSong(Object song) {
+            this.song = song;
+        }
+
+        public DataBean.StatsBean getStats() {
             return stats;
         }
 
-        public void setStats(StatsBean stats) {
+        public void setStats(DataBean.StatsBean stats) {
             this.stats = stats;
         }
 
@@ -352,11 +392,11 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
             this.user_digg = user_digg;
         }
 
-        public VideoBean getVideo() {
+        public DataBean.VideoBean getVideo() {
             return video;
         }
 
-        public void setVideo(VideoBean video) {
+        public void setVideo(DataBean.VideoBean video) {
             this.video = video;
         }
 
@@ -384,49 +424,54 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
              * allow_others_download_when_sharing_video : true
              * allow_share_show_profile : true
              * allow_show_in_gossip : true
+             * allow_show_my_action : true
              * allow_strange_comment : true
              * allow_unfollower_comment : true
-             * avatar_jpg : {"uri":"mosaic-legacy/124000049c8590a49e8f","url_list":["http://p1-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~100x100.jpg","http://p3-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~100x100.jpg","http://p3-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~100x100.jpg"]}
-             * avatar_large : {"uri":"mosaic-legacy/124000049c8590a49e8f","url_list":["http://p3-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~1080x1080.webp","http://p1-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~1080x1080.webp","http://p1-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~1080x1080.webp"]}
-             * avatar_medium : {"uri":"mosaic-legacy/124000049c8590a49e8f","url_list":["http://p3-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~720x720.webp","http://p9-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~720x720.webp","http://p9-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~720x720.webp"]}
-             * avatar_thumb : {"uri":"mosaic-legacy/124000049c8590a49e8f","url_list":["http://p3-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~100x100.webp","http://p1-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~100x100.webp","http://p1-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~100x100.webp"]}
+             * anchor_level : {"experience":362,"highest_experience_this_level":460,"level":10,"lowest_experience_this_level":311,"profile_dialog_bg":{"uri":"hotsoon-resource/anchor_level_1.1_3x.png","url_list":["http://p3-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1.1_3x.png","http://p1-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1.1_3x.png","http://p1-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1.1_3x.png"]},"profile_dialog_bg_back":{"uri":"hotsoon-resource/anchor_level_1.2_3x.png","url_list":["http://p1-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1.2_3x.png","http://p3-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1.2_3x.png","http://p3-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1.2_3x.png"]},"small_icon":{"uri":"hotsoon-resource/anchor_level_small_10_3x.png","url_list":["http://p1-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_small_10_3x.png","http://p3-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_small_10_3x.png","http://p3-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_small_10_3x.png"]},"stage_level":{"uri":"hotsoon-resource/anchor_level_1_3x.png","url_list":["http://p3-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1_3x.png","http://p1-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1_3x.png","http://p1-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1_3x.png"]},"task_decrease_experience":0,"task_end_time":1548345540,"task_start_experience":0,"task_start_time":1545853824,"task_target_experience":0}
+             * avatar_jpg : {"uri":"hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f","url_list":["http://p3-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~100x100.jpg","http://p1-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~100x100.jpg","http://p1-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~100x100.jpg"]}
+             * avatar_large : {"uri":"hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f","url_list":["http://p9-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~1080x1080.webp","http://p3-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~1080x1080.webp","http://p3-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~1080x1080.webp"]}
+             * avatar_medium : {"uri":"hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f","url_list":["http://p1-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~720x720.webp","http://p3-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~720x720.webp","http://p3-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~720x720.webp"]}
+             * avatar_thumb : {"uri":"hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f","url_list":["http://p3-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~100x100.webp","http://p1-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~100x100.webp","http://p1-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~100x100.webp"]}
              * bg_img_url :
-             * birthday : 776390400
+             * birthday : 0
              * birthday_description : 90后
              * birthday_valid : true
              * block_status : 0
-             * city :
+             * city : 周口
              * comment_restrict : 1
-             * constellation : 狮子座
+             * constellation :
              * disable_ichat : 0
              * enable_ichat_img : 1
+             * encrypted_id : MS4wLjABAAAAwK0u7wpNiQ5WQLSur67XJfyGaeK2iB8TGllwDC5TSPc
              * exp : 0
-             * fan_ticket_count : 4188
+             * fan_ticket_count : 63670
              * fold_stranger_chat : false
              * follow_status : 0
-             * gender : 1
+             * gender : 2
+             * has_hashtag_item : true
              * hotsoon_verified : false
              * hotsoon_verified_reason :
              * ichat_restrict_type : 1
-             * id : 54190054499
-             * id_str : 54190054499
-             * income_share_percent : 30
+             * id : 60178817263
+             * id_str : 60178817263
+             * income_share_percent : 0
              * is_follower : false
              * is_following : false
              * level : 1
              * need_profile_guide : false
-             * nickname : 阿福啊
-             * pay_grade : {"diamond_icon":{"uri":"mosaic-legacy/12400003aba3dd42e213","url_list":["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/12400003aba3dd42e213","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/12400003aba3dd42e213","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/12400003aba3dd42e213"]},"grade_banner":"7级可获房间展示升级通告","grade_describe":"当前无等级，消费1钻石即可升级获勋章","grade_icon_list":[{"icon":{"uri":"mosaic-legacy/3b60000a6308f74aec4e","url_list":["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/3b60000a6308f74aec4e","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/3b60000a6308f74aec4e","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/3b60000a6308f74aec4e"]},"icon_diamond":0,"level":0,"level_str":"暂无"},{"icon":{"uri":"mosaic-legacy/3b65000678af61a99a1b","url_list":["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/3b65000678af61a99a1b","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/3b65000678af61a99a1b","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/3b65000678af61a99a1b"]},"icon_diamond":0,"level":0,"level_str":"Lv.0"},{"icon":{"uri":"mosaic-legacy/3b620006b1e388185513","url_list":["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/3b620006b1e388185513","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/3b620006b1e388185513","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/3b620006b1e388185513"]},"icon_diamond":1,"level":1,"level_str":"Lv.1"}],"icon":{"uri":"mosaic-legacy/f2100085e55a62833b1","url_list":["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/f2100085e55a62833b1","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/f2100085e55a62833b1","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/f2100085e55a62833b1"]},"level":0,"live_icon":{"uri":"mosaic-legacy/2bd200048a6d1f88860b","url_list":["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/2bd200048a6d1f88860b","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/2bd200048a6d1f88860b","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/2bd200048a6d1f88860b"]},"name":"暂无","new_live_icon":{"uri":"mosaic-legacy/2bd200048a6d1f88860b","url_list":["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/2bd200048a6d1f88860b","http://p9-hs.bytecdn.cn/obj/mosaic-legacy/2bd200048a6d1f88860b","http://p9-hs.bytecdn.cn/obj/mosaic-legacy/2bd200048a6d1f88860b"]},"next_diamond":1,"next_icon":{"uri":"mosaic-legacy/30eb0000a12588d9bb3e","url_list":["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/30eb0000a12588d9bb3e","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/30eb0000a12588d9bb3e","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/30eb0000a12588d9bb3e"]},"next_name":"树苗","now_diamond":0,"pay_diamond_bak":0,"profile_dialog_bg":{"uri":"mosaic-legacy/","url_list":["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/","http://p9-hs.bytecdn.cn/obj/mosaic-legacy/","http://p9-hs.bytecdn.cn/obj/mosaic-legacy/"]},"profile_dialog_bg_back":{"uri":"mosaic-legacy/","url_list":["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/"]},"screen_chat_type":1,"this_grade_max_diamond":0,"this_grade_min_diamond":0,"total_diamond_count":0,"upgrade_need_consume":1}
-             * pay_scores : 0
+             * nickname : 幸福相伴^O^
+             * pay_grade : {"diamond_icon":{"uri":"mosaic-legacy/12400003aba3dd42e213","url_list":["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/12400003aba3dd42e213","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/12400003aba3dd42e213","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/12400003aba3dd42e213"]},"grade_banner":"7级可获房间展示升级通告","grade_describe":"距升级还需消费94钻","grade_icon_list":[{"icon":{"uri":"mosaic-legacy/3b65000678eac77af1d9","url_list":["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/3b65000678eac77af1d9","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/3b65000678eac77af1d9","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/3b65000678eac77af1d9"]},"icon_diamond":51,"level":5,"level_str":"Lv.5"},{"icon":{"uri":"mosaic-legacy/3b65000678eac77af1d9","url_list":["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/3b65000678eac77af1d9","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/3b65000678eac77af1d9","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/3b65000678eac77af1d9"]},"icon_diamond":100,"level":6,"level_str":"Lv.6"},{"icon":{"uri":"mosaic-legacy/3b620006b1e388185513","url_list":["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/3b620006b1e388185513","http://p9-hs.bytecdn.cn/obj/mosaic-legacy/3b620006b1e388185513","http://p9-hs.bytecdn.cn/obj/mosaic-legacy/3b620006b1e388185513"]},"icon_diamond":200,"level":7,"level_str":"Lv.7"}],"icon":{"uri":"mosaic-legacy/30eb0000a101d40eea0c","url_list":["http://p9-hs.bytecdn.cn/obj/mosaic-legacy/30eb0000a101d40eea0c","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/30eb0000a101d40eea0c","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/30eb0000a101d40eea0c"]},"im_icon":{"uri":"mosaic-legacy/2ea8000962099e965ff0","url_list":["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/2ea8000962099e965ff0","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/2ea8000962099e965ff0","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/2ea8000962099e965ff0"]},"im_icon_with_level":{"uri":"mosaic-legacy/78a30076591d3cd2dc07","url_list":["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/78a30076591d3cd2dc07","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/78a30076591d3cd2dc07","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/78a30076591d3cd2dc07"]},"level":6,"live_icon":{"uri":"mosaic-legacy/30ee0007ccef28b99639","url_list":["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/30ee0007ccef28b99639","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/30ee0007ccef28b99639","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/30ee0007ccef28b99639"]},"name":"树苗","new_im_icon_with_level":{"uri":"mosaic-legacy/78a500926ba4dd74b0fa","url_list":["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/78a500926ba4dd74b0fa","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/78a500926ba4dd74b0fa","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/78a500926ba4dd74b0fa"]},"new_live_icon":{"uri":"mosaic-legacy/78a10056e336cb6eb911","url_list":["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/78a10056e336cb6eb911","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/78a10056e336cb6eb911","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/78a10056e336cb6eb911"]},"new_nav_live_icon":{"uri":"hotsoon-resource/new_nva_level_icon_6.png","url_list":["http://p9-hs.bytecdn.cn/obj/hotsoon-resource/new_nva_level_icon_6.png","http://p3-hs.bytecdn.cn/obj/hotsoon-resource/new_nva_level_icon_6.png","http://p3-hs.bytecdn.cn/obj/hotsoon-resource/new_nva_level_icon_6.png"]},"next_diamond":500,"next_icon":{"uri":"mosaic-legacy/12400003aae89daccd69","url_list":["http://p9-hs.bytecdn.cn/obj/mosaic-legacy/12400003aae89daccd69","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/12400003aae89daccd69","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/12400003aae89daccd69"]},"next_name":"树叶","now_diamond":106,"pay_diamond_bak":0,"profile_dialog_bg":{"uri":"hotsoon-resource/user_level_1.1_3x.png","url_list":["http://p3-hs.bytecdn.cn/obj/hotsoon-resource/user_level_1.1_3x.png","http://p1-hs.bytecdn.cn/obj/hotsoon-resource/user_level_1.1_3x.png","http://p1-hs.bytecdn.cn/obj/hotsoon-resource/user_level_1.1_3x.png"]},"profile_dialog_bg_back":{"uri":"hotsoon-resource/user_level_1.2_3x.png","url_list":["http://p1-hs.bytecdn.cn/obj/hotsoon-resource/user_level_1.2_3x.png","http://p3-hs.bytecdn.cn/obj/hotsoon-resource/user_level_1.2_3x.png","http://p3-hs.bytecdn.cn/obj/hotsoon-resource/user_level_1.2_3x.png"]},"screen_chat_type":2,"this_grade_max_diamond":199,"this_grade_min_diamond":100,"total_diamond_count":184,"upgrade_need_consume":94}
+             * pay_scores : 20
              * push_comment_status : true
              * push_digg : true
              * push_follow : true
+             * push_friend_action : true
              * push_ichat : true
              * push_status : true
              * push_video_post : true
              * push_video_recommend : true
-             * short_id : 75553105
-             * signature :
+             * short_id : 192757941
+             * signature : 各位老铁们，我发视频是为了记录每场婚礼的幸福时刻，希望你们多多祝福，有些人不会说人话可以不说，希望那些小黑人，嘴下丢情，
              * type_a1 : 1
              * verified : false
              * verified_mobile : false
@@ -439,12 +484,18 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
             private boolean allow_others_download_when_sharing_video;
             private boolean allow_share_show_profile;
             private boolean allow_show_in_gossip;
+            private boolean allow_show_my_action;
             private boolean allow_strange_comment;
             private boolean allow_unfollower_comment;
-            private AvatarJpgBean avatar_jpg;
-            private AvatarLargeBean avatar_large;
-            private AvatarMediumBean avatar_medium;
-            private AvatarThumbBean avatar_thumb;
+            private DataBean.AuthorBean.AnchorLevelBean
+                anchor_level;
+            private DataBean.AuthorBean.AvatarJpgBean avatar_jpg;
+            private DataBean.AuthorBean.AvatarLargeBean
+                avatar_large;
+            private DataBean.AuthorBean.AvatarMediumBean
+                avatar_medium;
+            private DataBean.AuthorBean.AvatarThumbBean
+                avatar_thumb;
             private String bg_img_url;
             private int birthday;
             private String birthday_description;
@@ -455,11 +506,13 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
             private String constellation;
             private int disable_ichat;
             private int enable_ichat_img;
+            private String encrypted_id;
             private int exp;
             private int fan_ticket_count;
             private boolean fold_stranger_chat;
             private int follow_status;
             private int gender;
+            private boolean has_hashtag_item;
             private boolean hotsoon_verified;
             private String hotsoon_verified_reason;
             private int ichat_restrict_type;
@@ -471,11 +524,12 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
             private int level;
             private boolean need_profile_guide;
             private String nickname;
-            private PayGradeBean pay_grade;
+            private DataBean.AuthorBean.PayGradeBean pay_grade;
             private int pay_scores;
             private boolean push_comment_status;
             private boolean push_digg;
             private boolean push_follow;
+            private boolean push_friend_action;
             private boolean push_ichat;
             private boolean push_status;
             private boolean push_video_post;
@@ -515,8 +569,10 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
                 return allow_others_download_when_sharing_video;
             }
 
-            public void setAllow_others_download_when_sharing_video(boolean allow_others_download_when_sharing_video) {
-                this.allow_others_download_when_sharing_video = allow_others_download_when_sharing_video;
+            public void setAllow_others_download_when_sharing_video(
+                boolean allow_others_download_when_sharing_video) {
+                this.allow_others_download_when_sharing_video =
+                    allow_others_download_when_sharing_video;
             }
 
             public boolean isAllow_share_show_profile() {
@@ -535,6 +591,14 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
                 this.allow_show_in_gossip = allow_show_in_gossip;
             }
 
+            public boolean isAllow_show_my_action() {
+                return allow_show_my_action;
+            }
+
+            public void setAllow_show_my_action(boolean allow_show_my_action) {
+                this.allow_show_my_action = allow_show_my_action;
+            }
+
             public boolean isAllow_strange_comment() {
                 return allow_strange_comment;
             }
@@ -551,35 +615,43 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
                 this.allow_unfollower_comment = allow_unfollower_comment;
             }
 
-            public AvatarJpgBean getAvatar_jpg() {
+            public DataBean.AuthorBean.AnchorLevelBean getAnchor_level() {
+                return anchor_level;
+            }
+
+            public void setAnchor_level(DataBean.AuthorBean.AnchorLevelBean anchor_level) {
+                this.anchor_level = anchor_level;
+            }
+
+            public DataBean.AuthorBean.AvatarJpgBean getAvatar_jpg() {
                 return avatar_jpg;
             }
 
-            public void setAvatar_jpg(AvatarJpgBean avatar_jpg) {
+            public void setAvatar_jpg(DataBean.AuthorBean.AvatarJpgBean avatar_jpg) {
                 this.avatar_jpg = avatar_jpg;
             }
 
-            public AvatarLargeBean getAvatar_large() {
+            public DataBean.AuthorBean.AvatarLargeBean getAvatar_large() {
                 return avatar_large;
             }
 
-            public void setAvatar_large(AvatarLargeBean avatar_large) {
+            public void setAvatar_large(DataBean.AuthorBean.AvatarLargeBean avatar_large) {
                 this.avatar_large = avatar_large;
             }
 
-            public AvatarMediumBean getAvatar_medium() {
+            public DataBean.AuthorBean.AvatarMediumBean getAvatar_medium() {
                 return avatar_medium;
             }
 
-            public void setAvatar_medium(AvatarMediumBean avatar_medium) {
+            public void setAvatar_medium(DataBean.AuthorBean.AvatarMediumBean avatar_medium) {
                 this.avatar_medium = avatar_medium;
             }
 
-            public AvatarThumbBean getAvatar_thumb() {
+            public DataBean.AuthorBean.AvatarThumbBean getAvatar_thumb() {
                 return avatar_thumb;
             }
 
-            public void setAvatar_thumb(AvatarThumbBean avatar_thumb) {
+            public void setAvatar_thumb(DataBean.AuthorBean.AvatarThumbBean avatar_thumb) {
                 this.avatar_thumb = avatar_thumb;
             }
 
@@ -663,6 +735,14 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
                 this.enable_ichat_img = enable_ichat_img;
             }
 
+            public String getEncrypted_id() {
+                return encrypted_id;
+            }
+
+            public void setEncrypted_id(String encrypted_id) {
+                this.encrypted_id = encrypted_id;
+            }
+
             public int getExp() {
                 return exp;
             }
@@ -701,6 +781,14 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
 
             public void setGender(int gender) {
                 this.gender = gender;
+            }
+
+            public boolean isHas_hashtag_item() {
+                return has_hashtag_item;
+            }
+
+            public void setHas_hashtag_item(boolean has_hashtag_item) {
+                this.has_hashtag_item = has_hashtag_item;
             }
 
             public boolean isHotsoon_verified() {
@@ -791,11 +879,11 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
                 this.nickname = nickname;
             }
 
-            public PayGradeBean getPay_grade() {
+            public DataBean.AuthorBean.PayGradeBean getPay_grade() {
                 return pay_grade;
             }
 
-            public void setPay_grade(PayGradeBean pay_grade) {
+            public void setPay_grade(DataBean.AuthorBean.PayGradeBean pay_grade) {
                 this.pay_grade = pay_grade;
             }
 
@@ -829,6 +917,14 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
 
             public void setPush_follow(boolean push_follow) {
                 this.push_follow = push_follow;
+            }
+
+            public boolean isPush_friend_action() {
+                return push_friend_action;
+            }
+
+            public void setPush_friend_action(boolean push_friend_action) {
+                this.push_friend_action = push_friend_action;
             }
 
             public boolean isPush_ichat() {
@@ -911,10 +1007,256 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
                 this.verified_reason = verified_reason;
             }
 
+            public static class AnchorLevelBean {
+                /**
+                 * experience : 362
+                 * highest_experience_this_level : 460
+                 * level : 10
+                 * lowest_experience_this_level : 311
+                 * profile_dialog_bg : {"uri":"hotsoon-resource/anchor_level_1.1_3x.png","url_list":["http://p3-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1.1_3x.png","http://p1-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1.1_3x.png","http://p1-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1.1_3x.png"]}
+                 * profile_dialog_bg_back : {"uri":"hotsoon-resource/anchor_level_1.2_3x.png","url_list":["http://p1-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1.2_3x.png","http://p3-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1.2_3x.png","http://p3-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1.2_3x.png"]}
+                 * small_icon : {"uri":"hotsoon-resource/anchor_level_small_10_3x.png","url_list":["http://p1-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_small_10_3x.png","http://p3-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_small_10_3x.png","http://p3-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_small_10_3x.png"]}
+                 * stage_level : {"uri":"hotsoon-resource/anchor_level_1_3x.png","url_list":["http://p3-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1_3x.png","http://p1-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1_3x.png","http://p1-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1_3x.png"]}
+                 * task_decrease_experience : 0
+                 * task_end_time : 1548345540
+                 * task_start_experience : 0
+                 * task_start_time : 1545853824
+                 * task_target_experience : 0
+                 */
+
+                private int experience;
+                private int highest_experience_this_level;
+                private int level;
+                private int lowest_experience_this_level;
+                private DataBean.AuthorBean.AnchorLevelBean.ProfileDialogBgBean
+                    profile_dialog_bg;
+                private DataBean.AuthorBean.AnchorLevelBean.ProfileDialogBgBackBean
+                    profile_dialog_bg_back;
+                private DataBean.AuthorBean.AnchorLevelBean.SmallIconBean
+                    small_icon;
+                private DataBean.AuthorBean.AnchorLevelBean.StageLevelBean
+                    stage_level;
+                private int task_decrease_experience;
+                private int task_end_time;
+                private int task_start_experience;
+                private int task_start_time;
+                private int task_target_experience;
+
+                public int getExperience() {
+                    return experience;
+                }
+
+                public void setExperience(int experience) {
+                    this.experience = experience;
+                }
+
+                public int getHighest_experience_this_level() {
+                    return highest_experience_this_level;
+                }
+
+                public void setHighest_experience_this_level(
+                    int highest_experience_this_level) {
+                    this.highest_experience_this_level = highest_experience_this_level;
+                }
+
+                public int getLevel() {
+                    return level;
+                }
+
+                public void setLevel(int level) {
+                    this.level = level;
+                }
+
+                public int getLowest_experience_this_level() {
+                    return lowest_experience_this_level;
+                }
+
+                public void setLowest_experience_this_level(int lowest_experience_this_level) {
+                    this.lowest_experience_this_level = lowest_experience_this_level;
+                }
+
+                public DataBean.AuthorBean.AnchorLevelBean.ProfileDialogBgBean getProfile_dialog_bg() {
+                    return profile_dialog_bg;
+                }
+
+                public void setProfile_dialog_bg(DataBean.AuthorBean.AnchorLevelBean.ProfileDialogBgBean profile_dialog_bg) {
+                    this.profile_dialog_bg = profile_dialog_bg;
+                }
+
+                public DataBean.AuthorBean.AnchorLevelBean.ProfileDialogBgBackBean getProfile_dialog_bg_back() {
+                    return profile_dialog_bg_back;
+                }
+
+                public void setProfile_dialog_bg_back(
+                    DataBean.AuthorBean.AnchorLevelBean.ProfileDialogBgBackBean profile_dialog_bg_back) {
+                    this.profile_dialog_bg_back = profile_dialog_bg_back;
+                }
+
+                public DataBean.AuthorBean.AnchorLevelBean.SmallIconBean getSmall_icon() {
+                    return small_icon;
+                }
+
+                public void setSmall_icon(DataBean.AuthorBean.AnchorLevelBean.SmallIconBean small_icon) {
+                    this.small_icon = small_icon;
+                }
+
+                public DataBean.AuthorBean.AnchorLevelBean.StageLevelBean getStage_level() {
+                    return stage_level;
+                }
+
+                public void setStage_level(DataBean.AuthorBean.AnchorLevelBean.StageLevelBean stage_level) {
+                    this.stage_level = stage_level;
+                }
+
+                public int getTask_decrease_experience() {
+                    return task_decrease_experience;
+                }
+
+                public void setTask_decrease_experience(int task_decrease_experience) {
+                    this.task_decrease_experience = task_decrease_experience;
+                }
+
+                public int getTask_end_time() {
+                    return task_end_time;
+                }
+
+                public void setTask_end_time(int task_end_time) {
+                    this.task_end_time = task_end_time;
+                }
+
+                public int getTask_start_experience() {
+                    return task_start_experience;
+                }
+
+                public void setTask_start_experience(int task_start_experience) {
+                    this.task_start_experience = task_start_experience;
+                }
+
+                public int getTask_start_time() {
+                    return task_start_time;
+                }
+
+                public void setTask_start_time(int task_start_time) {
+                    this.task_start_time = task_start_time;
+                }
+
+                public int getTask_target_experience() {
+                    return task_target_experience;
+                }
+
+                public void setTask_target_experience(int task_target_experience) {
+                    this.task_target_experience = task_target_experience;
+                }
+
+                public static class ProfileDialogBgBean {
+                    /**
+                     * uri : hotsoon-resource/anchor_level_1.1_3x.png
+                     * url_list : ["http://p3-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1.1_3x.png","http://p1-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1.1_3x.png","http://p1-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1.1_3x.png"]
+                     */
+
+                    private String uri;
+                    private List<String> url_list;
+
+                    public String getUri() {
+                        return uri;
+                    }
+
+                    public void setUri(String uri) {
+                        this.uri = uri;
+                    }
+
+                    public List<String> getUrl_list() {
+                        return url_list;
+                    }
+
+                    public void setUrl_list(List<String> url_list) {
+                        this.url_list = url_list;
+                    }
+                }
+
+                public static class ProfileDialogBgBackBean {
+                    /**
+                     * uri : hotsoon-resource/anchor_level_1.2_3x.png
+                     * url_list : ["http://p1-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1.2_3x.png","http://p3-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1.2_3x.png","http://p3-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1.2_3x.png"]
+                     */
+
+                    private String uri;
+                    private List<String> url_list;
+
+                    public String getUri() {
+                        return uri;
+                    }
+
+                    public void setUri(String uri) {
+                        this.uri = uri;
+                    }
+
+                    public List<String> getUrl_list() {
+                        return url_list;
+                    }
+
+                    public void setUrl_list(List<String> url_list) {
+                        this.url_list = url_list;
+                    }
+                }
+
+                public static class SmallIconBean {
+                    /**
+                     * uri : hotsoon-resource/anchor_level_small_10_3x.png
+                     * url_list : ["http://p1-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_small_10_3x.png","http://p3-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_small_10_3x.png","http://p3-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_small_10_3x.png"]
+                     */
+
+                    private String uri;
+                    private List<String> url_list;
+
+                    public String getUri() {
+                        return uri;
+                    }
+
+                    public void setUri(String uri) {
+                        this.uri = uri;
+                    }
+
+                    public List<String> getUrl_list() {
+                        return url_list;
+                    }
+
+                    public void setUrl_list(List<String> url_list) {
+                        this.url_list = url_list;
+                    }
+                }
+
+                public static class StageLevelBean {
+                    /**
+                     * uri : hotsoon-resource/anchor_level_1_3x.png
+                     * url_list : ["http://p3-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1_3x.png","http://p1-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1_3x.png","http://p1-hs.bytecdn.cn/obj/hotsoon-resource/anchor_level_1_3x.png"]
+                     */
+
+                    private String uri;
+                    private List<String> url_list;
+
+                    public String getUri() {
+                        return uri;
+                    }
+
+                    public void setUri(String uri) {
+                        this.uri = uri;
+                    }
+
+                    public List<String> getUrl_list() {
+                        return url_list;
+                    }
+
+                    public void setUrl_list(List<String> url_list) {
+                        this.url_list = url_list;
+                    }
+                }
+            }
+
             public static class AvatarJpgBean {
                 /**
-                 * uri : mosaic-legacy/124000049c8590a49e8f
-                 * url_list : ["http://p1-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~100x100.jpg","http://p3-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~100x100.jpg","http://p3-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~100x100.jpg"]
+                 * uri : hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f
+                 * url_list : ["http://p3-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~100x100.jpg","http://p1-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~100x100.jpg","http://p1-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~100x100.jpg"]
                  */
 
                 private String uri;
@@ -939,8 +1281,8 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
 
             public static class AvatarLargeBean {
                 /**
-                 * uri : mosaic-legacy/124000049c8590a49e8f
-                 * url_list : ["http://p3-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~1080x1080.webp","http://p1-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~1080x1080.webp","http://p1-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~1080x1080.webp"]
+                 * uri : hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f
+                 * url_list : ["http://p9-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~1080x1080.webp","http://p3-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~1080x1080.webp","http://p3-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~1080x1080.webp"]
                  */
 
                 private String uri;
@@ -965,8 +1307,8 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
 
             public static class AvatarMediumBean {
                 /**
-                 * uri : mosaic-legacy/124000049c8590a49e8f
-                 * url_list : ["http://p3-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~720x720.webp","http://p9-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~720x720.webp","http://p9-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~720x720.webp"]
+                 * uri : hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f
+                 * url_list : ["http://p1-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~720x720.webp","http://p3-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~720x720.webp","http://p3-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~720x720.webp"]
                  */
 
                 private String uri;
@@ -991,8 +1333,8 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
 
             public static class AvatarThumbBean {
                 /**
-                 * uri : mosaic-legacy/124000049c8590a49e8f
-                 * url_list : ["http://p3-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~100x100.webp","http://p1-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~100x100.webp","http://p1-hs.bytecdn.cn/img/mosaic-legacy/124000049c8590a49e8f~100x100.webp"]
+                 * uri : hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f
+                 * url_list : ["http://p3-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~100x100.webp","http://p1-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~100x100.webp","http://p1-hs.bytecdn.cn/img/hotsoon-avatar/756f954689d1d70cb26ee5136f2896a9971988738b01edb9ae3ad19f6c8f588f~100x100.webp"]
                  */
 
                 private String uri;
@@ -1017,56 +1359,75 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
 
             public static class PayGradeBean {
                 /**
-                 * diamond_icon : {"uri":"mosaic-legacy/12400003aba3dd42e213","url_list":["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/12400003aba3dd42e213","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/12400003aba3dd42e213","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/12400003aba3dd42e213"]}
+                 * diamond_icon : {"uri":"mosaic-legacy/12400003aba3dd42e213","url_list":["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/12400003aba3dd42e213","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/12400003aba3dd42e213","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/12400003aba3dd42e213"]}
                  * grade_banner : 7级可获房间展示升级通告
-                 * grade_describe : 当前无等级，消费1钻石即可升级获勋章
-                 * grade_icon_list : [{"icon":{"uri":"mosaic-legacy/3b60000a6308f74aec4e","url_list":["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/3b60000a6308f74aec4e","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/3b60000a6308f74aec4e","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/3b60000a6308f74aec4e"]},"icon_diamond":0,"level":0,"level_str":"暂无"},{"icon":{"uri":"mosaic-legacy/3b65000678af61a99a1b","url_list":["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/3b65000678af61a99a1b","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/3b65000678af61a99a1b","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/3b65000678af61a99a1b"]},"icon_diamond":0,"level":0,"level_str":"Lv.0"},{"icon":{"uri":"mosaic-legacy/3b620006b1e388185513","url_list":["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/3b620006b1e388185513","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/3b620006b1e388185513","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/3b620006b1e388185513"]},"icon_diamond":1,"level":1,"level_str":"Lv.1"}]
-                 * icon : {"uri":"mosaic-legacy/f2100085e55a62833b1","url_list":["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/f2100085e55a62833b1","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/f2100085e55a62833b1","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/f2100085e55a62833b1"]}
-                 * level : 0
-                 * live_icon : {"uri":"mosaic-legacy/2bd200048a6d1f88860b","url_list":["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/2bd200048a6d1f88860b","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/2bd200048a6d1f88860b","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/2bd200048a6d1f88860b"]}
-                 * name : 暂无
-                 * new_live_icon : {"uri":"mosaic-legacy/2bd200048a6d1f88860b","url_list":["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/2bd200048a6d1f88860b","http://p9-hs.bytecdn.cn/obj/mosaic-legacy/2bd200048a6d1f88860b","http://p9-hs.bytecdn.cn/obj/mosaic-legacy/2bd200048a6d1f88860b"]}
-                 * next_diamond : 1
-                 * next_icon : {"uri":"mosaic-legacy/30eb0000a12588d9bb3e","url_list":["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/30eb0000a12588d9bb3e","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/30eb0000a12588d9bb3e","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/30eb0000a12588d9bb3e"]}
-                 * next_name : 树苗
-                 * now_diamond : 0
+                 * grade_describe : 距升级还需消费94钻
+                 * grade_icon_list : [{"icon":{"uri":"mosaic-legacy/3b65000678eac77af1d9","url_list":["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/3b65000678eac77af1d9","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/3b65000678eac77af1d9","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/3b65000678eac77af1d9"]},"icon_diamond":51,"level":5,"level_str":"Lv.5"},{"icon":{"uri":"mosaic-legacy/3b65000678eac77af1d9","url_list":["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/3b65000678eac77af1d9","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/3b65000678eac77af1d9","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/3b65000678eac77af1d9"]},"icon_diamond":100,"level":6,"level_str":"Lv.6"},{"icon":{"uri":"mosaic-legacy/3b620006b1e388185513","url_list":["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/3b620006b1e388185513","http://p9-hs.bytecdn.cn/obj/mosaic-legacy/3b620006b1e388185513","http://p9-hs.bytecdn.cn/obj/mosaic-legacy/3b620006b1e388185513"]},"icon_diamond":200,"level":7,"level_str":"Lv.7"}]
+                 * icon : {"uri":"mosaic-legacy/30eb0000a101d40eea0c","url_list":["http://p9-hs.bytecdn.cn/obj/mosaic-legacy/30eb0000a101d40eea0c","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/30eb0000a101d40eea0c","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/30eb0000a101d40eea0c"]}
+                 * im_icon : {"uri":"mosaic-legacy/2ea8000962099e965ff0","url_list":["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/2ea8000962099e965ff0","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/2ea8000962099e965ff0","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/2ea8000962099e965ff0"]}
+                 * im_icon_with_level : {"uri":"mosaic-legacy/78a30076591d3cd2dc07","url_list":["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/78a30076591d3cd2dc07","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/78a30076591d3cd2dc07","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/78a30076591d3cd2dc07"]}
+                 * level : 6
+                 * live_icon : {"uri":"mosaic-legacy/30ee0007ccef28b99639","url_list":["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/30ee0007ccef28b99639","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/30ee0007ccef28b99639","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/30ee0007ccef28b99639"]}
+                 * name : 树苗
+                 * new_im_icon_with_level : {"uri":"mosaic-legacy/78a500926ba4dd74b0fa","url_list":["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/78a500926ba4dd74b0fa","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/78a500926ba4dd74b0fa","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/78a500926ba4dd74b0fa"]}
+                 * new_live_icon : {"uri":"mosaic-legacy/78a10056e336cb6eb911","url_list":["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/78a10056e336cb6eb911","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/78a10056e336cb6eb911","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/78a10056e336cb6eb911"]}
+                 * new_nav_live_icon : {"uri":"hotsoon-resource/new_nva_level_icon_6.png","url_list":["http://p9-hs.bytecdn.cn/obj/hotsoon-resource/new_nva_level_icon_6.png","http://p3-hs.bytecdn.cn/obj/hotsoon-resource/new_nva_level_icon_6.png","http://p3-hs.bytecdn.cn/obj/hotsoon-resource/new_nva_level_icon_6.png"]}
+                 * next_diamond : 500
+                 * next_icon : {"uri":"mosaic-legacy/12400003aae89daccd69","url_list":["http://p9-hs.bytecdn.cn/obj/mosaic-legacy/12400003aae89daccd69","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/12400003aae89daccd69","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/12400003aae89daccd69"]}
+                 * next_name : 树叶
+                 * now_diamond : 106
                  * pay_diamond_bak : 0
-                 * profile_dialog_bg : {"uri":"mosaic-legacy/","url_list":["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/","http://p9-hs.bytecdn.cn/obj/mosaic-legacy/","http://p9-hs.bytecdn.cn/obj/mosaic-legacy/"]}
-                 * profile_dialog_bg_back : {"uri":"mosaic-legacy/","url_list":["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/"]}
-                 * screen_chat_type : 1
-                 * this_grade_max_diamond : 0
-                 * this_grade_min_diamond : 0
-                 * total_diamond_count : 0
-                 * upgrade_need_consume : 1
+                 * profile_dialog_bg : {"uri":"hotsoon-resource/user_level_1.1_3x.png","url_list":["http://p3-hs.bytecdn.cn/obj/hotsoon-resource/user_level_1.1_3x.png","http://p1-hs.bytecdn.cn/obj/hotsoon-resource/user_level_1.1_3x.png","http://p1-hs.bytecdn.cn/obj/hotsoon-resource/user_level_1.1_3x.png"]}
+                 * profile_dialog_bg_back : {"uri":"hotsoon-resource/user_level_1.2_3x.png","url_list":["http://p1-hs.bytecdn.cn/obj/hotsoon-resource/user_level_1.2_3x.png","http://p3-hs.bytecdn.cn/obj/hotsoon-resource/user_level_1.2_3x.png","http://p3-hs.bytecdn.cn/obj/hotsoon-resource/user_level_1.2_3x.png"]}
+                 * screen_chat_type : 2
+                 * this_grade_max_diamond : 199
+                 * this_grade_min_diamond : 100
+                 * total_diamond_count : 184
+                 * upgrade_need_consume : 94
                  */
 
-                private DiamondIconBean diamond_icon;
+                private DataBean.AuthorBean.PayGradeBean.DiamondIconBean
+                    diamond_icon;
                 private String grade_banner;
                 private String grade_describe;
-                private IconBean icon;
+                private DataBean.AuthorBean.PayGradeBean.IconBean
+                    icon;
+                private DataBean.AuthorBean.PayGradeBean.ImIconBean
+                    im_icon;
+                private DataBean.AuthorBean.PayGradeBean.ImIconWithLevelBean
+                    im_icon_with_level;
                 private int level;
-                private LiveIconBean live_icon;
+                private DataBean.AuthorBean.PayGradeBean.LiveIconBean
+                    live_icon;
                 private String name;
-                private NewLiveIconBean new_live_icon;
+                private DataBean.AuthorBean.PayGradeBean.NewImIconWithLevelBean
+                    new_im_icon_with_level;
+                private DataBean.AuthorBean.PayGradeBean.NewLiveIconBean
+                    new_live_icon;
+                private DataBean.AuthorBean.PayGradeBean.NewNavLiveIconBean
+                    new_nav_live_icon;
                 private int next_diamond;
-                private NextIconBean next_icon;
+                private DataBean.AuthorBean.PayGradeBean.NextIconBean
+                    next_icon;
                 private String next_name;
                 private int now_diamond;
                 private int pay_diamond_bak;
-                private ProfileDialogBgBean profile_dialog_bg;
-                private ProfileDialogBgBackBean profile_dialog_bg_back;
+                private DataBean.AuthorBean.PayGradeBean.ProfileDialogBgBeanX
+                    profile_dialog_bg;
+                private DataBean.AuthorBean.PayGradeBean.ProfileDialogBgBackBeanX
+                    profile_dialog_bg_back;
                 private int screen_chat_type;
                 private int this_grade_max_diamond;
                 private int this_grade_min_diamond;
                 private int total_diamond_count;
                 private int upgrade_need_consume;
-                private List<GradeIconListBean> grade_icon_list;
+                private List<DataBean.AuthorBean.PayGradeBean.GradeIconListBean> grade_icon_list;
 
-                public DiamondIconBean getDiamond_icon() {
+                public DataBean.AuthorBean.PayGradeBean.DiamondIconBean getDiamond_icon() {
                     return diamond_icon;
                 }
 
-                public void setDiamond_icon(DiamondIconBean diamond_icon) {
+                public void setDiamond_icon(DataBean.AuthorBean.PayGradeBean.DiamondIconBean diamond_icon) {
                     this.diamond_icon = diamond_icon;
                 }
 
@@ -1086,12 +1447,28 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
                     this.grade_describe = grade_describe;
                 }
 
-                public IconBean getIcon() {
+                public DataBean.AuthorBean.PayGradeBean.IconBean getIcon() {
                     return icon;
                 }
 
-                public void setIcon(IconBean icon) {
+                public void setIcon(DataBean.AuthorBean.PayGradeBean.IconBean icon) {
                     this.icon = icon;
+                }
+
+                public DataBean.AuthorBean.PayGradeBean.ImIconBean getIm_icon() {
+                    return im_icon;
+                }
+
+                public void setIm_icon(DataBean.AuthorBean.PayGradeBean.ImIconBean im_icon) {
+                    this.im_icon = im_icon;
+                }
+
+                public DataBean.AuthorBean.PayGradeBean.ImIconWithLevelBean getIm_icon_with_level() {
+                    return im_icon_with_level;
+                }
+
+                public void setIm_icon_with_level(DataBean.AuthorBean.PayGradeBean.ImIconWithLevelBean im_icon_with_level) {
+                    this.im_icon_with_level = im_icon_with_level;
                 }
 
                 public int getLevel() {
@@ -1102,11 +1479,11 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
                     this.level = level;
                 }
 
-                public LiveIconBean getLive_icon() {
+                public DataBean.AuthorBean.PayGradeBean.LiveIconBean getLive_icon() {
                     return live_icon;
                 }
 
-                public void setLive_icon(LiveIconBean live_icon) {
+                public void setLive_icon(DataBean.AuthorBean.PayGradeBean.LiveIconBean live_icon) {
                     this.live_icon = live_icon;
                 }
 
@@ -1118,12 +1495,29 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
                     this.name = name;
                 }
 
-                public NewLiveIconBean getNew_live_icon() {
+                public DataBean.AuthorBean.PayGradeBean.NewImIconWithLevelBean getNew_im_icon_with_level() {
+                    return new_im_icon_with_level;
+                }
+
+                public void setNew_im_icon_with_level(
+                    DataBean.AuthorBean.PayGradeBean.NewImIconWithLevelBean new_im_icon_with_level) {
+                    this.new_im_icon_with_level = new_im_icon_with_level;
+                }
+
+                public DataBean.AuthorBean.PayGradeBean.NewLiveIconBean getNew_live_icon() {
                     return new_live_icon;
                 }
 
-                public void setNew_live_icon(NewLiveIconBean new_live_icon) {
+                public void setNew_live_icon(DataBean.AuthorBean.PayGradeBean.NewLiveIconBean new_live_icon) {
                     this.new_live_icon = new_live_icon;
+                }
+
+                public DataBean.AuthorBean.PayGradeBean.NewNavLiveIconBean getNew_nav_live_icon() {
+                    return new_nav_live_icon;
+                }
+
+                public void setNew_nav_live_icon(DataBean.AuthorBean.PayGradeBean.NewNavLiveIconBean new_nav_live_icon) {
+                    this.new_nav_live_icon = new_nav_live_icon;
                 }
 
                 public int getNext_diamond() {
@@ -1134,11 +1528,11 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
                     this.next_diamond = next_diamond;
                 }
 
-                public NextIconBean getNext_icon() {
+                public DataBean.AuthorBean.PayGradeBean.NextIconBean getNext_icon() {
                     return next_icon;
                 }
 
-                public void setNext_icon(NextIconBean next_icon) {
+                public void setNext_icon(DataBean.AuthorBean.PayGradeBean.NextIconBean next_icon) {
                     this.next_icon = next_icon;
                 }
 
@@ -1166,19 +1560,20 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
                     this.pay_diamond_bak = pay_diamond_bak;
                 }
 
-                public ProfileDialogBgBean getProfile_dialog_bg() {
+                public DataBean.AuthorBean.PayGradeBean.ProfileDialogBgBeanX getProfile_dialog_bg() {
                     return profile_dialog_bg;
                 }
 
-                public void setProfile_dialog_bg(ProfileDialogBgBean profile_dialog_bg) {
+                public void setProfile_dialog_bg(DataBean.AuthorBean.PayGradeBean.ProfileDialogBgBeanX profile_dialog_bg) {
                     this.profile_dialog_bg = profile_dialog_bg;
                 }
 
-                public ProfileDialogBgBackBean getProfile_dialog_bg_back() {
+                public DataBean.AuthorBean.PayGradeBean.ProfileDialogBgBackBeanX getProfile_dialog_bg_back() {
                     return profile_dialog_bg_back;
                 }
 
-                public void setProfile_dialog_bg_back(ProfileDialogBgBackBean profile_dialog_bg_back) {
+                public void setProfile_dialog_bg_back(
+                    DataBean.AuthorBean.PayGradeBean.ProfileDialogBgBackBeanX profile_dialog_bg_back) {
                     this.profile_dialog_bg_back = profile_dialog_bg_back;
                 }
 
@@ -1222,18 +1617,18 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
                     this.upgrade_need_consume = upgrade_need_consume;
                 }
 
-                public List<GradeIconListBean> getGrade_icon_list() {
+                public List<DataBean.AuthorBean.PayGradeBean.GradeIconListBean> getGrade_icon_list() {
                     return grade_icon_list;
                 }
 
-                public void setGrade_icon_list(List<GradeIconListBean> grade_icon_list) {
+                public void setGrade_icon_list(List<DataBean.AuthorBean.PayGradeBean.GradeIconListBean> grade_icon_list) {
                     this.grade_icon_list = grade_icon_list;
                 }
 
                 public static class DiamondIconBean {
                     /**
                      * uri : mosaic-legacy/12400003aba3dd42e213
-                     * url_list : ["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/12400003aba3dd42e213","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/12400003aba3dd42e213","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/12400003aba3dd42e213"]
+                     * url_list : ["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/12400003aba3dd42e213","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/12400003aba3dd42e213","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/12400003aba3dd42e213"]
                      */
 
                     private String uri;
@@ -1258,8 +1653,60 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
 
                 public static class IconBean {
                     /**
-                     * uri : mosaic-legacy/f2100085e55a62833b1
-                     * url_list : ["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/f2100085e55a62833b1","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/f2100085e55a62833b1","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/f2100085e55a62833b1"]
+                     * uri : mosaic-legacy/30eb0000a101d40eea0c
+                     * url_list : ["http://p9-hs.bytecdn.cn/obj/mosaic-legacy/30eb0000a101d40eea0c","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/30eb0000a101d40eea0c","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/30eb0000a101d40eea0c"]
+                     */
+
+                    private String uri;
+                    private List<String> url_list;
+
+                    public String getUri() {
+                        return uri;
+                    }
+
+                    public void setUri(String uri) {
+                        this.uri = uri;
+                    }
+
+                    public List<String> getUrl_list() {
+                        return url_list;
+                    }
+
+                    public void setUrl_list(List<String> url_list) {
+                        this.url_list = url_list;
+                    }
+                }
+
+                public static class ImIconBean {
+                    /**
+                     * uri : mosaic-legacy/2ea8000962099e965ff0
+                     * url_list : ["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/2ea8000962099e965ff0","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/2ea8000962099e965ff0","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/2ea8000962099e965ff0"]
+                     */
+
+                    private String uri;
+                    private List<String> url_list;
+
+                    public String getUri() {
+                        return uri;
+                    }
+
+                    public void setUri(String uri) {
+                        this.uri = uri;
+                    }
+
+                    public List<String> getUrl_list() {
+                        return url_list;
+                    }
+
+                    public void setUrl_list(List<String> url_list) {
+                        this.url_list = url_list;
+                    }
+                }
+
+                public static class ImIconWithLevelBean {
+                    /**
+                     * uri : mosaic-legacy/78a30076591d3cd2dc07
+                     * url_list : ["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/78a30076591d3cd2dc07","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/78a30076591d3cd2dc07","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/78a30076591d3cd2dc07"]
                      */
 
                     private String uri;
@@ -1284,8 +1731,34 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
 
                 public static class LiveIconBean {
                     /**
-                     * uri : mosaic-legacy/2bd200048a6d1f88860b
-                     * url_list : ["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/2bd200048a6d1f88860b","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/2bd200048a6d1f88860b","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/2bd200048a6d1f88860b"]
+                     * uri : mosaic-legacy/30ee0007ccef28b99639
+                     * url_list : ["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/30ee0007ccef28b99639","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/30ee0007ccef28b99639","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/30ee0007ccef28b99639"]
+                     */
+
+                    private String uri;
+                    private List<String> url_list;
+
+                    public String getUri() {
+                        return uri;
+                    }
+
+                    public void setUri(String uri) {
+                        this.uri = uri;
+                    }
+
+                    public List<String> getUrl_list() {
+                        return url_list;
+                    }
+
+                    public void setUrl_list(List<String> url_list) {
+                        this.url_list = url_list;
+                    }
+                }
+
+                public static class NewImIconWithLevelBean {
+                    /**
+                     * uri : mosaic-legacy/78a500926ba4dd74b0fa
+                     * url_list : ["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/78a500926ba4dd74b0fa","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/78a500926ba4dd74b0fa","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/78a500926ba4dd74b0fa"]
                      */
 
                     private String uri;
@@ -1310,8 +1783,34 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
 
                 public static class NewLiveIconBean {
                     /**
-                     * uri : mosaic-legacy/2bd200048a6d1f88860b
-                     * url_list : ["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/2bd200048a6d1f88860b","http://p9-hs.bytecdn.cn/obj/mosaic-legacy/2bd200048a6d1f88860b","http://p9-hs.bytecdn.cn/obj/mosaic-legacy/2bd200048a6d1f88860b"]
+                     * uri : mosaic-legacy/78a10056e336cb6eb911
+                     * url_list : ["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/78a10056e336cb6eb911","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/78a10056e336cb6eb911","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/78a10056e336cb6eb911"]
+                     */
+
+                    private String uri;
+                    private List<String> url_list;
+
+                    public String getUri() {
+                        return uri;
+                    }
+
+                    public void setUri(String uri) {
+                        this.uri = uri;
+                    }
+
+                    public List<String> getUrl_list() {
+                        return url_list;
+                    }
+
+                    public void setUrl_list(List<String> url_list) {
+                        this.url_list = url_list;
+                    }
+                }
+
+                public static class NewNavLiveIconBean {
+                    /**
+                     * uri : hotsoon-resource/new_nva_level_icon_6.png
+                     * url_list : ["http://p9-hs.bytecdn.cn/obj/hotsoon-resource/new_nva_level_icon_6.png","http://p3-hs.bytecdn.cn/obj/hotsoon-resource/new_nva_level_icon_6.png","http://p3-hs.bytecdn.cn/obj/hotsoon-resource/new_nva_level_icon_6.png"]
                      */
 
                     private String uri;
@@ -1336,8 +1835,8 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
 
                 public static class NextIconBean {
                     /**
-                     * uri : mosaic-legacy/30eb0000a12588d9bb3e
-                     * url_list : ["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/30eb0000a12588d9bb3e","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/30eb0000a12588d9bb3e","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/30eb0000a12588d9bb3e"]
+                     * uri : mosaic-legacy/12400003aae89daccd69
+                     * url_list : ["http://p9-hs.bytecdn.cn/obj/mosaic-legacy/12400003aae89daccd69","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/12400003aae89daccd69","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/12400003aae89daccd69"]
                      */
 
                     private String uri;
@@ -1360,10 +1859,10 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
                     }
                 }
 
-                public static class ProfileDialogBgBean {
+                public static class ProfileDialogBgBeanX {
                     /**
-                     * uri : mosaic-legacy/
-                     * url_list : ["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/","http://p9-hs.bytecdn.cn/obj/mosaic-legacy/","http://p9-hs.bytecdn.cn/obj/mosaic-legacy/"]
+                     * uri : hotsoon-resource/user_level_1.1_3x.png
+                     * url_list : ["http://p3-hs.bytecdn.cn/obj/hotsoon-resource/user_level_1.1_3x.png","http://p1-hs.bytecdn.cn/obj/hotsoon-resource/user_level_1.1_3x.png","http://p1-hs.bytecdn.cn/obj/hotsoon-resource/user_level_1.1_3x.png"]
                      */
 
                     private String uri;
@@ -1386,10 +1885,10 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
                     }
                 }
 
-                public static class ProfileDialogBgBackBean {
+                public static class ProfileDialogBgBackBeanX {
                     /**
-                     * uri : mosaic-legacy/
-                     * url_list : ["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/"]
+                     * uri : hotsoon-resource/user_level_1.2_3x.png
+                     * url_list : ["http://p1-hs.bytecdn.cn/obj/hotsoon-resource/user_level_1.2_3x.png","http://p3-hs.bytecdn.cn/obj/hotsoon-resource/user_level_1.2_3x.png","http://p3-hs.bytecdn.cn/obj/hotsoon-resource/user_level_1.2_3x.png"]
                      */
 
                     private String uri;
@@ -1414,22 +1913,23 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
 
                 public static class GradeIconListBean {
                     /**
-                     * icon : {"uri":"mosaic-legacy/3b60000a6308f74aec4e","url_list":["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/3b60000a6308f74aec4e","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/3b60000a6308f74aec4e","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/3b60000a6308f74aec4e"]}
-                     * icon_diamond : 0
-                     * level : 0
-                     * level_str : 暂无
+                     * icon : {"uri":"mosaic-legacy/3b65000678eac77af1d9","url_list":["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/3b65000678eac77af1d9","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/3b65000678eac77af1d9","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/3b65000678eac77af1d9"]}
+                     * icon_diamond : 51
+                     * level : 5
+                     * level_str : Lv.5
                      */
 
-                    private IconBeanX icon;
+                    private DataBean.AuthorBean.PayGradeBean.GradeIconListBean.IconBeanX
+                        icon;
                     private int icon_diamond;
                     private int level;
                     private String level_str;
 
-                    public IconBeanX getIcon() {
+                    public DataBean.AuthorBean.PayGradeBean.GradeIconListBean.IconBeanX getIcon() {
                         return icon;
                     }
 
-                    public void setIcon(IconBeanX icon) {
+                    public void setIcon(DataBean.AuthorBean.PayGradeBean.GradeIconListBean.IconBeanX icon) {
                         this.icon = icon;
                     }
 
@@ -1459,8 +1959,8 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
 
                     public static class IconBeanX {
                         /**
-                         * uri : mosaic-legacy/3b60000a6308f74aec4e
-                         * url_list : ["http://p1-hs.bytecdn.cn/obj/mosaic-legacy/3b60000a6308f74aec4e","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/3b60000a6308f74aec4e","http://p3-hs.bytecdn.cn/obj/mosaic-legacy/3b60000a6308f74aec4e"]
+                         * uri : mosaic-legacy/3b65000678eac77af1d9
+                         * url_list : ["http://p3-hs.bytecdn.cn/obj/mosaic-legacy/3b65000678eac77af1d9","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/3b65000678eac77af1d9","http://p1-hs.bytecdn.cn/obj/mosaic-legacy/3b65000678eac77af1d9"]
                          */
 
                         private String uri;
@@ -1488,10 +1988,10 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
 
         public static class StatsBean {
             /**
-             * comment_count : 178
-             * digg_count : 3388
-             * play_count : 687823
-             * share_count : 2138
+             * comment_count : 2
+             * digg_count : 43
+             * play_count : 3240
+             * share_count : 0
              */
 
             private int comment_count;
@@ -1535,27 +2035,35 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
         public static class VideoBean {
             /**
              * allow_cache : true
-             * cover : {"avg_color":"#FADCDC","uri":"large/18b60001104831fa133d","url_list":["http://p3-hs.bytecdn.cn/large/18b60001104831fa133d.webp","http://p1-hs.bytecdn.cn/large/18b60001104831fa133d.webp","http://p6-hs.bytecdn.cn/large/18b60001104831fa133d.webp"]}
+             * cover : {"avg_color":"#89A37C","uri":"large/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912","url_list":["http://p1-hs.bytecdn.cn/large/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912.webp","http://p9-hs.bytecdn.cn/large/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912.webp","http://p6-hs.bytecdn.cn/large/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912.webp"]}
              * cover_animated : null
-             * cover_medium : {"avg_color":"#3D3D3D","uri":"medium/18b60001104831fa133d","url_list":["http://p3-hs.bytecdn.cn/medium/18b60001104831fa133d.webp","http://p1-hs.bytecdn.cn/medium/18b60001104831fa133d.webp","http://p6-hs.bytecdn.cn/medium/18b60001104831fa133d.webp"]}
-             * cover_thumb : {"avg_color":"#FADCF0","uri":"live/100x100/18b60001104831fa133d","url_list":["http://p3-hs.bytecdn.cn/live/100x100/18b60001104831fa133d.webp","http://p1-hs.bytecdn.cn/live/100x100/18b60001104831fa133d.webp","http://p6-hs.bytecdn.cn/live/100x100/18b60001104831fa133d.webp"]}
-             * download_url : ["https://api-hl.huoshan.com/hotsoon/item/video/_playback/?video_id=897937be13a345dd859c268206dd810c&line=0&app_id=1112&vquality=normal&watermark=2&long_video=0&sf=3&ts=1550398050","https://api-hl.huoshan.com/hotsoon/item/video/_playback/?video_id=897937be13a345dd859c268206dd810c&line=1&app_id=1112&vquality=normal&watermark=2&long_video=0&sf=3&ts=1550398050"]
-             * duration : 14.982
-             * height : 640
-             * preload_size : 512000
-             * uri : 897937be13a345dd859c268206dd810c_720p
-             * url_list : ["http://v6-hs.ixigua.com/730aa8cbe214527e1135909c2ef0bc10/5c694080/video/m/220d5d8a8d77c294e5a88e9018e137455d311441fa000042ca7d10d8fb/?rc=ZjRnOTU5ZjhnODY2aDo8PEApQHRAbzs6NTs7MzUzMzYzNDQzNDVvQGg2dSlAZjV1KWZzcHcxeW9mNTRALTVhLTUvNjVhMV4uXzA0NXMtbyNvIzAyLy0zLy0uLTQ1NC82LTojbyM6YS1xIzpgaF4rYmZiZjojLi5e","http://v9-hs.ixigua.com/dbe6a374aa4349d847967086ebc79b55/5c694080/video/m/220d5d8a8d77c294e5a88e9018e137455d311441fa000042ca7d10d8fb/?rc=ZjRnOTU5ZjhnODY2aDo8PEApQHRAbzs6NTs7MzUzMzYzNDQzNDVvQGg2dSlAZjV1KWZzcHcxeW9mNTRALTVhLTUvNjVhMV4uXzA0NXMtbyNvIzAyLy0zLy0uLTQ1NC82LTojbyM6YS1xIzpgaF4rYmZiZjojLi5e","https://api.huoshan.com/hotsoon/item/video/_playback/?video_id=897937be13a345dd859c268206dd810c&line=0&app_id=1112&vquality=normal&quality=720p&codec=h264&sf=3&origin=0&ts=1550398050"]
-             * video_id : 897937be13a345dd859c268206dd810c
+             * cover_medium : {"avg_color":"#A37C7C","uri":"medium/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912","url_list":["http://p1-hs.bytecdn.cn/medium/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912.webp","http://p9-hs.bytecdn.cn/medium/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912.webp","http://p6-hs.bytecdn.cn/medium/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912.webp"]}
+             * cover_thumb : {"avg_color":"#8F8F8F","uri":"live/100x100/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912","url_list":["http://p1-hs.bytecdn.cn/live/100x100/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912.webp","http://p9-hs.bytecdn.cn/live/100x100/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912.webp","http://p6-hs.bytecdn.cn/live/100x100/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912.webp"]}
+             * download_url : ["https://api.huoshan.com/hotsoon/item/video/_playback/?video_id=v0200c250000bipbnmsmavf81s5igggg&line=0&app_id=1112&vquality=normal&watermark=2&long_video=0&sf=3&ts=1555254680","https://api.huoshan.com/hotsoon/item/video/_playback/?video_id=v0200c250000bipbnmsmavf81s5igggg&line=1&app_id=1112&vquality=normal&watermark=2&long_video=0&sf=3&ts=1555254680"]
+             * duration : 15.047
+             * gif_uri : 1ed89000954de90340b01
+             * gif_url_list : ["http://p1-hs.bytecdn.cn/img/mosaic-legacy/1ed89000954de90340b01~noop.image","http://p3-hs.bytecdn.cn/img/mosaic-legacy/1ed89000954de90340b01~noop.image","http://p3-hs.bytecdn.cn/img/mosaic-legacy/1ed89000954de90340b01~noop.image"]
+             * h265_uri : h265/v0200c250000bipbnmsmavf81s5igggg_720p
+             * h265_url : ["http://v9-hs.ixigua.com/6ae79d21994340311afd9b7fa45a69c0/5cb35bb7/video/m/220bfdb80a213194242919a229a4e0cd8151161cdbbe00005e3a293e1bdf/?rc=ampsdjt5cHBlbDMzOGYzM0ApQHRAbzc2NzY5MzQzMzU0NTQzNDVvQGg2dSlAZjV1KWZzcHcxeW9mNTRAZGQyLmNecGttXy0tLy0vc3MtbyNvIzEtMy4uNi0uLS4wMTE2LTojbyM6YS1xIzpgaF4rYmZiZjojLi5e","http://v1-hs.ixigua.com/e37c9fc9507c04687c9eb39e9925ed37/5cb35bb7/video/m/220bfdb80a213194242919a229a4e0cd8151161cdbbe00005e3a293e1bdf/?rc=ampsdjt5cHBlbDMzOGYzM0ApQHRAbzc2NzY5MzQzMzU0NTQzNDVvQGg2dSlAZjV1KWZzcHcxeW9mNTRAZGQyLmNecGttXy0tLy0vc3MtbyNvIzEtMy4uNi0uLS4wMTE2LTojbyM6YS1xIzpgaF4rYmZiZjojLi5e","https://api.huoshan.com/hotsoon/item/video/_playback/?video_id=v0200c250000bipbnmsmavf81s5igggg&line=0&app_id=1112&vquality=normal&quality=720p&codec=h265&sf=3&origin=0&ts=1555254680"]
+             * height : 1024
+             * preload_size : 375000
+             * uri : v0200c250000bipbnmsmavf81s5igggg
+             * url_list : ["https://api.huoshan.com/hotsoon/item/video/_playback/?video_id=v0200c250000bipbnmsmavf81s5igggg&line=0&app_id=1112&vquality=normal&watermark=0&long_video=0&sf=3&ts=1555254680","https://api.huoshan.com/hotsoon/item/video/_playback/?video_id=v0200c250000bipbnmsmavf81s5igggg&line=1&app_id=1112&vquality=normal&watermark=0&long_video=0&sf=3&ts=1555254680"]
+             * video_id : v0200c250000bipbnmsmavf81s5igggg
              * watermark : true
-             * width : 360
+             * width : 576
              */
 
             private boolean allow_cache;
-            private CoverBean cover;
+            private DataBean.VideoBean.CoverBean cover;
             private Object cover_animated;
-            private CoverMediumBean cover_medium;
-            private CoverThumbBean cover_thumb;
+            private DataBean.VideoBean.CoverMediumBean
+                cover_medium;
+            private DataBean.VideoBean.CoverThumbBean
+                cover_thumb;
             private double duration;
+            private String gif_uri;
+            private String h265_uri;
             private int height;
             private int preload_size;
             private String uri;
@@ -1563,6 +2071,8 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
             private boolean watermark;
             private int width;
             private List<String> download_url;
+            private List<String> gif_url_list;
+            private List<String> h265_url;
             private List<String> url_list;
 
             public boolean isAllow_cache() {
@@ -1573,11 +2083,11 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
                 this.allow_cache = allow_cache;
             }
 
-            public CoverBean getCover() {
+            public DataBean.VideoBean.CoverBean getCover() {
                 return cover;
             }
 
-            public void setCover(CoverBean cover) {
+            public void setCover(DataBean.VideoBean.CoverBean cover) {
                 this.cover = cover;
             }
 
@@ -1589,19 +2099,19 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
                 this.cover_animated = cover_animated;
             }
 
-            public CoverMediumBean getCover_medium() {
+            public DataBean.VideoBean.CoverMediumBean getCover_medium() {
                 return cover_medium;
             }
 
-            public void setCover_medium(CoverMediumBean cover_medium) {
+            public void setCover_medium(DataBean.VideoBean.CoverMediumBean cover_medium) {
                 this.cover_medium = cover_medium;
             }
 
-            public CoverThumbBean getCover_thumb() {
+            public DataBean.VideoBean.CoverThumbBean getCover_thumb() {
                 return cover_thumb;
             }
 
-            public void setCover_thumb(CoverThumbBean cover_thumb) {
+            public void setCover_thumb(DataBean.VideoBean.CoverThumbBean cover_thumb) {
                 this.cover_thumb = cover_thumb;
             }
 
@@ -1611,6 +2121,22 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
 
             public void setDuration(double duration) {
                 this.duration = duration;
+            }
+
+            public String getGif_uri() {
+                return gif_uri;
+            }
+
+            public void setGif_uri(String gif_uri) {
+                this.gif_uri = gif_uri;
+            }
+
+            public String getH265_uri() {
+                return h265_uri;
+            }
+
+            public void setH265_uri(String h265_uri) {
+                this.h265_uri = h265_uri;
             }
 
             public int getHeight() {
@@ -1669,6 +2195,22 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
                 this.download_url = download_url;
             }
 
+            public List<String> getGif_url_list() {
+                return gif_url_list;
+            }
+
+            public void setGif_url_list(List<String> gif_url_list) {
+                this.gif_url_list = gif_url_list;
+            }
+
+            public List<String> getH265_url() {
+                return h265_url;
+            }
+
+            public void setH265_url(List<String> h265_url) {
+                this.h265_url = h265_url;
+            }
+
             public List<String> getUrl_list() {
                 return url_list;
             }
@@ -1679,9 +2221,9 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
 
             public static class CoverBean {
                 /**
-                 * avg_color : #FADCDC
-                 * uri : large/18b60001104831fa133d
-                 * url_list : ["http://p3-hs.bytecdn.cn/large/18b60001104831fa133d.webp","http://p1-hs.bytecdn.cn/large/18b60001104831fa133d.webp","http://p6-hs.bytecdn.cn/large/18b60001104831fa133d.webp"]
+                 * avg_color : #89A37C
+                 * uri : large/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912
+                 * url_list : ["http://p1-hs.bytecdn.cn/large/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912.webp","http://p9-hs.bytecdn.cn/large/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912.webp","http://p6-hs.bytecdn.cn/large/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912.webp"]
                  */
 
                 private String avg_color;
@@ -1715,9 +2257,9 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
 
             public static class CoverMediumBean {
                 /**
-                 * avg_color : #3D3D3D
-                 * uri : medium/18b60001104831fa133d
-                 * url_list : ["http://p3-hs.bytecdn.cn/medium/18b60001104831fa133d.webp","http://p1-hs.bytecdn.cn/medium/18b60001104831fa133d.webp","http://p6-hs.bytecdn.cn/medium/18b60001104831fa133d.webp"]
+                 * avg_color : #A37C7C
+                 * uri : medium/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912
+                 * url_list : ["http://p1-hs.bytecdn.cn/medium/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912.webp","http://p9-hs.bytecdn.cn/medium/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912.webp","http://p6-hs.bytecdn.cn/medium/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912.webp"]
                  */
 
                 private String avg_color;
@@ -1751,9 +2293,9 @@ public class HuoUserVideoItemBean extends BaseVideoItemBean {
 
             public static class CoverThumbBean {
                 /**
-                 * avg_color : #FADCF0
-                 * uri : live/100x100/18b60001104831fa133d
-                 * url_list : ["http://p3-hs.bytecdn.cn/live/100x100/18b60001104831fa133d.webp","http://p1-hs.bytecdn.cn/live/100x100/18b60001104831fa133d.webp","http://p6-hs.bytecdn.cn/live/100x100/18b60001104831fa133d.webp"]
+                 * avg_color : #8F8F8F
+                 * uri : live/100x100/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912
+                 * url_list : ["http://p1-hs.bytecdn.cn/live/100x100/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912.webp","http://p9-hs.bytecdn.cn/live/100x100/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912.webp","http://p6-hs.bytecdn.cn/live/100x100/tos-cn-p-0000/30da2008e7d14f1abcd7764872a7a912.webp"]
                  */
 
                 private String avg_color;

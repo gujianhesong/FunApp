@@ -29,7 +29,9 @@ public abstract class BaseRxJavaPresenter<T extends IView> implements IPresenter
     if (mCompositeDisposable == null) {
       mCompositeDisposable = new CompositeDisposable();
     }
-    mCompositeDisposable.add(disposable);
+    if(disposable != null){
+      mCompositeDisposable.add(disposable);
+    }
   }
 
   public void dispose() {

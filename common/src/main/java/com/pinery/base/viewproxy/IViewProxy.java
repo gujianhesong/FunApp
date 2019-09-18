@@ -1,4 +1,4 @@
-package com.pinery.fun.video.ui.viewproxy;
+package com.pinery.base.viewproxy;
 
 import android.view.View;
 

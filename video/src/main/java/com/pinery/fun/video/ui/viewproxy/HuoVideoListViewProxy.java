@@ -10,6 +10,7 @@ import com.pinery.base.adapter.BaseAdapter;
 import com.pinery.base.util.LogUtil;
 import com.pinery.base.util.NetWorkUtil;
 import com.pinery.base.util.ScreenUtil;
+import com.pinery.base.viewproxy.BaseListViewProxy;
 import com.pinery.fun.video.R;
 import com.pinery.fun.video.bean.BaseVideoItemBean;
 import com.pinery.fun.video.bean.HuoVideoBean;
@@ -97,7 +98,6 @@ public class HuoVideoListViewProxy extends BaseListViewProxy<HuoVideoPresenter>
       mDatas.clear();
       mPage = 0;
     }
-    LogUtil.printStack("add page:" + mPage);
     mPage++;
 
     List<BaseVideoItemBean> list = huoVideoBean.getData();

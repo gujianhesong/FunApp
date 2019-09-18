@@ -48,13 +48,22 @@ public class JokeApplication extends Application {
   }
 
   public void notifyGc(){
+    LogUtil.i("System.gc()!!!!!!");
+    System.gc();
+    System.gc();
+  }
+
+  public void notifyGcWithDelay(long time){
+    if (time < 0){
+      time = 0;
+    }
     mHandler.postDelayed(new Runnable() {
       @Override public void run() {
         LogUtil.i("System.gc()!!!!!!");
         System.gc();
         System.gc();
       }
-    }, 10*1000);
+    }, time);
   }
 
 }

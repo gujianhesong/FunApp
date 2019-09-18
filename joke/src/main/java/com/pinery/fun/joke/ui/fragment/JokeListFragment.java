@@ -2,22 +2,16 @@ package com.pinery.fun.joke.ui.fragment;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import com.bumptech.glide.Glide;
 import com.github.jdsjlzx.ItemDecoration.DividerDecoration;
 import com.github.jdsjlzx.interfaces.OnNetWorkErrorListener;
 import com.github.jdsjlzx.recyclerview.LRecyclerView;
-import com.github.jdsjlzx.recyclerview.LRecyclerViewAdapter;
-import com.pinery.base.adapter.BaseAdapter;
 import com.pinery.base.fragment.BaseListFragment;
 import com.pinery.base.util.LogUtil;
 import com.pinery.base.util.NetWorkUtil;
-import com.pinery.base.util.ScreenUtil;
 import com.pinery.base.util.ViewUtil;
-import com.pinery.base.widget.LRecycleViewDivider;
 import com.pinery.fun.joke.R;
 import com.pinery.fun.joke.bean.JokeDatasBean;
 import com.pinery.fun.joke.callback.IRecyclerViewPool;
@@ -26,14 +20,8 @@ import com.pinery.fun.joke.mvp.JokeContract;
 import com.pinery.fun.joke.mvp.JokePresenter;
 import com.pinery.fun.joke.ui.adapter.JokeAdapter;
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
-import io.reactivex.Flowable;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.annotations.NonNull;
-import io.reactivex.functions.Consumer;
-import io.reactivex.schedulers.Schedulers;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Created by gujian on 2018-08-12.

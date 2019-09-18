@@ -44,14 +44,14 @@ public class HashTagVideoListAdapter extends
 
     HashTagItemsBean.DataBeanX bean = list.get(position);
     if (bean != null) {
-      holder.tvTitle.setText(bean.getData().getTitle());
-      holder.tvUserNickname.setText(bean.getData().getAuthor().getNickname());
-      Glide.with(context)
-          .load(bean.getData().getVideo().getCover().getUrl_list().get(0))
-          .into(holder.ivImage);
-      Glide.with(context)
-          .load(bean.getData().getAuthor().getAvatar_jpg().getUrl_list().get(0))
-          .into(holder.ivAvatar);
+      //holder.tvTitle.setText(bean.getData().getTitle());
+      //holder.tvUserNickname.setText(bean.getData().getAuthor().getNickname());
+      //Glide.with(context)
+      //    .load(bean.getData().getVideo().getCover().getUrl_list().get(0))
+      //    .into(holder.ivImage);
+      //Glide.with(context)
+      //    .load(bean.getData().getAuthor().getAvatar_jpg().getUrl_list().get(0))
+      //    .into(holder.ivAvatar);
     }
   }
 

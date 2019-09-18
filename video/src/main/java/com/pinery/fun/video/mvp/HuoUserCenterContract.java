@@ -13,17 +13,25 @@ import com.pinery.fun.video.bean.HuoUserVideoListBean;
 
 public interface HuoUserCenterContract {
 
-  interface View extends IView {
+  interface UserCenterView extends IView {
     void update(HuoUserCenterBean bean);
+
+    void error(Throwable throwable);
+  }
+
+  interface UserVideoView extends IView {
     void updateList(boolean isRefresh, HuoUserVideoListBean bean);
 
     void error(Throwable throwable);
   }
 
-  interface Presenter extends IPresenter<View> {
+  interface UserCenterPresenter extends IPresenter<UserCenterView> {
     void requestUserInfo(String userId);
-    void refreshVideoList(String userId, boolean firstRefresh);
-    void loadMoreVideoList(String userId, int page);
+  }
+
+  interface UserVideoPresenter extends IPresenter<UserVideoView> {
+    void refreshData(String userId, boolean firstRefresh);
+    void loadMoreData(String userId, int page);
   }
 
 }

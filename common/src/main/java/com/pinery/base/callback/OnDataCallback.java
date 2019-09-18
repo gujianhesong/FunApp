@@ -1,4 +1,4 @@
-package com.pinery.fun.joke.callback;
+package com.pinery.base.callback;
 
 /**
  * Created by gujian on 2018-08-12.

@@ -1,9 +1,9 @@
 package com.pinery.fun.video.mvp;
 
+import com.pinery.base.callback.OnDataCallback;
 import com.pinery.base.mvp.BaseRxJavaPresenter;
 import com.pinery.base.util.LogUtil;
 import com.pinery.fun.video.bean.HuoVideoBean;
-import com.pinery.fun.video.callback.OnDataCallback;
 import com.pinery.fun.video.model.HuoVideoModel;
 import javax.inject.Inject;
 
@@ -55,7 +55,6 @@ public class HuoVideoPresenter extends BaseRxJavaPresenter<HuoVideoContract.View
   }
 
   @Override public void loadMoreData(int page) {
-    LogUtil.printStack("page:" + page);
     addDisposable(model.loadMoreData(page, new OnDataCallback<HuoVideoBean>() {
       @Override public void onSuccess(HuoVideoBean bean) {
         LogUtil.i("page:" + bean);

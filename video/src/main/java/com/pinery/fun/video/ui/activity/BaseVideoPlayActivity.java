@@ -5,6 +5,8 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
 import com.pinery.base.activity.BaseActivity;
+import com.pinery.base.util.GlideUtil;
+import com.pinery.fun.video.R;
 import com.shuyu.gsyvideoplayer.GSYVideoADManager;
 import com.shuyu.gsyvideoplayer.GSYVideoManager;
 import com.shuyu.gsyvideoplayer.builder.GSYVideoOptionBuilder;
@@ -87,14 +89,6 @@ public abstract class BaseVideoPlayActivity extends BaseActivity {
       return;
     }
 
-    //设置封面
-    ImageView imageView = new ImageView(this);
-    imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-    imageView.setImageDrawable(new ColorDrawable(0x77ffff00));
-    if (!TextUtils.isEmpty(coverUrl)) {
-      //Glide.with(this).load(coverUrl).into(imageView);
-    }
-
     //外部辅助的旋转，帮助全屏
     orientationUtils = new OrientationUtils(this, videoPlayer);
     //初始化不打开外部的旋转
@@ -129,6 +123,13 @@ public abstract class BaseVideoPlayActivity extends BaseActivity {
         });
     gsyVideoOptionBuilder.build(videoPlayer);
 
+    //设置封面
+    final ImageView imageView = new ImageView(this);
+    imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+    //imageView.setImageDrawable(new B);
+    //if (!TextUtils.isEmpty(coverUrl)) {
+    //  GlideUtil.loadImage(imageView, coverUrl);
+    //}
     videoPlayer.setThumbImageView(imageView);
     videoPlayer.setThumbPlay(true);
 

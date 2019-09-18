@@ -33,10 +33,10 @@
   <!-- 用户信息 -->
   <include layout="@layout/layout_user_info" />
 
-  <com.github.jdsjlzx.recyclerview.LRecyclerView
-      android:id="@+id/swipe_target"
+  <RelativeLayout
+      android:id="@+id/rl_video_list"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-      android:scrollbars="vertical" />
+      />
 
 </LinearLayout>

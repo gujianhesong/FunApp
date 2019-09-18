@@ -1,85 +1,102 @@
 package com.pinery.fun.video.model;
 
-import com.pinery.base.rxjava.RetryWithDelayFunc;
+import com.pinery.base.callback.OnDataCallback;
+import com.pinery.base.model.BCacheModel;
 import com.pinery.fun.video.api.ApiService;
 import com.pinery.fun.video.api.HuoApi;
+import com.pinery.fun.video.api.RetrofitClient;
 import com.pinery.fun.video.bean.HuoCityBean;
-import com.pinery.fun.video.callback.OnDataCallback;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.annotations.NonNull;
+import io.reactivex.Flowable;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
-import io.reactivex.schedulers.Schedulers;
 import java.util.HashMap;
 
-public class HuoCityModel extends BaseModel<HuoCityBean> implements IModel<HuoCityBean> {
+public class HuoCityModel extends BCacheModel implements IModel<HuoCityBean> {
+  private static final int COUNT = 10;
+
+  public <T> T getApiService(String url, Class<T> cl) {
+    return RetrofitClient.getInstance().getApiService(url, cl);
+  }
 
   @Override public Disposable firstRefreshData(final OnDataCallback<HuoCityBean> callback) {
-    HashMap<String, Object> hashMap = createHashMapWithCommonParams();
+    final HashMap<String, Object> params = createHashMapWithCommonParams();
+    params.put("req_from", "enter_auto");
+    params.put("min_time", 0);
+    params.put("offset", 0);
+    params.put("count", COUNT);
 
-    return getApiService(HuoApi.Main, ApiService.class).firstRefreshCityData(hashMap)
-        .retryWhen(new RetryWithDelayFunc())
-        .subscribeOn(Schedulers.io())
-        .observeOn(AndroidSchedulers.mainThread())
-        .subscribe(new Consumer<HuoCityBean>() {
-          @Override public void accept(@NonNull HuoCityBean bean) throws Exception {
-            if (callback != null) {
-              callback.onSuccess(bean);
-            }
-          }
-        }, new Consumer<Throwable>() {
-          @Override public void accept(@NonNull Throwable throwable) throws Exception {
-            if (callback != null) {
-              callback.onError(throwable);
-            }
-          }
-        });
+    return requestData(params, callback, new OnRequestHandler<HuoCityBean>() {
+      @Override public Flowable<HuoCityBean> onRequest(HashMap<String, Object> params) {
+        return getApiService(HuoApi.Main, ApiService.class).requestCityData(params);
+      }
+
+      @Override public HashMap<String, Object> onPrepareNextParams(HuoCityBean data) {
+        HashMap<String, Object> params = createHashMapWithCommonParams();
+        params.put("req_from", "feed_loadmore");
+        params.put("max_time", System.currentTimeMillis());
+        params.put("offset", 1 * COUNT);
+        params.put("count", COUNT);
+        return params;
+      }
+
+      @Override public String onPrepareCacheKey(HashMap<String, Object> params) {
+        return "key_city" + "_" + params.get("offset") + "_" + params.get("count");
+      }
+    });
   }
 
   @Override public Disposable refreshData(final OnDataCallback<HuoCityBean> callback) {
-    HashMap<String, Object> hashMap = createHashMapWithCommonParams();
+    HashMap<String, Object> params = createHashMapWithCommonParams();
+    params.put("req_from", "feed_refresh");
+    params.put("min_time", 0);
+    params.put("offset", 0);
+    params.put("count", COUNT);
 
-    return getApiService(HuoApi.Main, ApiService.class).refreshCityData(hashMap)
-        .retryWhen(new RetryWithDelayFunc())
-        .subscribeOn(Schedulers.io())
-        .observeOn(AndroidSchedulers.mainThread())
-        .subscribe(new Consumer<HuoCityBean>() {
-          @Override public void accept(@NonNull HuoCityBean bean) throws Exception {
-            if (callback != null) {
-              callback.onSuccess(bean);
-            }
-          }
-        }, new Consumer<Throwable>() {
-          @Override public void accept(@NonNull Throwable throwable) throws Exception {
-            if (callback != null) {
-              callback.onError(throwable);
-            }
-          }
-        });
+    return requestData(params, callback, new OnRequestHandler<HuoCityBean>() {
+      @Override public Flowable<HuoCityBean> onRequest(HashMap<String, Object> params) {
+        return getApiService(HuoApi.Main, ApiService.class).requestCityData(params);
+      }
+
+      @Override public HashMap<String, Object> onPrepareNextParams(HuoCityBean data) {
+        HashMap<String, Object> params = createHashMapWithCommonParams();
+        params.put("req_from", "feed_loadmore");
+        params.put("max_time", System.currentTimeMillis());
+        params.put("offset", 1 * COUNT);
+        params.put("count", COUNT);
+        return params;
+      }
+
+      @Override public String onPrepareCacheKey(HashMap<String, Object> params) {
+        return "key_city" + "_" + params.get("offset") + "_" + params.get("count");
+      }
+    });
   }
 
-  @Override public Disposable loadMoreData(int page, final OnDataCallback<HuoCityBean> callback) {
-    HashMap<String, Object> hashMap = createHashMapWithCommonParams();
-    hashMap.put("max_time", System.currentTimeMillis());
-    hashMap.put("offset", page * 10 + 1);
+  @Override public Disposable loadMoreData(final int page, final OnDataCallback<HuoCityBean> callback) {
+    HashMap<String, Object> params = createHashMapWithCommonParams();
+    params.put("req_from", "feed_loadmore");
+    params.put("max_time", System.currentTimeMillis());
+    params.put("offset", page * COUNT);
+    params.put("count", COUNT);
 
-    return getApiService(HuoApi.Main, ApiService.class).loadMoreCityData(hashMap)
-        .retryWhen(new RetryWithDelayFunc())
-        .subscribeOn(Schedulers.io())
-        .observeOn(AndroidSchedulers.mainThread())
-        .subscribe(new Consumer<HuoCityBean>() {
-          @Override public void accept(@NonNull HuoCityBean bean) throws Exception {
-            if (callback != null) {
-              callback.onSuccess(bean);
-            }
-          }
-        }, new Consumer<Throwable>() {
-          @Override public void accept(@NonNull Throwable throwable) throws Exception {
-            if (callback != null) {
-              callback.onError(throwable);
-            }
-          }
-        });
+    return requestData(params, callback, new OnRequestHandler<HuoCityBean>() {
+      @Override public Flowable<HuoCityBean> onRequest(HashMap<String, Object> params) {
+        return getApiService(HuoApi.Main, ApiService.class).requestCityData(params);
+      }
+
+      @Override public HashMap<String, Object> onPrepareNextParams(HuoCityBean data) {
+        HashMap<String, Object> params = createHashMapWithCommonParams();
+        params.put("req_from", "feed_loadmore");
+        params.put("max_time", System.currentTimeMillis());
+        params.put("offset", (page + 1) * COUNT);
+        params.put("count", COUNT);
+        return params;
+      }
+
+      @Override public String onPrepareCacheKey(HashMap<String, Object> params) {
+        return "key_city" + "_" + params.get("offset") + "_" + params.get("count");
+      }
+    });
+
   }
 
   private HashMap createHashMapWithCommonParams() {

@@ -4,9 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import com.bumptech.glide.Glide;
 import com.github.jdsjlzx.interfaces.OnItemClickListener;
 import com.github.jdsjlzx.interfaces.OnItemLongClickListener;
 import com.github.jdsjlzx.interfaces.OnLoadMoreListener;
@@ -15,7 +13,9 @@ import com.github.jdsjlzx.interfaces.OnRefreshListener;
 import com.github.jdsjlzx.recyclerview.LRecyclerView;
 import com.github.jdsjlzx.recyclerview.LRecyclerViewAdapter;
 import com.pinery.base.adapter.BaseAdapter;
+import com.pinery.base.callback.OnClickRefreshCallback;
 import com.pinery.base.mvp.IPresenter;
+import com.pinery.base.util.ImageAutoLoadScrollListener;
 import com.pinery.base.util.LogUtil;
 import com.pinery.base.util.ViewUtil;
 import com.pinery.base.widget.RecycleViewDivider;
@@ -33,7 +33,7 @@ import java.util.concurrent.TimeUnit;
  */
 
 public abstract class BaseListFragment<T extends IPresenter> extends BaseLazyFragment<T>
-    implements OnRefreshListener, OnLoadMoreListener {
+    implements OnRefreshListener, OnLoadMoreListener, OnClickRefreshCallback {
 
   protected LRecyclerView mRecyclerView;
 
@@ -79,7 +79,7 @@ public abstract class BaseListFragment<T extends IPresenter> extends BaseLazyFra
   /**
    * 开始刷新
    */
-  protected void startRefresh(){
+  public void startRefresh(){
     boolean isRefreshing = isRefreshing();
 
     //取消任务
@@ -166,47 +166,9 @@ public abstract class BaseListFragment<T extends IPresenter> extends BaseLazyFra
     }
   }
 
-  protected abstract BaseAdapter generateAdapter();
-
-  public abstract void onLoadMore();
-
-  public abstract void onRefresh();
-
-  //监听滚动来对图片加载进行判断处理
-  private class ImageAutoLoadScrollListener extends RecyclerView.OnScrollListener {
-
-    @Override public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-      super.onScrolled(recyclerView, dx, dy);
-    }
-
-    @Override public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
-      super.onScrollStateChanged(recyclerView, newState);
-      switch (newState) {
-        case RecyclerView.SCROLL_STATE_IDLE: // The RecyclerView is not currently scrolling.
-          //当屏幕停止滚动，加载图片
-          try {
-            if (getContext() != null) Glide.with(getContext()).resumeRequests();
-          } catch (Exception e) {
-            e.printStackTrace();
-          }
-          break;
-        case RecyclerView.SCROLL_STATE_DRAGGING: // The RecyclerView is currently being dragged by outside input such as user touch input.
-          //当屏幕滚动且用户使用的触碰或手指还在屏幕上，停止加载图片
-          //try {
-          //  if (getContext() != null) Glide.with(getContext()).pauseRequests();
-          //} catch (Exception e) {
-          //  e.printStackTrace();
-          //}
-          break;
-        case RecyclerView.SCROLL_STATE_SETTLING: // The RecyclerView is currently animating to a final position while not under outside control.
-          //由于用户的操作，屏幕产生惯性滑动，停止加载图片
-          try {
-            if (getContext() != null) Glide.with(getContext()).pauseRequests();
-          } catch (Exception e) {
-            e.printStackTrace();
-          }
-          break;
-      }
-    }
+  @Override public void onClickRefresh() {
+    startRefresh();
   }
+
+  protected abstract BaseAdapter generateAdapter();
 }

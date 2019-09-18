@@ -2,34 +2,25 @@ package com.pinery.fun.video.mvp;
 
 import com.pinery.base.mvp.IPresenter;
 import com.pinery.base.mvp.IView;
-import com.pinery.fun.video.bean.SearchTagItemsBean;
-import com.pinery.fun.video.bean.SearchTagListBean;
+import com.pinery.fun.video.bean.SearchBean;
 
 /**
  * @author hesong
- * @time 2019/3/21
+ * @time 2018/1/17
  * @desc
  */
 
 public interface SearchContract {
 
-  interface TagListView extends IView {
-    void updateTagList(SearchTagListBean bean);
+  interface View extends IView {
+    void updateList(String keyword, boolean isRefresh, SearchBean data);
+
     void error(Throwable throwable);
   }
 
-  interface TagItemsView extends IView {
-    void updateTagItems(SearchTagItemsBean bean, boolean isRefresh);
-    void error(Throwable throwable);
-  }
+  interface Presenter extends IPresenter<View> {
+    void refreshData(String keyword, int searchType);
 
-  interface TagListPresenter extends IPresenter<TagListView> {
-    void requestTagList();
+    void loadMoreData(String keyword, int searchType, int page);
   }
-
-  interface TagItemsPresenter extends IPresenter<TagItemsView> {
-    void requestTagItems(int tagId);
-    void loadMoreData(int tagId, int page);
-  }
-
 }

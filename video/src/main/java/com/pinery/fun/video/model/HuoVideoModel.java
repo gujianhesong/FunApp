@@ -1,85 +1,109 @@
 package com.pinery.fun.video.model;
 
-import com.pinery.base.rxjava.RetryWithDelayFunc;
+import com.pinery.base.callback.OnDataCallback;
+import com.pinery.base.model.BCacheModel;
 import com.pinery.fun.video.api.ApiService;
 import com.pinery.fun.video.api.HuoApi;
+import com.pinery.fun.video.api.RetrofitClient;
 import com.pinery.fun.video.bean.HuoVideoBean;
-import com.pinery.fun.video.callback.OnDataCallback;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.annotations.NonNull;
+import io.reactivex.Flowable;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
-import io.reactivex.schedulers.Schedulers;
 import java.util.HashMap;
 
-public class HuoVideoModel extends BaseModel<HuoVideoBean> implements IModel<HuoVideoBean> {
+public class HuoVideoModel extends BCacheModel implements IModel<HuoVideoBean> {
+  private static int COUNT = 12;
 
-  @Override public Disposable firstRefreshData(final OnDataCallback<HuoVideoBean> callback) {
-    HashMap<String, Object> hashMap = createHashMapWithCommonParams();
-
-    return getApiService(HuoApi.Main, ApiService.class).firstRefreshVideoData(hashMap)
-        .retryWhen(new RetryWithDelayFunc())
-        .subscribeOn(Schedulers.io())
-        .observeOn(AndroidSchedulers.mainThread())
-        .subscribe(new Consumer<HuoVideoBean>() {
-          @Override public void accept(@NonNull HuoVideoBean huoVideoBean) throws Exception {
-            if (callback != null) {
-              callback.onSuccess(huoVideoBean);
-            }
-          }
-        }, new Consumer<Throwable>() {
-          @Override public void accept(@NonNull Throwable throwable) throws Exception {
-            if (callback != null) {
-              callback.onError(throwable);
-            }
-          }
-        });
+  public <T> T getApiService(String url, Class<T> cl) {
+    return RetrofitClient.getInstance().getApiService(url, cl);
   }
 
-  @Override public Disposable refreshData(final OnDataCallback<HuoVideoBean> callback) {
-    HashMap<String, Object> hashMap = createHashMapWithCommonParams();
+  @Override
+  public Disposable firstRefreshData(OnDataCallback<HuoVideoBean> callback) {
 
-    return getApiService(HuoApi.Main, ApiService.class).refreshVideoData(hashMap)
-        .retryWhen(new RetryWithDelayFunc())
-        .subscribeOn(Schedulers.io())
-        .observeOn(AndroidSchedulers.mainThread())
-        .subscribe(new Consumer<HuoVideoBean>() {
-          @Override public void accept(@NonNull HuoVideoBean huoVideoBean) throws Exception {
-            if (callback != null) {
-              callback.onSuccess(huoVideoBean);
-            }
-          }
-        }, new Consumer<Throwable>() {
-          @Override public void accept(@NonNull Throwable throwable) throws Exception {
-            if (callback != null) {
-              callback.onError(throwable);
-            }
-          }
-        });
+    final HashMap<String, Object> params = createHashMapWithCommonParams();
+    params.put("req_from", "enter_auto");
+    params.put("min_time", 0);
+    params.put("offset", 0);
+    params.put("count", COUNT);
+
+    return requestData(params, callback, new OnRequestHandler<HuoVideoBean>() {
+      @Override public Flowable<HuoVideoBean> onRequest(HashMap<String, Object> params) {
+        return getApiService(HuoApi.Main, ApiService.class).requestVideoData(params);
+      }
+
+      @Override public HashMap<String, Object> onPrepareNextParams(HuoVideoBean data) {
+        HashMap<String, Object> params = createHashMapWithCommonParams();
+        params.put("req_from", "feed_loadmore");
+        params.put("max_time", System.currentTimeMillis());
+        params.put("offset", 1 * COUNT);
+        params.put("count", COUNT);
+        return params;
+      }
+
+      @Override public String onPrepareCacheKey(HashMap<String, Object> params) {
+        return "key_video" + "_" + params.get("offset") + "_" + params.get("count");
+      }
+    });
+
   }
 
-  @Override public Disposable loadMoreData(int page, final OnDataCallback<HuoVideoBean> callback) {
-    HashMap<String, Object> hashMap = createHashMapWithCommonParams();
-    hashMap.put("max_time", System.currentTimeMillis());
-    hashMap.put("offset", page * 12 + 1);
+  @Override
+  public Disposable refreshData(OnDataCallback<HuoVideoBean> callback) {
 
-    return getApiService(HuoApi.Main, ApiService.class).loadMoreVideoData(hashMap)
-        .retryWhen(new RetryWithDelayFunc())
-        .subscribeOn(Schedulers.io())
-        .observeOn(AndroidSchedulers.mainThread())
-        .subscribe(new Consumer<HuoVideoBean>() {
-          @Override public void accept(@NonNull HuoVideoBean huoVideoBean) throws Exception {
-            if (callback != null) {
-              callback.onSuccess(huoVideoBean);
-            }
-          }
-        }, new Consumer<Throwable>() {
-          @Override public void accept(@NonNull Throwable throwable) throws Exception {
-            if (callback != null) {
-              callback.onError(throwable);
-            }
-          }
-        });
+    final HashMap<String, Object> params = createHashMapWithCommonParams();
+    params.put("req_from", "feed_refresh");
+    params.put("min_time", 0);
+    params.put("offset", 0);
+    params.put("count", COUNT);
+
+    return requestData(params, callback, new OnRequestHandler<HuoVideoBean>() {
+      @Override public Flowable<HuoVideoBean> onRequest(HashMap<String, Object> params) {
+        return getApiService(HuoApi.Main, ApiService.class).requestVideoData(params);
+      }
+
+      @Override public HashMap<String, Object> onPrepareNextParams(HuoVideoBean data) {
+        HashMap<String, Object> params = createHashMapWithCommonParams();
+        params.put("req_from", "feed_loadmore");
+        params.put("max_time", System.currentTimeMillis());
+        params.put("offset", 1 * COUNT);
+        params.put("count", COUNT);
+        return params;
+      }
+
+      @Override public String onPrepareCacheKey(HashMap<String, Object> params) {
+        return "key_video" + "_" + params.get("offset") + "_" + params.get("count");
+      }
+    });
+
+  }
+
+  @Override
+  public Disposable loadMoreData(final int page, OnDataCallback<HuoVideoBean> callback) {
+    HashMap<String, Object> params = createHashMapWithCommonParams();
+    params.put("req_from", "feed_loadmore");
+    params.put("max_time", System.currentTimeMillis());
+    params.put("offset", page * COUNT);
+    params.put("count", COUNT);
+
+    return requestData(params, callback, new OnRequestHandler<HuoVideoBean>() {
+      @Override public Flowable<HuoVideoBean> onRequest(HashMap<String, Object> params) {
+        return getApiService(HuoApi.Main, ApiService.class).requestVideoData(params);
+      }
+
+      @Override public HashMap<String, Object> onPrepareNextParams(HuoVideoBean data) {
+        HashMap<String, Object> params = createHashMapWithCommonParams();
+        params.put("req_from", "feed_loadmore");
+        params.put("max_time", System.currentTimeMillis());
+        params.put("offset", (page + 1) * COUNT);
+        params.put("count", COUNT);
+        return params;
+      }
+
+      @Override public String onPrepareCacheKey(HashMap<String, Object> params) {
+        return "key_video" + "_" + params.get("offset") + "_" + params.get("count");
+      }
+    });
+
   }
 
   private HashMap createHashMapWithCommonParams() {

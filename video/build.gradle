@@ -77,4 +77,6 @@ dependencies {
 
   //banner轮播控件
   compile 'com.youth.banner:banner:1.4.10'
+
+  compile 'org.ligboy.retrofit2:converter-fastjson-android:2.1.0'
 }

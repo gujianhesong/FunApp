@@ -1,23 +1,23 @@
 package com.pinery.fun.video.mvp;
 
+import com.pinery.base.callback.OnDataCallback;
 import com.pinery.base.mvp.BaseRxJavaPresenter;
-import com.pinery.fun.video.bean.SearchTagItemsBean;
-import com.pinery.fun.video.callback.OnDataCallback;
-import com.pinery.fun.video.model.SearchModel;
+import com.pinery.fun.video.bean.TagItemsBean;
+import com.pinery.fun.video.model.TagModel;
 
 import javax.inject.Inject;
 
 /**
  * Created by gujian on 2019-3-21
  */
-public class SearchTagItemsPresenter extends BaseRxJavaPresenter<SearchContract.TagItemsView>
-        implements SearchContract.TagItemsPresenter {
+public class TagItemsPresenter extends BaseRxJavaPresenter<TagContract.TagItemsView>
+        implements TagContract.TagItemsPresenter {
 
-    private SearchModel model;
+    private TagModel model;
 
     @Inject
-    public SearchTagItemsPresenter() {
-        model = new SearchModel();
+    public TagItemsPresenter() {
+        model = new TagModel();
     }
 
 
@@ -27,9 +27,9 @@ public class SearchTagItemsPresenter extends BaseRxJavaPresenter<SearchContract.
 
     @Override
     public void requestTagItems(int tagId) {
-        addDisposable(model.requestTagItems(tagId, 0, new OnDataCallback<SearchTagItemsBean>() {
+        addDisposable(model.requestTagItems(tagId, 0, new OnDataCallback<TagItemsBean>() {
             @Override
-            public void onSuccess(SearchTagItemsBean bean) {
+            public void onSuccess(TagItemsBean bean) {
                 if (mView != null) {
                     mView.updateTagItems(bean, true);
                 }
@@ -46,9 +46,9 @@ public class SearchTagItemsPresenter extends BaseRxJavaPresenter<SearchContract.
 
     @Override
     public void loadMoreData(int tagId, int page) {
-        addDisposable(model.requestTagItems(tagId, page, new OnDataCallback<SearchTagItemsBean>() {
+        addDisposable(model.requestTagItems(tagId, page, new OnDataCallback<TagItemsBean>() {
             @Override
-            public void onSuccess(SearchTagItemsBean bean) {
+            public void onSuccess(TagItemsBean bean) {
                 if (mView != null) {
                     mView.updateTagItems(bean, false);
                 }

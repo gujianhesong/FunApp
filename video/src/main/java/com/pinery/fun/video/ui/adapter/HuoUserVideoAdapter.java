@@ -46,7 +46,7 @@ public class HuoUserVideoAdapter extends HuoBaseVideoAdapter {
     if (itemBean instanceof HuoUserVideoItemBean) {
       HuoUserVideoItemBean videoBean = (HuoUserVideoItemBean) itemBean;
       String id = videoBean.getData().getId_str();
-      String url = videoBean.getData().getVideo().getUrl_list().get(0);
+      String url = videoBean.getData().getVideo().getH265_url().get(0);
 
       String coverUrl = "";
       try {

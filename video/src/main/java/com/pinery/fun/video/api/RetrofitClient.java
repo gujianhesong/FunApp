@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 import com.pinery.fun.video.bean.BaseVideoItemBean;
 import com.pinery.fun.video.bean.VideoItemInfoDeserializer;
 import com.pinery.fun.video.util.LenientConvertFactory;
+import com.pinery.fun.video.util.Retrofit2ConverterFactory;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
@@ -14,6 +15,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
+import retrofit2.converter.fastjson.FastJsonConverterFactory;
 
 public class RetrofitClient {
   private RetrofitClient() {
@@ -51,6 +53,7 @@ public class RetrofitClient {
         .client(okHttpClient)
         //.addConverterFactory(GsonConverterFactory.create(gson))
         .addConverterFactory(LenientConvertFactory.create(gson))
+        //.addConverterFactory(FastJsonConverterFactory.create())//重点是这句话
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
         .build();
     retrofitMap.put(url, retrofit);

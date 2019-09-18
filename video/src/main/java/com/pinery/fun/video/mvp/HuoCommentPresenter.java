@@ -1,9 +1,9 @@
 package com.pinery.fun.video.mvp;
 
+import com.pinery.base.callback.OnDataCallback;
 import com.pinery.base.mvp.BaseRxJavaPresenter;
 import com.pinery.base.util.LogUtil;
 import com.pinery.fun.video.bean.CommentListBean;
-import com.pinery.fun.video.callback.OnDataCallback;
 import com.pinery.fun.video.model.HuoCommentModel;
 import javax.inject.Inject;
 

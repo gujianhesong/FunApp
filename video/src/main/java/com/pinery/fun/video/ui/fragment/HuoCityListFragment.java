@@ -98,7 +98,6 @@ public class HuoCityListFragment extends BaseListFragment<HuoCityPresenter>
       mDatas.clear();
       mPage = 0;
     }
-    LogUtil.printStack("add page:" + mPage);
     mPage++;
 
     List<BaseVideoItemBean> list = bean.getData();

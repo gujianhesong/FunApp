@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    >
+
+  <android.support.v7.widget.Toolbar
+      android:id="@+id/toolbar"
+      android:layout_width="match_parent"
+      android:layout_height="?attr/actionBarSize"
+      >
+
+    <TextView
+        android:id="@+id/tv_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginRight="@dimen/margin_16dp"
+        android:background="@drawable/bg_btn_normal"
+        android:drawableLeft="@drawable/a8l"
+        android:gravity="center_vertical"
+        android:padding="2dp"
+        android:text="搜索"
+        android:textColor="@color/text_gray"
+        android:textSize="14sp"
+        />
+
+  </android.support.v7.widget.Toolbar>
+
+  <View
+      android:layout_width="match_parent"
+      android:layout_height="1px"
+      android:background="@color/divide_line"
+      />
+
+  <com.youth.banner.Banner
+      android:id="@+id/banner"
+      android:layout_width="match_parent"
+      android:layout_height="120dp"
+      />
+
+  <android.support.design.widget.TabLayout
+      android:id="@+id/indicator"
+      android:layout_width="match_parent"
+      android:layout_height="48dp"
+      android:layout_centerHorizontal="true"
+      app:tabIndicatorColor="#E02E24"
+      app:tabMode="scrollable"
+      app:tabSelectedTextColor="#000"
+      app:tabTextColor="#64000000"
+      />
+
+  <android.support.v4.view.ViewPager
+      android:id="@+id/viewPager"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="9"
+      />
+
+</LinearLayout>

@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.pinery.base.adapter.BaseAdapter;
 import com.pinery.base.util.NetWorkUtil;
 import com.pinery.base.util.ViewUtil;
+import com.pinery.base.viewproxy.BaseListViewProxy;
 import com.pinery.fun.video.R;
 import com.pinery.fun.video.bean.CommentListBean;
 import com.pinery.fun.video.bean.CommentsItemBean;

@@ -1,89 +1,84 @@
 package com.pinery.fun.video.model;
 
-import com.pinery.base.rxjava.RetryWithDelayFunc;
+import com.pinery.base.callback.OnDataCallback;
+import com.pinery.base.model.BCacheModel;
 import com.pinery.fun.video.api.ApiService;
 import com.pinery.fun.video.api.HuoApi;
+import com.pinery.fun.video.api.RetrofitClient;
 import com.pinery.fun.video.bean.HuoUserCenterBean;
 import com.pinery.fun.video.bean.HuoUserVideoListBean;
-import com.pinery.fun.video.callback.OnDataCallback;
-
+import io.reactivex.Flowable;
+import io.reactivex.disposables.Disposable;
 import java.util.HashMap;
 
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.annotations.NonNull;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
-import io.reactivex.schedulers.Schedulers;
+public class HuoUserCenterModel extends BCacheModel {
+  private static final int COUNT = 20;
 
-public class HuoUserCenterModel extends BaseModel<HuoUserCenterBean> {
+  public <T> T getApiService(String url, Class<T> cl) {
+    return RetrofitClient.getInstance().getApiService(url, cl);
+  }
 
   public Disposable requestUserCenterInfo(final String userId, final OnDataCallback<HuoUserCenterBean> callback) {
-    HashMap<String, Object> hashMap = createHashMapWithCommonParams();
+    HashMap<String, Object> params = createHashMapWithCommonParams();
 
-    return getApiService(HuoApi.Main, ApiService.class).requestUserCenterInfo(userId, hashMap)
-        .retryWhen(new RetryWithDelayFunc())
-        .subscribeOn(Schedulers.io())
-        .observeOn(AndroidSchedulers.mainThread())
-        .subscribe(new Consumer<HuoUserCenterBean>() {
-          @Override public void accept(@NonNull HuoUserCenterBean HuoUserCenterBean) throws Exception {
-            if (callback != null) {
-              callback.onSuccess(HuoUserCenterBean);
-            }
-          }
-        }, new Consumer<Throwable>() {
-          @Override public void accept(@NonNull Throwable throwable) throws Exception {
-            if (callback != null) {
-              callback.onError(throwable);
-            }
-          }
-        });
+    return requestDataNoCache(params, callback, new OnRequestNoCacheHandler<HuoUserCenterBean>() {
+      @Override public Flowable<HuoUserCenterBean> onRequest(HashMap<String, Object> params) {
+        return getApiService(HuoApi.Main, ApiService.class).requestUserCenterInfo(userId, params);
+      }
+    });
   }
 
   public Disposable refreshData(final String userId, final OnDataCallback<HuoUserVideoListBean> callback) {
-    HashMap<String, Object> hashMap = createHashMapWithCommonParams();
+    HashMap<String, Object> params = createHashMapWithCommonParams();
+    params.put("req_from", "enter_auto");
+    params.put("min_time", 0);
+    params.put("offset", 0);
+    params.put("count", COUNT);
 
-    return getApiService(HuoApi.Main, ApiService.class).requestUserVideoList(userId, hashMap)
-            .retryWhen(new RetryWithDelayFunc())
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(new Consumer<HuoUserVideoListBean>() {
-              @Override public void accept(@NonNull HuoUserVideoListBean huoVideoBean) throws Exception {
-                if (callback != null) {
-                  callback.onSuccess(huoVideoBean);
-                }
-              }
-            }, new Consumer<Throwable>() {
-              @Override public void accept(@NonNull Throwable throwable) throws Exception {
-                if (callback != null) {
-                  callback.onError(throwable);
-                }
-              }
-            });
+    return requestData(params, callback, new OnRequestHandler<HuoUserVideoListBean>() {
+      @Override public Flowable<HuoUserVideoListBean> onRequest(HashMap<String, Object> params) {
+        return getApiService(HuoApi.Main, ApiService.class).requestUserVideoList(userId, params);
+      }
+
+      @Override public HashMap<String, Object> onPrepareNextParams(HuoUserVideoListBean data) {
+        HashMap<String, Object> params = createHashMapWithCommonParams();
+        params.put("req_from", "enter_auto");
+        params.put("offset", 1 * COUNT);
+        params.put("count", COUNT);
+        return params;
+      }
+
+      @Override public String onPrepareCacheKey(HashMap<String, Object> params) {
+        return "key_user_video" + "_" + params.get("offset") + "_" + params.get("count");
+      }
+    });
   }
 
 
    public Disposable loadMoreData(final String userId, final int page, final OnDataCallback<HuoUserVideoListBean> callback) {
-    HashMap<String, Object> hashMap = createHashMapWithCommonParams();
-    hashMap.put("max_time", System.currentTimeMillis());
-    hashMap.put("offset", page * 12 + 1);
+     HashMap<String, Object> params = createHashMapWithCommonParams();
+     params.put("req_from", "enter_auto");
+     params.put("offset", page * COUNT);
+     params.put("count", COUNT);
 
-    return getApiService(HuoApi.Main, ApiService.class).requestMoreUserVideoList(userId, hashMap)
-            .retryWhen(new RetryWithDelayFunc())
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(new Consumer<HuoUserVideoListBean>() {
-              @Override public void accept(@NonNull HuoUserVideoListBean huoVideoBean) throws Exception {
-                if (callback != null) {
-                  callback.onSuccess(huoVideoBean);
-                }
-              }
-            }, new Consumer<Throwable>() {
-              @Override public void accept(@NonNull Throwable throwable) throws Exception {
-                if (callback != null) {
-                  callback.onError(throwable);
-                }
-              }
-            });
+     return requestData(params, callback, new OnRequestHandler<HuoUserVideoListBean>() {
+       @Override public Flowable<HuoUserVideoListBean> onRequest(HashMap<String, Object> params) {
+         return getApiService(HuoApi.Main, ApiService.class).requestUserVideoList(userId, params);
+       }
+
+       @Override public HashMap<String, Object> onPrepareNextParams(HuoUserVideoListBean data) {
+         HashMap<String, Object> params = createHashMapWithCommonParams();
+         params.put("req_from", "enter_auto");
+         params.put("offset", (page+1) * COUNT);
+         params.put("count", COUNT);
+         return params;
+       }
+
+       @Override public String onPrepareCacheKey(HashMap<String, Object> params) {
+         return "key_user_video" + "_" + params.get("offset") + "_" + params.get("count");
+       }
+     });
+
   }
 
   private HashMap createHashMapWithCommonParams() {

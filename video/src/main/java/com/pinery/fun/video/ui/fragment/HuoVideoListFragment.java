@@ -7,7 +7,6 @@ import android.view.View;
 import com.github.jdsjlzx.recyclerview.LRecyclerView;
 import com.pinery.base.adapter.BaseAdapter;
 import com.pinery.base.fragment.BaseListFragment;
-import com.pinery.base.util.LogUtil;
 import com.pinery.base.util.NetWorkUtil;
 import com.pinery.base.util.ScreenUtil;
 import com.pinery.fun.video.R;
@@ -97,7 +96,6 @@ public class HuoVideoListFragment extends BaseListFragment<HuoVideoPresenter>
       mDatas.clear();
       mPage = 0;
     }
-    LogUtil.printStack("add page:" + mPage);
     mPage++;
 
     List<BaseVideoItemBean> list = huoVideoBean.getData();

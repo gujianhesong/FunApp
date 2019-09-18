@@ -98,12 +98,12 @@ public class HashtagVideoListFragment extends BaseListFragment<HashTagItemsPrese
     }
     mPage++;
 
-    List<HashTagItemsBean.DataBeanX> list = bean.getData();
-    if (list != null) {
-      mDatas.addAll(list);
-    }
-
-    notifyCompleteRefresh(list != null ? list.size() : 0);
+    //List<HashTagItemsBean.DataBeanX> list = bean.getData();
+    //if (list != null) {
+    //  mDatas.addAll(list);
+    //}
+    //
+    //notifyCompleteRefresh(list != null ? list.size() : 0);
   }
 
   @Override public void error(Throwable throwable) {

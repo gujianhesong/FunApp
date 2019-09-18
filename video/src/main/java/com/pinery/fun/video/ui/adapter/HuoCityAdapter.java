@@ -12,6 +12,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
+import com.pinery.base.util.GlideUtil;
 import com.pinery.base.util.ViewUtil;
 import com.pinery.fun.video.R;
 import com.pinery.fun.video.bean.BaseVideoItemBean;
@@ -196,6 +197,8 @@ public class HuoCityAdapter extends HuoBaseVideoAdapter {
 
     @Override
     public void loadCoverImage(CityVideoViewHolder viewHodler, HuoVideoItemBean dataBeanX) {
+      setLayoutParams(viewHodler, dataBeanX);
+
       String url = "";
       try {
         url = dataBeanX.getData().getVideo().getCover().getUrl_list().get(0);
@@ -203,7 +206,7 @@ public class HuoCityAdapter extends HuoBaseVideoAdapter {
         ex.printStackTrace();
       }
 
-      Glide.with(context).load(url).into(viewHodler.ivImage);
+      GlideUtil.loadImage(viewHodler.ivImage, url);
     }
 
     @Override
@@ -214,7 +217,7 @@ public class HuoCityAdapter extends HuoBaseVideoAdapter {
       } catch (Exception ex) {
       }
 
-      Glide.with(context).load(avatar).error(R.drawable.a0b).into(viewHodler.ivAvatar);
+      GlideUtil.loadImage(viewHodler.ivAvatar, avatar, R.drawable.a0b);
     }
   }
 
@@ -274,21 +277,15 @@ public class HuoCityAdapter extends HuoBaseVideoAdapter {
     }
 
     @Override public void loadCoverImage(final CityLiveViewHolder viewHodler, final HuoLiveItemBean dataBeanX) {
+      setLayoutParams(viewHodler, dataBeanX);
+
       String url = "";
       try {
         url = dataBeanX.getData().getCover().getUrl_list().get(0);
       }catch (Exception ex){
       }
 
-      Glide.with(context).load(url).error(R.drawable.a0b).into(new SimpleTarget<GlideDrawable>() {
-        @Override public void onResourceReady(GlideDrawable resource,
-            GlideAnimation<? super GlideDrawable> glideAnimation) {
-
-          viewHodler.ivImage.setImageDrawable(resource);
-
-          setLayoutParams(viewHodler, dataBeanX);
-        }
-      });
+      GlideUtil.loadImage(viewHodler.ivImage, url);
     }
 
     @Override public void loadAvatarImage(final CityLiveViewHolder viewHodler,

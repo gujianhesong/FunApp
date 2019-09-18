@@ -1,4 +1,4 @@
-package com.pinery.fun.video.ui.viewproxy;
+package com.pinery.base.viewproxy;
 
 import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,21 +11,34 @@ import com.github.jdsjlzx.interfaces.OnRefreshListener;
 import com.github.jdsjlzx.recyclerview.LRecyclerView;
 import com.github.jdsjlzx.recyclerview.LRecyclerViewAdapter;
 import com.pinery.base.adapter.BaseAdapter;
+import com.pinery.base.callback.OnClickRefreshCallback;
 import com.pinery.base.mvp.IPresenter;
+import com.pinery.base.util.ImageAutoLoadScrollListener;
+import com.pinery.base.util.LogUtil;
 import com.pinery.base.util.ViewUtil;
-import com.pinery.fun.video.R;
+import com.pinery.base.widget.RecycleViewDivider;
+import com.pinery.fun.commonlib.R;
+import io.reactivex.Flowable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.annotations.NonNull;
+import io.reactivex.functions.Consumer;
+import io.reactivex.schedulers.Schedulers;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by gujian on 2018-08-25.
  */
 
 public abstract class BaseListViewProxy<T extends IPresenter> extends BaseViewProxy<T>
-    implements OnRefreshListener, OnLoadMoreListener {
+    implements OnRefreshListener, OnLoadMoreListener, OnClickRefreshCallback {
 
   protected LRecyclerView mRecyclerView;
 
   protected BaseAdapter mAdapter;
-  private LRecyclerViewAdapter mLRecyclerViewAdapter;
+
+  protected Context mContext;
+
+  private boolean isRefreshing;
 
   public BaseListViewProxy(Context context) {
     super(context);
@@ -36,17 +49,18 @@ public abstract class BaseListViewProxy<T extends IPresenter> extends BaseViewPr
   }
 
   @Override protected void initView(View view) {
+    mContext = view.getContext();
+
     mRecyclerView = ViewUtil.findViewById(view, R.id.swipe_target);
     mRecyclerView.setHasFixedSize(true);
 
     setLayoutManager(mRecyclerView);
 
     mAdapter = generateAdapter();
-    mLRecyclerViewAdapter = new LRecyclerViewAdapter(mAdapter);
-    mRecyclerView.setAdapter(mLRecyclerViewAdapter);
+    mRecyclerView.setAdapter(new LRecyclerViewAdapter(mAdapter));
     mRecyclerView.setOnRefreshListener(this);
     mRecyclerView.setOnLoadMoreListener(this);
-    //mRecyclerView.addOnScrollListener(new ImageAutoLoadScrollListener());
+    mRecyclerView.addOnScrollListener(new ImageAutoLoadScrollListener());
     setOnItemClickListener(new OnItemClickListener() {
       @Override public void onItemClick(View view, int position) {
         if (mAdapter != null) {
@@ -63,13 +77,56 @@ public abstract class BaseListViewProxy<T extends IPresenter> extends BaseViewPr
     });
   }
 
-  public void notifyCompleteRefresh(int refreshCount) {
+  /**
+   * 开始刷新
+   */
+  public void startRefresh() {
+    boolean isRefreshing = isRefreshing();
+
+    //取消任务
+    mPresenter.dispose();
+    //设置刷新完成.
+    notifyCompleteRefresh(0);
+    //移到顶部
+    mRecyclerView.scrollToPosition(0);
+
+    int delayTime = 100;
+    if (isRefreshing) {
+      delayTime = 1000;
+    }
+
+    LogUtil.i("delayTime : " + delayTime);
+
+    //下拉刷新
+    Flowable.just("")
+        .subscribeOn(Schedulers.io())
+        .delay(delayTime, TimeUnit.MILLISECONDS)
+        .observeOn(AndroidSchedulers.mainThread())
+        .subscribe(new Consumer<String>() {
+          @Override public void accept(@NonNull String s) throws Exception {
+            mRecyclerView.forceToRefresh();
+          }
+        });
+  }
+
+  public boolean isRefreshing() {
+    return isRefreshing;
+  }
+
+  public void setRefreshing(boolean isRefreshing) {
+    this.isRefreshing = isRefreshing;
+  }
+
+  protected void notifyCompleteRefresh(int refreshCount) {
+    isRefreshing = false;
     mRecyclerView.refreshComplete(refreshCount);
-    if (mAdapter.getItemCount() == refreshCount) {
-      mLRecyclerViewAdapter.notifyDataSetChanged();
-    } else {
-      mLRecyclerViewAdapter.notifyItemRangeInserted(mAdapter.getItemCount() - refreshCount,
-          refreshCount);
+    if (refreshCount > 0) {
+      int start = mAdapter.getItemCount() - refreshCount;
+      if (start > 0) {
+        mAdapter.notifyItemRangeInserted(start, refreshCount);
+      } else {
+        mAdapter.notifyDataSetChanged();
+      }
     }
   }
 
@@ -94,19 +151,23 @@ public abstract class BaseListViewProxy<T extends IPresenter> extends BaseViewPr
     LinearLayoutManager layoutManager = new LinearLayoutManager(mContext);
     recyclerView.setLayoutManager(layoutManager);
 
-    //mRecyclerView.addItemDecoration(new RecycleViewDivider(mContext));
+    mRecyclerView.addItemDecoration(new RecycleViewDivider(mContext));
   }
 
   public void setOnItemClickListener(OnItemClickListener listener) {
-    if (mLRecyclerViewAdapter != null) {
-      mLRecyclerViewAdapter.setOnItemClickListener(listener);
+    if (mRecyclerView.getAdapter() != null) {
+      ((LRecyclerViewAdapter) mRecyclerView.getAdapter()).setOnItemClickListener(listener);
     }
   }
 
   public void setOnItemLongClickListener(OnItemLongClickListener listener) {
-    if (mLRecyclerViewAdapter != null) {
-      mLRecyclerViewAdapter.setOnItemLongClickListener(listener);
+    if (mRecyclerView.getAdapter() != null) {
+      ((LRecyclerViewAdapter) mRecyclerView.getAdapter()).setOnItemLongClickListener(listener);
     }
+  }
+
+  @Override public void onClickRefresh() {
+    startRefresh();
   }
 
   protected abstract BaseAdapter generateAdapter();
